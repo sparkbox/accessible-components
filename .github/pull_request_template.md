@@ -2,6 +2,7 @@
 <!-- Add description of work done here -->
 
 ### Spec:
+Designs: [Designs](DESIGN_URL)
 
 See Story: [FSA22V2-ISSUE](https://sparkbox.atlassian.net/browse/FSA22V2-ISSUE)
 
