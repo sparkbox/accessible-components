@@ -1,3 +1,6 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends":[
+    "eslint-config-airbnb",
+    "next/core-web-vitals"
+  ]
 }
