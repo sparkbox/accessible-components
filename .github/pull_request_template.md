@@ -17,7 +17,11 @@ See Story: [FSA22V2-ISSUE](https://sparkbox.atlassian.net/browse/FSA22V2-ISSUE)
 
 1. Make sure all PR Checks have passed (GitHub Actions, CircleCI, Code Climate, etc).
 2. Pull down all related branches.
-3. Confirm all tests pass.
+3. In terminal: `npm run dev`.
+4. Check [localhost:3000](http://localhost:3000/)for changes.
+5. Run `npm run lint`.
+6. Run axe Devtools on affected pages.
+7. Confirm all tests pass.
 
 <!-- Additional validation steps below -->
 
