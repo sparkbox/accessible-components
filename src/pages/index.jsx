@@ -1,9 +1,13 @@
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
+import Header from '../components/Header';
+import PageTitle from '../components/PageTitle';
 
 export default function Home() {
   return (
     <div>
+      <PageTitle title="Home" />
+      <Header />
       <main className="home">
         <div className="home-top">
           <div>
@@ -15,10 +19,10 @@ export default function Home() {
               Check back often as we’re adding new components frequently!
             </p>
             <ul>
-              <li><Link href="/accordion">Accordion</Link></li>
-              <li><Link href="/dialog">Dialog</Link></li>
-              <li><Link href="/disclosure">Disclosure</Link></li>
-              <li><Link href="/tabs">Tabs</Link></li>
+              <li><Link href="/accordion"><a>Accordion</a></Link></li>
+              <li><Link href="/dialog"><a>Dialog</a></Link></li>
+              <li><Link href="/disclosure"><a>Disclosure</a></Link></li>
+              <li><Link href="/tabs"><a>Tabs</a></Link></li>
             </ul>
           </div>
         </div>
