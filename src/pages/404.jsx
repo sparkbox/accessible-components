@@ -8,7 +8,7 @@ export default function ErrorPage() {
       <PageTitle title="404 Not Found" />
       <Header />
       <h1>404 Not Found</h1>
-      <Link href='/'><a>Overview Page</a></Link>
+      <Link href="/"><a>Overview Page</a></Link>
     </div>
   );
 }

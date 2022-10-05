@@ -13,9 +13,9 @@ export default function Home() {
           <div>
             <h1>Accessibility Cheatsheets for Components</h1>
             <p className="home-top__top-description">
-              Intro copy goes here, such as: Build accessible components 
-              more accurately and in less time with these easy-to-read 
-              cheatsheets based on WCAG and ARIA best practices. 
+              Intro copy goes here, such as: Build accessible components
+              more accurately and in less time with these easy-to-read
+              cheatsheets based on WCAG and ARIA best practices.
               Check back often as we’re adding new components frequently!
             </p>
             <ul>

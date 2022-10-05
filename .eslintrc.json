@@ -3,8 +3,14 @@
     "eslint-config-airbnb",
     "next/core-web-vitals"
   ],
+  "env": {
+    "jest": true
+  },
   "rules": {
     // Other rules
-    "@next/next/no-img-element": "off"
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "@next/next/no-img-element": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "@next/next/no-html-link-for-pages": "off"
   }
 }
