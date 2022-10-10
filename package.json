@@ -3,16 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "check-node-version --package",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint:js": "next lint",
     "lint:css": "stylelint '**/*.scss'",
     "lint": "run-s lint:js lint:css",
-    "test": "jest", 
+    "test": "jest",
     "test:watch": "npm run test -- --watchAll"
   },
   "dependencies": {
+    "check-node-version": "^4.2.1",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -20,15 +22,18 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "jest-environment-jsdom": "^29.1.2",
     "eslint": "8.25.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "12.3.1",
     "jest": "^29.1.2",
+    "jest-environment-jsdom": "^29.1.2",
     "npm-run-all": "^4.1.5",
     "sass": "^1.55.0",
     "stylelint": "^14.13.0",
     "stylelint-config-standard": "^28.0.0",
     "stylelint-config-standard-scss": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }
