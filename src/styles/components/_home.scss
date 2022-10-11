@@ -5,12 +5,22 @@ $breakpoint-tablet: 820px;
   grid-template-columns: 1fr;
   gap: 1rem;
 
-  &-top {
-    display: flex;
-    justify-content: space-between;
+  @media only screen and (min-width: $breakpoint-tablet) {
+    &-top {
+      display: flex;
+      flex-basis: 100%;
+      justify-content: space-between;
 
-    h1 {
-      font-size: 2.5rem;
+      &__text-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-basis: 50%;
+
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
     }
 
     &__top-description {
@@ -18,13 +28,7 @@ $breakpoint-tablet: 820px;
     }
 
     &__top-image {
-      width: 100%;
+      flex-basis: 50%;
     }
-  }
-
-  @media only screen and (min-width: $breakpoint-tablet) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
   }
 }

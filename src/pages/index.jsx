@@ -5,9 +5,9 @@ import ComponentCard from '../components/ComponentCard';
 export default function Home() {
   return (
     <Layout pageTitle="Home">
-      <div>
+      <div className="home">
         <div className="home-top">
-          <div>
+          <div className="home-top__text-column">
             <h1>Accessibility Cheatsheets for Components</h1>
             <p className="home-top__top-description">
               Intro copy goes here, such as: Build accessible components
@@ -15,6 +15,8 @@ export default function Home() {
               cheatsheets based on WCAG and ARIA best practices.
               Check back often as we’re adding new components frequently!
             </p>
+          </div>
+          <div>
             <img
               className="home-top__top-image"
               src="/home-header-image.svg"
