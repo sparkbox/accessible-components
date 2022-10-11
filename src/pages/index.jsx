@@ -1,14 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import Header from '../components/Header';
-import PageTitle from '../components/PageTitle';
+import Layout from '../components/Layout';
 
 export default function Home() {
   return (
-    <div>
-      <PageTitle title="Home" />
-      <Header />
-      <main className="home">
+    <Layout pageTitle="Home">
+      <div>
         <div className="home-top">
           <div>
             <h1>Accessibility Cheatsheets for Components</h1>
@@ -27,7 +24,7 @@ export default function Home() {
           </div>
         </div>
         <img className="home-top__top-image" src="/home-header-image.svg" alt="Illustration of dog surrounded by accessible components" />
-      </main>
-    </div>
+      </div>
+    </Layout>
   );
 }
