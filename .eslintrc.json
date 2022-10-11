@@ -8,9 +8,7 @@
   },
   "rules": {
     // Other rules
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "@next/next/no-img-element": "off",
-    "jsx-a11y/anchor-is-valid": "off",
-    "@next/next/no-html-link-for-pages": "off"
+    "jsx-a11y/anchor-is-valid": "off"
   }
 }
