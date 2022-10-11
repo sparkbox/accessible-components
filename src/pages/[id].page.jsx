@@ -13,9 +13,17 @@ export default function Details() {
   );
 }
 
+export const getStaticPaths = async () => ({
+  paths: [
+    '/accordion',
+    '/dialog',
+    '/disclosure',
+    '/tabs',
+  ],
+  fallback: 'blocking', // indicates the type of fallback
+});
+
 // pre-render this page on each request using data in props.
-export async function getServerSideProps() {
-  return {
-    props: {},
-  };
-}
+export const getStaticProps = async () => ({
+  props: {},
+});
