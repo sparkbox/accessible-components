@@ -1,5 +1,7 @@
-@import "./components/header";
 @import "./components/home";
+@import "./components/header";
+@import "./elements/ul";
+@import "./components/componentCard";
 
 html,
 body {
@@ -27,3 +29,25 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* SETTINGS: variables, custom properties, etc. */
+
+/* TOOLS: mixins, etc */
+
+/* GENERIC: fonts, reset stylesheets, etc */
+// @import './components/index.scss'; this file may have been renamed to _home!
+
+/* ELEMENTS: html element selectors only */
+// @import "./elements/ul";
+
+/* LAYOUT/OBJECTS: objects, grids, flexbox etc */
+
+/* COMPONENTS: most of the work goes here! BEM classes, headers/footers/carousels, etc */
+// these will go be uncommented here, and deleted from line 1 after we refactor (otherwise the linter throws errors.
+// @import "./components/home";
+// @import "./components/header";
+// @import "./components/componentCard";
+
+/* VENDORS: third-party */
+
+/* UTILITIES: one offs, display:hidden, backgrounds, margin, padding, etc */

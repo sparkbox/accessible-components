@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
 import Layout from '../components/Layout';
+import ComponentCard from '../components/ComponentCard';
 
 export default function Home() {
   return (
@@ -15,15 +15,27 @@ export default function Home() {
               cheatsheets based on WCAG and ARIA best practices.
               Check back often as we’re adding new components frequently!
             </p>
-            <ul>
-              <li><Link href="/accordion"><a>Accordion</a></Link></li>
-              <li><Link href="/dialog"><a>Dialog</a></Link></li>
-              <li><Link href="/disclosure"><a>Disclosure</a></Link></li>
-              <li><Link href="/tabs"><a>Tabs</a></Link></li>
-            </ul>
+            <img
+              className="home-top__top-image"
+              src="/home-header-image.svg"
+              alt="Illustration of dog surrounded by accessible components"
+            />
           </div>
         </div>
-        <img className="home-top__top-image" src="/home-header-image.svg" alt="Illustration of dog surrounded by accessible components" />
+        <ul>
+          <li>
+            <ComponentCard name="Accordion" slug="/accordion" image="/accordion_artwork.svg" />
+          </li>
+          <li>
+            <ComponentCard name="Dialog" slug="/dialog" image="/dialog_artwork.svg" />
+          </li>
+          <li>
+            <ComponentCard name="Disclosure" slug="/disclosure" image="/disclosure_artwork.svg" />
+          </li>
+          <li>
+            <ComponentCard name="Tabs" slug="/tabs" image="/tabs_artwork.svg" />
+          </li>
+        </ul>
       </div>
     </Layout>
   );

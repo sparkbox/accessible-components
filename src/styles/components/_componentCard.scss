@@ -1,0 +1,31 @@
+.component-card {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1rem; // right now this matches the gap property found in index.scss
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+
+  &:focus {
+    border: 2px solid #01f5ac;
+    outline: none;
+  }
+
+  img {
+    transition: all 150ms ease-in-out;
+  }
+
+  &:hover img {
+    scale: 102%;
+  }
+
+  &__header {
+    font-weight: 700;
+    font-size: 1.25rem; // 20px
+    line-height: 4.6667rem; // 28px
+    letter-spacing: 2%;
+    text-align: center;
+    display: block;
+    border-top: 0.25rem solid black;
+  }
+}

@@ -8,4 +8,13 @@ describe('Home', () => {
     const heading = screen.getByRole('heading');
     expect(heading).toBeInTheDocument();
   });
+
+  it('renders multiple component cards', () => {
+    // test if the Home page has some component cards on it
+    render(<Home />);
+    const componentCard = screen.getAllByRole('listitem');
+    componentCard.forEach((component) => {
+      expect(component).toBeVisible();
+    });
+  });
 });
