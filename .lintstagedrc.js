@@ -6,6 +6,6 @@ const buildEslintCommand = (filenames) =>
 // this runs the commands indicated on the following file types
 module.exports = {
   '*.{ts,tsx,js,jsx}': [buildEslintCommand],
-  '*.scss': ['stylelint --fix'],
-  '*': ['prettier --write'],
+  '*.scss': ['npm run lint:scss -- --fix'],
+  '*.{ts,tsx,js,jsx,json,md}': ['prettier --write'],
 };

@@ -24,30 +24,36 @@ export default function Home() {
             />
           </div>
         </div>
-        <ul>
-          <li>
+        <ul className="components-grid">
+          <li className="components-grid__item components-grid__item--accordion">
             <ComponentCard
               name="Accordion"
               slug="/accordion"
               image="/accordion_artwork.svg"
             />
           </li>
-          <li>
+          <li className="components-grid__item components-grid__item--dialog">
             <ComponentCard
               name="Dialog"
               slug="/dialog"
               image="/dialog_artwork.svg"
             />
           </li>
-          <li>
+          <li className="components-grid__item components-grid__item--disclosure">
             <ComponentCard
               name="Disclosure"
               slug="/disclosure"
               image="/disclosure_artwork.svg"
             />
           </li>
-          <li>
+          <li className="components-grid__item components-grid__item--tabs">
             <ComponentCard name="Tabs" slug="/tabs" image="/tabs_artwork.svg" />
+          </li>
+          <li className="components-grid__item components-grid__item--max-scott">
+            <img
+              src="/max-grid.svg"
+              alt="Illustration of cute small white terrier dog with tongue out and head turned left looking like he is curious"
+            />
           </li>
         </ul>
       </div>

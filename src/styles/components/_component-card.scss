@@ -13,6 +13,8 @@
 
   img {
     transition: all 150ms ease-in-out;
+    width: 100%;
+    height: auto;
   }
 
   &:hover img {

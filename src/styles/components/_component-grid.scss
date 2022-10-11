@@ -1,0 +1,72 @@
+$breakpoint-tablet: 820px;
+
+.components-grid {
+  width: 100%;
+  border: 1px black solid;
+  text-align: center;
+  padding: 1rem;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    &--accordion {
+      grid-area: accordion;
+    }
+
+    &--dialog {
+      grid-area: dialog;
+    }
+
+    &--disclosure {
+      grid-area: disclosure;
+    }
+
+    &--tabs {
+      grid-area: tabs;
+    }
+
+    &--max-scott {
+      grid-area: max-scott;
+    }
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  .components-grid {
+    display: grid;
+    max-width: calc(100vw - 2rem);
+    list-style: none;
+    grid-template-areas:
+      "accordion dialog disclosure"
+      "accordion tabs tabs"
+      ". max-scott .";
+
+    &__item {
+      &--accordion {
+        grid-area: accordion;
+      }
+
+      &--dialog {
+        grid-area: dialog;
+      }
+
+      &--disclosure {
+        grid-area: disclosure;
+      }
+
+      &--tabs {
+        grid-area: tabs;
+      }
+
+      &--max-scott {
+        grid-area: max-scott;
+      }
+
+      border: 1px black solid;
+      text-align: center;
+      align-items: center;
+    }
+  }
+}
