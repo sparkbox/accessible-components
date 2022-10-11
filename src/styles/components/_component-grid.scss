@@ -1,0 +1,30 @@
+.component-grid {
+  display: grid;
+  max-width: calc(100vw - 2rem);
+  list-style: none;
+  grid-template-areas:
+    'accordion dialog disclosure'
+    'accordion tabs tabs'
+    '. max-scott .';
+}
+
+.component-grid__item {
+  &--accordion {
+    grid-area: accordion;
+  }
+  &--dialog {
+    grid-area: dialog;
+  }
+  &--disclosure {
+    grid-area: disclosure;
+  }
+  &--tabs {
+    grid-area: tabs;
+  }
+  &--max-scott {
+    grid-area: max-scott;
+  }
+  border: 1px black solid;
+  text-align: center;
+  padding: 1rem;
+}
