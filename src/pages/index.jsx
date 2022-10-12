@@ -26,11 +26,21 @@ export default function Home() {
         </div>
         <div className="components">
           <ul className="component-grid">
-            <li className="component-grid__item component-grid__item--accordion"><ComponentCard name="Accordion" slug="/accordion" image="/accordion_artwork.svg" /></li>
-            <li className="component-grid__item component-grid__item--dialog"><ComponentCard name="Dialog" slug="/dialog" image="/dialog_artwork.svg" /></li>
-            <li className="component-grid__item component-grid__item--disclosure"><ComponentCard name="Disclosure" slug="/disclosure" image="/disclosure_artwork.svg" /></li>
-            <li className="component-grid__item component-grid__item--tabs"><ComponentCard name="Tabs" slug="/tabs" image="/tabs_artwork.svg" /></li>
-            <li className="component-grid__item component-grid__item--max-scott">Max-scot illustration</li>
+            <li className="component-grid__item component-grid__item--accordion">
+              <ComponentCard name="Accordion" slug="/accordion" image="/accordion_artwork.svg" />
+            </li>
+            <li className="component-grid__item component-grid__item--dialog">
+              <ComponentCard name="Dialog" slug="/dialog" image="/dialog_artwork.svg" />
+            </li>
+            <li className="component-grid__item component-grid__item--disclosure">
+              <ComponentCard name="Disclosure" slug="/disclosure" image="/disclosure_artwork.svg" />
+            </li>
+            <li className="component-grid__item component-grid__item--tabs">
+              <ComponentCard name="Tabs" slug="/tabs" image="/tabs_artwork.svg" />
+            </li>
+            <li className="component-grid__item component-grid__item--max-scott">
+              Max-scot illustration
+              </li>
           </ul>
         </div>
       </div>
