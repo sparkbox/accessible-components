@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Header from './Header';
+import Footer from './Footer';
 
 function formatTitle(title) {
   const firstLetter = title[0];
@@ -12,14 +13,18 @@ export default function Layout({ children, pageTitle }) {
   const formattedTitle = `${formatTitle(pageTitle)} | Accessible Components`;
   return (
     <>
-      <Header />
       <Head>
-        <title>{formattedTitle}</title>
+        <title data-testid="layout-title">{formattedTitle}</title>
         <meta name="description" content="Sparkbox accessible components" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <main>{children}</main>
-      {/* <Footer /> */}
+      <div className="page-container">
+        <div className="content-wrap">
+          <Header />
+          <main className="content">{children}</main>
+          <Footer />
+        </div>
+      </div>
     </>
   );
 }

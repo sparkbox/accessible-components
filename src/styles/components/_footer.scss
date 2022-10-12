@@ -1,0 +1,94 @@
+.default-footer {
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+
+  // Content wrapper
+  &__content {
+    min-height: 332px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 3.75rem; /* 60px/16px */
+    font-size: 1.25rem; /* 20px/16px */
+    margin: auto;
+    line-height: 2rem; /* 17px/16px */
+    transition: 500ms color;
+  }
+
+  // Flex items of content wrapper
+  &__item {
+    color: white;
+    width: 100%;
+
+    & p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__item a {
+    text-decoration: underline;
+    background: linear-gradient(to left, rgb(0 0 0 / 0%) 50%, #595959 50%);
+    background-size: 201% 100%;
+    background-position: right bottom;
+    transition: ease-in-out all 250ms;
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    &__item > a:hover,
+    &__item > a:focus-within {
+      background-position: left bottom;
+    }
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    &__item > a:hover,
+    &__item > a:focus-within {
+      background-color: #595959;
+    }
+  }
+
+  // Container for icons that link to other websites
+  &__links {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+    a {
+      height: 45px;
+      min-width: 45px;
+      position: relative;
+    }
+
+    img {
+      position: absolute;
+      min-width: 2.8125rem; /* 45px/16px */
+      min-height: 100%;
+      filter: invert(1);
+      bottom: 0;
+      right: 0;
+      transition: 200ms;
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      & a:hover > img {
+        filter: invert(0.7);
+      }
+    }
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+      a:hover > img,
+      a:focus-within > img {
+        filter: invert(0.7);
+        bottom: 0.5rem;
+      }
+    }
+  }
+}
