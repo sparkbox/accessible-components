@@ -10,11 +10,11 @@
     "start": "next start",
     "lint:js": "next lint",
     "lint:css": "stylelint '**/*.scss'",
-    "lint:html": "npm run export && pa11y-ci -c .pa11yci.json './out/**/*.html'",
-    "lint": "run-s lint:js lint:css lint:html",
+    "lint": "run-s lint:js lint:css",
     "test": "jest",
     "test:watch": "npm run test -- --watchAll",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "check-node-version": "^4.2.1",
@@ -29,16 +29,26 @@
     "eslint": "8.25.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "12.3.1",
-    "jest": "^29.1.2",
-    "jest-environment-jsdom": "^29.1.2",
     "husky": "^8.0.1",
+    "jest-environment-jsdom": "^29.1.2",
+    "jest": "^29.1.2",
+    "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
+<<<<<<< HEAD
     "pa11y-ci": "^3.0.1",
     "prettier": "2.7.1",
+=======
+    "prettier": "2.6.2",
+>>>>>>> 8956219 (feat: add prettier format on save)
     "sass": "^1.55.0",
     "stylelint": "^14.13.0",
     "stylelint-config-standard": "^28.0.0",
     "stylelint-config-standard-scss": "^5.0.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,css,md,json}": [
+      "prettier --write"
+    ]
   },
   "engines": {
     "node": ">=16"
