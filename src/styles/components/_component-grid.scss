@@ -43,9 +43,9 @@ $breakpoint-tablet: 820px;
     max-width: calc(100vw - 2rem);
     list-style: none;
     grid-template-areas:
-      'accordion dialog disclosure'
-      'accordion tabs tabs'
-      '. max-scott .';
+      "accordion dialog disclosure"
+      "accordion tabs tabs"
+      ". max-scott .";
   }
 
   .components-grid__item {

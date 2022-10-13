@@ -1,53 +1,20 @@
-@import "./components/home";
-@import "./components/header";
-@import "./elements/ul";
-@import "./components/componentCard";
-@import "./components/component-grid";
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Fira Sans",
-    "Droid Sans",
-    "Helvetica Neue",
-    sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 /* SETTINGS: variables, custom properties, etc. */
 
 /* TOOLS: mixins, etc */
 
 /* GENERIC: fonts, reset stylesheets, etc */
-// @import './components/index.scss'; this file may have been renamed to _home!
 
 /* ELEMENTS: html element selectors only */
-// @import "./elements/ul";
+@import "./elements/elements";
+@import "./elements/ul";
 
 /* LAYOUT/OBJECTS: objects, grids, flexbox etc */
 
 /* COMPONENTS: most of the work goes here! BEM classes, headers/footers/carousels, etc */
-// these will go be uncommented here, and deleted from line 1 after we refactor (otherwise the linter throws errors.
-// @import "./components/home";
-// @import "./components/header";
-// @import "./components/componentCard";
+@import "./components/home";
+@import "./components/header";
+@import "./components/componentCard";
+@import "./components/component-grid";
 
 /* VENDORS: third-party */
 
