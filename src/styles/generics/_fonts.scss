@@ -1,0 +1,28 @@
+@font-face {
+  font-family: Viga;
+  src: url("../../../fonts/Viga/Viga-Regular.ttf");
+}
+
+@font-face {
+  font-family: Oxygen;
+  src: url("../../../fonts/Oxygen/Oxygen-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Oxygen Bold";
+  src: url("../../../fonts/Oxygen/Oxygen-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Oxygen Light";
+  src: url("../../../fonts/Oxygen/Oxygen-Light.ttf");
+}
+
+// Reference figma for font sizes
+$font-sizes: (
+  xs: 1rem, // 16px
+  sm: 1.25rem, // 20px
+  md: 1.875rem, // 30px
+  lg: 2.5rem, // 40px
+  xl: 3.125rem, // 50px
+);
