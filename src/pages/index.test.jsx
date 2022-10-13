@@ -14,7 +14,7 @@ describe('Home', () => {
     render(<Home />);
     const componentCard = screen.getAllByRole('listitem');
     componentCard.forEach((component) => {
-      expect(component).toBeVisible();
+      expect(component).toBeInTheDocument();
     });
   });
 });
