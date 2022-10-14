@@ -2,9 +2,9 @@
   border: 2px solid black;
   display: flex;
   flex-direction: column-reverse;
-  margin: 1rem; // right now this matches the gap property found in index.scss
   cursor: pointer;
   transition: all 150ms ease-in-out;
+  width: 100%;
 
   &:focus {
     border: 2px solid #01f5ac;
@@ -13,6 +13,8 @@
 
   img {
     transition: all 150ms ease-in-out;
+    width: 100%;
+    height: auto;
   }
 
   &:hover img {

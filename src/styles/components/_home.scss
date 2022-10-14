@@ -1,9 +1,11 @@
 $breakpoint-tablet: 820px;
 
 .home {
+  // border: 1px solid red;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  width: 100%;
 
   @media only screen and (min-width: $breakpoint-tablet) {
     &-top {
@@ -22,13 +24,9 @@ $breakpoint-tablet: 820px;
         }
       }
     }
+  }
 
-    &__top-description {
-      font-size: 1.1rem;
-    }
-
-    &__top-image {
-      flex-basis: 50%;
-    }
+  &-top__top-image {
+    width: 100%;
   }
 }

@@ -1,6 +1,23 @@
 $breakpoint-tablet: 820px;
 
 .components {
+  display: flex;
+  border: 1px solid red;
+  padding: 0;
+  margin: 0;
+
+    &-grid {
+      border: 1px solid red;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-grid__item {
+      border: 1px solid blue;
+      width: 100%;
+    }
+
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
@@ -8,7 +25,7 @@ $breakpoint-tablet: 820px;
   &-grid {
     &__item {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
 
       &--accordion {
         grid-area: accordion;
@@ -30,7 +47,7 @@ $breakpoint-tablet: 820px;
         grid-area: max-scott;
       }
 
-      border: 1px black solid;
+      border: 1px solid blue;
       text-align: center;
       padding: 1rem;
     }
@@ -39,9 +56,10 @@ $breakpoint-tablet: 820px;
 
 @media only screen and (min-width: $breakpoint-tablet) {
   .components-grid {
+    border: 1px solid blue;
+    margin: auto;
     display: grid;
     max-width: calc(100vw - 2rem);
-    list-style: none;
     grid-template-areas:
       "accordion dialog disclosure"
       "accordion tabs tabs"
