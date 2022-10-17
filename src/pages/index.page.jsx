@@ -1,13 +1,13 @@
 import React from 'react';
-import Link from 'next/link';
 import Layout from '../components/Layout';
+import ComponentCard from '../components/ComponentCard';
 
 export default function Home() {
   return (
     <Layout pageTitle="Home">
-      <div>
+      <div className="home">
         <div className="home-top">
-          <div>
+          <div className="home-top__text-column">
             <h1>Accessibility Cheatsheets for Components</h1>
             <p className="home-top__top-description">
               Intro copy goes here, such as: Build accessible components more
@@ -15,35 +15,41 @@ export default function Home() {
               based on WCAG and ARIA best practices. Check back often as we’re
               adding new components frequently!
             </p>
-            <ul>
-              <li>
-                <Link href="/accordion">
-                  <a>Accordion</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/dialog">
-                  <a>Dialog</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/disclosure">
-                  <a>Disclosure</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/tabs">
-                  <a>Tabs</a>
-                </Link>
-              </li>
-            </ul>
+          </div>
+          <div>
+            <img
+              className="home-top__top-image"
+              src="/home-header-image.svg"
+              alt="Illustration of dog surrounded by accessible components"
+            />
           </div>
         </div>
-        <img
-          className="home-top__top-image"
-          src="/home-header-image.svg"
-          alt="Illustration of dog surrounded by accessible components"
-        />
+        <ul>
+          <li>
+            <ComponentCard
+              name="Accordion"
+              slug="/accordion"
+              image="/accordion_artwork.svg"
+            />
+          </li>
+          <li>
+            <ComponentCard
+              name="Dialog"
+              slug="/dialog"
+              image="/dialog_artwork.svg"
+            />
+          </li>
+          <li>
+            <ComponentCard
+              name="Disclosure"
+              slug="/disclosure"
+              image="/disclosure_artwork.svg"
+            />
+          </li>
+          <li>
+            <ComponentCard name="Tabs" slug="/tabs" image="/tabs_artwork.svg" />
+          </li>
+        </ul>
       </div>
     </Layout>
   );
