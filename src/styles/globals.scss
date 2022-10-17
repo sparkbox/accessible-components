@@ -1,5 +1,6 @@
 @use "sass:map";
 @import "./generics/fonts";
+@import "./settings/colors";
 @import "./components/home";
 @import "./components/header";
 @import "./elements/ul";
@@ -11,6 +12,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  background-color: map.get($colors, "white");
   font-size: map.get($font-sizes, "sm");
   font-family:
     Oxygen,
