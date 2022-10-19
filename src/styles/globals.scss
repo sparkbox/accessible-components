@@ -1,6 +1,7 @@
 @use "sass:map";
 @import "./generics/fonts";
 @import "./settings/colors";
+@import "./tools/mixins";
 @import "./components/home";
 @import "./components/header";
 @import "./elements/ul";

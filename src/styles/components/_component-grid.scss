@@ -2,14 +2,17 @@ $breakpoint-tablet: 820px;
 
 .components-grid {
   width: 100%;
-  border: 1px black solid;
   text-align: center;
   padding: 1rem;
+  gap: 1rem;
+
+  @include background-pattern;
 
   &__item {
     display: flex;
     justify-content: center;
     width: 100%;
+    background-color: white;
 
     &--accordion {
       grid-area: accordion;
