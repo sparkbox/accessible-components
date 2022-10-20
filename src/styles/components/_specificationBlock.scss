@@ -1,0 +1,10 @@
+$breakpoint-tablet: 820px;
+
+.cmp-specifications-list {
+  display: block;
+
+  @media only screen and (min-width: $breakpoint-tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
