@@ -1,0 +1,16 @@
+.details-banner {
+  font-weight: 700;
+  font-size: font-size("sm");
+  line-height: 4.6667rem; // 28px
+  letter-spacing: 2%;
+  margin: 1.25rem;
+}
+
+.details-banner-image {
+  box-sizing: border-box;
+  background-color: white;
+  padding: 1.25rem; // 20px
+  & img {
+    width: 100%;
+  }
+}
