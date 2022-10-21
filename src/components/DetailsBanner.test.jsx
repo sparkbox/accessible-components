@@ -1,17 +1,12 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
 import DetailsBanner from './DetailsBanner';
 
 it('Displays the banner header based on component name prop', () => {
   const headerText = 'The header';
-
-  act(() => {
-    render(<DetailsBanner name={headerText} />);
-  });
+  render(<DetailsBanner name={headerText} />);
 
   const headerElement = screen.queryByText(headerText);
-
   expect(headerElement).toBeInTheDocument();
 });
 
@@ -20,10 +15,7 @@ it('Displays the banner image based on component name prop', () => {
     src: 'http://some-url.com/',
     alt: 'test alt tag',
   };
-
-  act(() => {
-    render(<DetailsBanner image={image} />);
-  });
+  render(<DetailsBanner image={image} />);
 
   // from testing-library doc https://testing-library.com/docs/queries/byalttext/
   const bannerImage = screen.getByAltText(image.alt); // pass string in to test

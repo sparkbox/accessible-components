@@ -4,6 +4,7 @@ import RelatedComponents from '../components/RelatedComponents';
 import SpecificationBlock from '../components/SpecificationBlock';
 import Definition from '../components/Definition';
 import DetailsBanner from '../components/DetailsBanner';
+import RichText from '../components/RichText';
 
 // Data will be replaced by Airtable
 const relatedComponents = [
@@ -68,11 +69,11 @@ export default function Details({ componentName }) {
         <div className="cmp-specifications-block">
           {/* This content will be replaced with Air Table data */}
           <SpecificationBlock heading="Focus Expectations">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+            <RichText
+              markdown="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
               doloremque minima ducimus et voluptatem natus repudiandae porro
-              vel, animi fugiat.
-            </p>
+              vel, animi fugiat."
+            />
           </SpecificationBlock>
           <SpecificationBlock heading="Keyboard Interactions">
             <p>
