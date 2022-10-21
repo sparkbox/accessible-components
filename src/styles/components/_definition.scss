@@ -1,0 +1,33 @@
+$breakpoint-tablet: 820px;
+
+.cmp-definition {
+  &__heading {
+    position: relative;
+    font-family: Viga, sans-serif;
+    font-weight: 400;
+    font-size: map.get($font-sizes, "md");
+  }
+
+  &__heading-circle {
+    position: absolute;
+    width: 14rem;
+    height: auto;
+    top: -1.8rem;
+    left: -2rem;
+  }
+
+  @media only screen and (min-width: $breakpoint-tablet) {
+    background:
+      linear-gradient(to right, white 50%, rgba(255 255 255 / 0%)),
+      url("../../../public/definition_text_light.svg");
+    background-size: contain;
+    background-position-x: right;
+    background-repeat: no-repeat;
+    margin: auto;
+    max-width: 59rem;
+
+    &__content {
+      max-width: 70%;
+    }
+  }
+}
