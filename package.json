@@ -27,7 +27,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "axe-core": "^4.4.3",
-    "eslint": "8.25.0",
+    "eslint": "8.26.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "12.3.1",
     "husky": "^8.0.1",
