@@ -1,0 +1,16 @@
+$breakpoint-tablet: 820px;
+
+.cmp-specifications-block {
+  &__wrapper {
+    display: block;
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__heading {
+    font-size: map.get($font-sizes, "md");
+  }
+}

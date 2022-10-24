@@ -19,11 +19,9 @@ export default function Layout({ children, pageTitle }) {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <div className="page-container">
-        <div className="content-wrap">
-          <Header />
-          <main className="content">{children}</main>
-          <Footer />
-        </div>
+        <Header />
+        <main className="content">{children}</main>
+        <Footer />
       </div>
     </>
   );

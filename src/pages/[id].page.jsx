@@ -37,7 +37,7 @@ export default function Details({ componentName }) {
           </p>
         </Definition>
         <DetailsBanner name={componentName} image={image} />
-        <div className="cmp-specifications-list">
+        <div className="cmp-specifications-block">
           {/* This content will be replaced with Air Table data */}
           <SpecificationBlock heading="Focus Expectations">
             <p>

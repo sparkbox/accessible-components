@@ -1,0 +1,32 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: map.get($colors, "white");
+  font-size: map.get($font-sizes, "sm");
+  font-family:
+    Oxygen,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Ubuntu,
+    Cantarell,
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: map.get($font-sizes, "xl");
+  font-family: Viga, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}

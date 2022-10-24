@@ -1,12 +1,12 @@
 .default-footer {
-  background-color: black;
-  position: absolute;
+  background-color: map.get($colors, "white");
   width: 100%;
+  position: relative;
   bottom: 0;
 
   // Content wrapper
   &__content {
-    min-height: 332px;
+    min-height: 20.75rem; /* 332px */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -14,7 +14,7 @@
     gap: 0.5rem;
     text-align: center;
     padding: 3.75rem; /* 60px/16px */
-    font-size: 1.25rem; /* 20px/16px */
+    font-size: map.get($font-sizes, "sm"); /* 20px/16px */
     margin: auto;
     line-height: 2rem; /* 17px/16px */
     transition: 500ms color;
@@ -22,7 +22,6 @@
 
   // Flex items of content wrapper
   &__item {
-    color: white;
     width: 100%;
 
     & p {
@@ -33,7 +32,8 @@
 
   &__item a {
     text-decoration: underline;
-    background: linear-gradient(to left, rgb(0 0 0 / 0%) 50%, #595959 50%);
+    color: map.get($colors, "black");
+    background: linear-gradient(to left, rgb(0 0 0 / 0%) 50%, map.get($colors, accent-teal) 50%);
     background-size: 201% 100%;
     background-position: right bottom;
     transition: ease-in-out all 250ms;
@@ -71,7 +71,6 @@
       position: absolute;
       min-width: 2.8125rem; /* 45px/16px */
       min-height: 100%;
-      filter: invert(1);
       bottom: 0;
       right: 0;
       transition: 200ms;

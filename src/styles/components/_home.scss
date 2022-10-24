@@ -23,7 +23,7 @@ $breakpoint-tablet: 820px;
         flex-basis: 50%;
 
         h1 {
-          font-size: 2.5rem;
+          font-size: map.get($font-sizes, "xl");
         }
       }
     }
