@@ -1,0 +1,55 @@
+$breakpoint-tablet: 1220px;
+
+.cmp-usage-guidelines {
+  background-color: #01f5ac;
+  padding-left: 1.25rem;
+
+  &__heading {
+    position: relative;
+    font-family: Viga, sans-serif;
+    font-weight: 400;
+    font-size: map.get($font-sizes, "md");
+    padding-top: 3.75rem;
+  }
+
+  &__content {
+    padding-right: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  &__image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  .cmp-usage-guidelines {
+    background-color: #01f5ac;
+    background-image: url("../../../public/usage-guidelines-image.svg");
+    background-repeat: no-repeat;
+    background-position: top 50% right 10%;
+    background-size: 20rem;
+    width: 100%;
+    padding-left: 6rem;
+
+    &__content {
+      max-width: 70%;
+      padding-bottom: 8.4rem;
+    }
+
+    &__heading {
+      position: relative;
+      font-family: Viga, sans-serif;
+      font-weight: 400;
+      font-size: map.get($font-sizes, "md");
+      padding-top: 8.4rem;
+    }
+
+    &__image {
+      display: none;
+    }
+  }
+}

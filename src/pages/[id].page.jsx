@@ -4,6 +4,7 @@ import RelatedComponents from '../components/RelatedComponents';
 import SpecificationBlock from '../components/SpecificationBlock';
 import Definition from '../components/Definition';
 import DetailsBanner from '../components/DetailsBanner';
+import UsageGuidelines from '../components/UsageGuidelines';
 import RichText from '../components/RichText';
 
 // Data will be replaced by Airtable
@@ -66,37 +67,50 @@ export default function Details({ componentName }) {
             and the answer to that question is in the Accordion panel.
           </p>
         </Definition>
-        <div className="cmp-specifications-block">
-          {/* This content will be replaced with Air Table data */}
-          <SpecificationBlock heading="Focus Expectations">
-            <RichText
-              markdown="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+        {/* This content will be replaced with Air Table data */}
+        <UsageGuidelines>
+          <h3>Heading3</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+          doloremque minima ducimus et voluptatem natus repudiandae porro vel,
+          animi fugiat. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Quod doloremque minima ducimus et voluptatem natus repudiandae porro
+          vel, animi fugiat.
+          <h3>Heading3</h3>
+          Lorem psum dolor sit amet consectetur adipisicing elit. Quod
+          doloremque minima ducimus et voluptatem natus repudiandae porro vel,
+          animi fugiat. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Quod doloremque minima ducimus et voluptatem natus repudiandae porro
+          vel, animi fugiat.
+        </UsageGuidelines>
+
+        <SpecificationBlock heading="Focus Expectations">
+          <RichText
+            markdown="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
               doloremque minima ducimus et voluptatem natus repudiandae porro
               vel, animi fugiat."
-            />
-          </SpecificationBlock>
-          <SpecificationBlock heading="Semantic Elements">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              doloremque minima ducimus et voluptatem natus repudiandae porro
-              vel, animi fugiat.
-            </p>
-          </SpecificationBlock>
-          <SpecificationBlock heading="Keyboard Interactions">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              doloremque minima ducimus et voluptatem natus repudiandae porro
-              vel, animi fugiat.
-            </p>
-          </SpecificationBlock>
-          <SpecificationBlock heading="ARIA Roles and Attributes">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              doloremque minima ducimus et voluptatem natus repudiandae porro
-              vel, animi fugiat.
-            </p>
-          </SpecificationBlock>
-        </div>
+          />
+        </SpecificationBlock>
+        <SpecificationBlock heading="Semantic Elements">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+            doloremque minima ducimus et voluptatem natus repudiandae porro vel,
+            animi fugiat.
+          </p>
+        </SpecificationBlock>
+        <SpecificationBlock heading="Keyboard Interactions">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+            doloremque minima ducimus et voluptatem natus repudiandae porro vel,
+            animi fugiat.
+          </p>
+        </SpecificationBlock>
+        <SpecificationBlock heading="ARIA Roles and Attributes">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+            doloremque minima ducimus et voluptatem natus repudiandae porro vel,
+            animi fugiat.
+          </p>
+        </SpecificationBlock>
         {/* List of links to other components */}
         <RelatedComponents components={relatedComponents} />
       </div>
