@@ -12,7 +12,7 @@ $breakpoint-tablet: 820px;
     justify-content: center;
     width: 100%;
     margin: 0;
-    background-color: white;
+    background-color: var(--light-background-color);
     text-align: center;
     align-items: flex-start;
 
@@ -69,6 +69,10 @@ $breakpoint-tablet: 820px;
       &--max-scott {
         grid-area: max-scott;
       }
+
+      border: 1px solid;
+      text-align: center;
+      align-items: center;
     }
   }
 }

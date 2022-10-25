@@ -3,12 +3,15 @@
 
 /* SETTINGS: variables, custom properties, etc. */
 @import "./settings/colors";
+@import "./settings/font_map";
 
 /* TOOLS: mixins, etc */
 @import "./tools/mixins";
+@import "./tools/functions";
 
 /* GENERIC: fonts, reset stylesheets, etc */
 @import "./generics/fonts";
+@import "./generics/root";
 
 /* ELEMENTS: html element selectors only */
 @import "./elements/elements";

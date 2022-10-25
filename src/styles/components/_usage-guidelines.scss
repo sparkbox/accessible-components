@@ -1,8 +1,9 @@
 $breakpoint-tablet: 1220px;
 
 .cmp-usage-guidelines {
-  background-color: #01f5ac;
+  background-color: var(--accent-color);
   padding-left: 1.25rem;
+  color: var(--font-color);
 
   &__heading {
     position: relative;
@@ -27,10 +28,9 @@ $breakpoint-tablet: 1220px;
 
 @media only screen and (min-width: $breakpoint-tablet) {
   .cmp-usage-guidelines {
-    background-color: #01f5ac;
     background-image: url("../../../public/usage-guidelines-image.svg");
     background-repeat: no-repeat;
-    background-position: top 50% right 3%;
+    background-position: top 50% right 10%;
     background-size: 20rem;
     width: 100%;
     padding-left: 6rem;
