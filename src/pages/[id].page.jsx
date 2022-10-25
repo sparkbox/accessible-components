@@ -1,8 +1,37 @@
 import Layout from '../components/Layout';
 import getComponentDetails from '../utils/airtable';
+import RelatedComponents from '../components/RelatedComponents';
 import SpecificationBlock from '../components/SpecificationBlock';
 import Definition from '../components/Definition';
 import DetailsBanner from '../components/DetailsBanner';
+
+// Data will be replaced by Airtable
+const relatedComponents = [
+  {
+    name: 'Accordion',
+    slug: 'accordion',
+  },
+  {
+    name: 'Alert',
+    slug: 'alert',
+  },
+  {
+    name: 'Checkbox',
+    slug: 'checkbox',
+  },
+  {
+    name: 'Dialog',
+    slug: 'dialog',
+  },
+  {
+    name: 'Disclosure',
+    slug: 'disclosure',
+  },
+  {
+    name: 'Tabs',
+    slug: 'tabs',
+  },
+];
 
 export default function Details({ componentName }) {
   const image = {
@@ -13,7 +42,7 @@ export default function Details({ componentName }) {
   return (
     <Layout pageTitle={componentName}>
       <div className="details-page">
-        <h1>{componentName}</h1>
+        <DetailsBanner name={componentName} image={image} />
         <Definition>
           {/* This content will be replaced with Air Table data */}
           <p>
@@ -36,7 +65,6 @@ export default function Details({ componentName }) {
             and the answer to that question is in the Accordion panel.
           </p>
         </Definition>
-        <DetailsBanner name={componentName} image={image} />
         <div className="cmp-specifications-block">
           {/* This content will be replaced with Air Table data */}
           <SpecificationBlock heading="Focus Expectations">
@@ -68,6 +96,8 @@ export default function Details({ componentName }) {
             </p>
           </SpecificationBlock>
         </div>
+        {/* List of links to other components */}
+        <RelatedComponents components={relatedComponents} />
       </div>
     </Layout>
   );

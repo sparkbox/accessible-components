@@ -1,0 +1,53 @@
+$breakpoint-tablet: 900px;
+
+.rel-component {
+  background-color: map.get($colors, "accent-teal");
+  padding: 6rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__heading {
+    max-width: 15rem;
+    font-size: map.get($font-sizes, "md");
+    font-family: Viga, sans-serif;
+    margin: 0;
+    position: relative;
+
+    &--arrow {
+      position: absolute;
+      top: -3.7rem;
+      left: 3rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    max-height: 10rem;
+    flex-flow: nowrap column;
+    gap: 1rem;
+    margin-top: 0.6rem;
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      gap: 1rem 6rem;
+      flex-wrap: wrap;
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: underline;
+    transition: all ease-in-out 100ms;
+
+    &:hover {
+      text-decoration: none;
+      transform: scale(1.04, 1.04);
+    }
+
+    @media (prefers-reduced-motion) {
+      &:hover {
+        text-decoration: none;
+        transform: scale(1, 1);
+      }
+    }
+  }
+}

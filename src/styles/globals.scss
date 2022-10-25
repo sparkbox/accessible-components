@@ -1,5 +1,7 @@
 /* SETTINGS: variables, custom properties, etc. */
 @use "sass:map";
+
+/* SETTINGS: variables, custom properties, etc. */
 @import "./settings/colors";
 
 /* TOOLS: mixins, etc */
@@ -24,7 +26,42 @@
 @import "./components/specification-block";
 @import "./components/definition";
 @import "./components/detailsBanner";
+@import "./components/related-components";
 
 /* VENDORS: third-party */
 
 /* UTILITIES: one offs, display:hidden, backgrounds, margin, padding, etc */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: map.get($colors, "white");
+  font-size: map.get($font-sizes, "sm");
+  font-family:
+    Oxygen,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Ubuntu,
+    Cantarell,
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: map.get($font-sizes, "xl");
+  font-family: Viga, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
