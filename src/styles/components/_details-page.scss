@@ -7,8 +7,8 @@
     background-position: center;
 
     @media (prefers-color-scheme: dark) {
-    background-image: url("../../../public/images/background_image-light.svg")
-  }
+      background-image: url("../../../public/images/background_image-light.svg");
+    }
   }
 
   &__banner {
@@ -28,8 +28,6 @@
     overflow: hidden;
   }
 
-  
-
   &__secondary {
     position: relative;
     width: 100%;
@@ -42,6 +40,7 @@
     &__secondary--usage-guidelines {
       background-color: var(--accent-color-background);
     }
+
     &__secondary--related-components {
       background-color: var(--background-color);
     }

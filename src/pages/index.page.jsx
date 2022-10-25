@@ -17,17 +17,19 @@ export default function Home() {
                 we&#39;re adding new components frequently!
               </p>
             </div>
-            <picture>
-              <source
-                srcSet="/images/home-header-image_dark.svg"
-                media="(prefers-color-scheme: dark)"
-              />
-              <img
-                className="home-top__top-image"
-                src="/images/home-header-image_light.svg"
-                alt="Illustration of dog surrounded by accessible components"
-              />
-            </picture>
+            <div>
+              <picture>
+                <source
+                  srcSet="/images/home-header-image_dark.svg"
+                  media="(prefers-color-scheme: dark)"
+                />
+                <img
+                  src="/images/home-header-image_light.svg"
+                  className="home-top__top-image"
+                  alt="Illustration of dog surrounded by accessible components"
+                />
+              </picture>
+            </div>
           </div>
         </div>
         <article className="components-grid">

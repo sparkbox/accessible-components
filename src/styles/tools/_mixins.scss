@@ -4,8 +4,8 @@ $breakpoint-tablet: 820px;
   background: url("../../../public/images/background_image.png");
   background-size: 100%;
 
-  @media (prefers-color-scheme: dark) {
-    background: url("../../../public/images/background_image.svg");
+  @media screen and (prefers-color-scheme: dark) {
+    background: url("../../../public/images/background_image_dark.svg");
   }
 
   @media only screen and (min-width: $breakpoint-tablet) {

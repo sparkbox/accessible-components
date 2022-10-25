@@ -8,8 +8,6 @@ $breakpoint-tablet: 820px;
   line-height: 2.125rem; // 28px
   letter-spacing: 0.02em; // 2% in Figma
 
-  
-
   h1 {
     margin: 1.875rem 0; // top&bottom: 30px/16; left&right: 0
     line-height: 2.125rem; // 34px/16
@@ -26,12 +24,12 @@ $breakpoint-tablet: 820px;
 
   &-image {
     box-sizing: border-box;
-  background-color: var(--light-background-color);
-  border: 2px solid var(--foreground-color);
+    background-color: var(--light-background-color);
+    border: 2px solid var(--foreground-color);
 
-  @media (prefers-color-scheme: dark) {
-    border: 2px solid var(--background-color);
-  }
+    @media (prefers-color-scheme: dark) {
+      border: 2px solid var(--background-color);
+    }
 
     img {
       width: 100%;
