@@ -5,15 +5,13 @@
   height: 100%;
 
   .component-card {
-    margin: 0;
-    border: 2px solid var(--foreground-color);
     display: flex;
     flex-direction: column-reverse;
     height: 21.875rem; // 350px/16
     width: 100%;
     cursor: pointer;
     transition: all 150ms ease-in-out;
-    color: var(--font-color-dark);
+    border: 2px solid var(--foreground-color);
 
     @media (prefers-color-scheme: dark) {
       border: 2px solid var(--background-color);
@@ -54,6 +52,7 @@
       position: relative;
       text-align: center;
       display: block;
+      border-top: 0.25rem solid var(--foreground-color);
 
       @media (prefers-color-scheme: dark) {
         border-top: 0.25rem solid var(--background-color);

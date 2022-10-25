@@ -47,6 +47,7 @@ $breakpoint-tablet: 820px;
     background-color: var(--light-background-color);
     text-align: center;
     align-items: flex-start;
+    color: var(--font-color-dark);
 
     &--accordion {
       grid-area: accordion;
