@@ -8,7 +8,7 @@
 
 .details-banner-image {
   box-sizing: border-box;
-  background-color: white;
+  background-color: var(--light-background-color);
   padding: 1.25rem; // 20px
 
   & img {
