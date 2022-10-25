@@ -1,8 +1,9 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: map.get($colors, "white");
+  background-color: var(--background-color);
   font-size: map.get($font-sizes, "sm");
+  color: var(--font-color);
   font-family:
     Oxygen,
     -apple-system,

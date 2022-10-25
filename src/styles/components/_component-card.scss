@@ -6,13 +6,14 @@
 
   .component-card {
     margin: 0;
-    border: 2px solid black;
+    border: 2px solid var(--foreground-color);
     display: flex;
     flex-direction: column-reverse;
     height: 100%;
     width: 100%;
     cursor: pointer;
     transition: all 150ms ease-in-out;
+    color: var(--font-color);
 
     img {
       transition: all 150ms ease-in-out;
@@ -32,12 +33,12 @@
       letter-spacing: 2%;
       text-align: center;
       display: block;
-      border-top: 0.25rem solid map.get($colors, "black");
+      border-top: 0.25rem solid var(--foreground-color);
     }
   }
 
   &:focus .component-card {
     outline: none;
-    border: 2px solid map.get($colors, "accent-teal");
+    border: 2px solid var(--accent-color);
   }
 }

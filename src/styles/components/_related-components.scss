@@ -1,10 +1,11 @@
 $breakpoint-tablet: 900px;
 
 .rel-component {
-  background-color: map.get($colors, "accent-teal");
+  background-color: var(--accent-color);
   padding: 6rem 2rem;
   display: flex;
   flex-wrap: wrap;
+  color: var(--font-color-highlight);
 
   &__heading {
     max-width: 15rem;

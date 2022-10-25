@@ -1,6 +1,8 @@
 $breakpoint-tablet: 820px;
 
 .cmp-definition {
+  color: var(--card-font-color);
+
   &__heading {
     position: relative;
     font-family: Viga, sans-serif;
@@ -18,8 +20,8 @@ $breakpoint-tablet: 820px;
 
   @media only screen and (min-width: $breakpoint-tablet) {
     background:
-      linear-gradient(to right, white 50%, rgba(255 255 255 / 0%)),
-      url("../../../public/definition_text_light.svg");
+      linear-gradient(to right, var(--background-color) 50%, transparent),
+      url("/definition_text_light.svg");
     background-size: contain;
     background-position-x: right;
     background-repeat: no-repeat;
