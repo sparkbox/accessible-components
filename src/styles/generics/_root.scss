@@ -1,0 +1,23 @@
+:root {
+  @each $key, $value in $colors {
+    --color-#{$key}: #{$value};
+  }
+
+  --background-color: var(--color-white);
+  --foreground-color: var(--color-black);
+  --light-background-color: var(--color-white);
+  --accent-color: var(--color-accent-teal);
+  --accent-color-icons: var(--color-accent-gray);
+  --font-color: var(--color-black);
+  --font-color-highlight: var(--color-black);
+
+  @media (prefers-color-scheme: dark) {
+    --background-color: var(--color-black);
+    --foreground-color: var(--color-white);
+    --accent-color: var(--color-accent-pink);
+    --accent-color-background: var(--color-accent-teal);
+    --font-color: var(--color-white);
+    --font-color-dark: var(--color-black);
+    --font-color-highlight: var(--accent-color);
+  }
+}

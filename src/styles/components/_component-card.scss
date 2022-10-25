@@ -6,13 +6,14 @@
 
   .component-card {
     margin: 0;
-    border: 2px solid black;
+    border: 2px solid var(--background-color);
     display: flex;
     flex-direction: column-reverse;
     height: 21.875rem; // 350px/16
     width: 100%;
     cursor: pointer;
     transition: all 150ms ease-in-out;
+    color: var(--font-color);
 
     img {
       transition: all 150ms ease-in-out;
@@ -44,9 +45,11 @@
       font-size: 1.125rem; // 18px/16
       line-height: 4.6667rem; // 75px
       letter-spacing: 0.02em;
-      border-top: 0.25rem solid map.get($colors, "black");
-      background-color: map.get($colors, "white");
+      border-top: 0.25rem solid var(--background-color);
+      background-color: var(--foreground-color);
       position: relative;
+      text-align: center;
+      display: block;
 
       @media only screen and (min-width: $breakpoint-tablet) {
         font-size: map.get($font-sizes, "sm"); // 20px/16
@@ -70,6 +73,6 @@
 
   &:focus .component-card {
     outline: none;
-    border: 2px solid map.get($colors, "accent-teal");
+    border: 2px solid var(--accent-color);
   }
 }

@@ -5,6 +5,8 @@ $breakpoint-tablet: 860px;
   flex-direction: column;
   margin: auto;
   letter-spacing: 0.02rem;
+  background-color: var(--accent-color);
+  color: var(--font-color);
 
   &__heading {
     position: relative;
@@ -49,6 +51,12 @@ $breakpoint-tablet: 860px;
 
 @media only screen and (min-width: $breakpoint-tablet) {
   .cmp-usage-guidelines {
+    background-color: var(--accent-color-background);
+    // background-image: url("../../../public/images/usage-guidelines-image.svg");
+    // background-repeat: no-repeat;
+    // background-position: top 50% right 10%;
+    background-size: 20rem;
+    width: 100%;
     max-width: 100rem;
     display: flex;
     flex-direction: row;

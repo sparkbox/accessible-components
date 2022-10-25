@@ -3,6 +3,7 @@ $breakpoint-tablet: 820px;
 .cmp-definition {
   position: relative;
   line-height: 1.75rem;
+  color: var(--foreground-color);
 
   &__heading {
     position: relative;
@@ -43,8 +44,8 @@ $breakpoint-tablet: 820px;
       width: 100%;
       min-height: 100%;
       background:
-        linear-gradient(to right, white 30ch, rgba(255 255 255 / 40%) 80ch, rgba(255 255 255 / 0%)),
-        url("../../../public/images/definition_text_light.svg");
+    linear-gradient(to right, var(--background-color) 50%, transparent 0%),
+    url("../../../public/images/definition_text_light.svg");
       background-size: contain;
       background-position: right;
       background-repeat: no-repeat;

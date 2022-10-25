@@ -6,15 +6,18 @@ $breakpoint-tablet: 820px;
   @include background-pattern;
 
   width: 100%;
+  background-color: var(--background-color);
+  color: var(--font-color);
 
   &-wrapper {
-    background-color: map.get($colors, "white");
+    background-color: var(--background-color);
   }
 
   // hero section
   &-top {
     padding: 0 1.25rem; // top&bottom: 0; left&right: 20px/16
-    background-color: map.get($colors, "white");
+    background-color: var(--background-color);
+    color: var(--foreground-color);
     max-width: 100rem; // 1600px/16
 
     @media only screen and (min-width: 100rem) {
@@ -40,6 +43,7 @@ $breakpoint-tablet: 820px;
   &-top__top-image {
     width: 100%;
     margin: 3.75rem 0; // top&bottom: 60px/16; left&right: 0
+    //background-color: var(--background-color);
   }
 
   &__date-updated {

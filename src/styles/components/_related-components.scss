@@ -1,9 +1,11 @@
 $breakpoint-tablet: 820px;
 
 .rel-component {
+  background-color: var(--accent-color);
   display: flex;
   gap: 1rem;
   flex-direction: column;
+  color: var(--font-color-highlight);
 
   &__heading {
     position: relative;
