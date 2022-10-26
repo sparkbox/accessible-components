@@ -2,7 +2,18 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+Once you've installed all of the dependencies (`npm install`), you will need to establish your connection to the Airtable database.
+
+1.  Copy the `.env.example` file, making sure it's in the root of your project, and rename it `.env.local`.
+2.  Your `env.local` file should include the following:
+
+`AIRTABLE_API_KEY=<generate an API key from your Airtable account overview>`
+
+`AIRTABLE_BASE_ID=<find the ID of your base in your Airtable API documentation>`
+
+This sets up your Airtable API for use in your project.
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -22,10 +33,10 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Additional Commands
 
-| Command   | Description |
-|-----------|-------------|
-| `npm run test` | Run a single test command.|
-| `npm run test:watch` | Rerun tests continuously as files change.|
+| Command              | Description                               |
+| -------------------- | ----------------------------------------- |
+| `npm run test`       | Run a single test command.                |
+| `npm run test:watch` | Rerun tests continuously as files change. |
 
 ## Learn More
 

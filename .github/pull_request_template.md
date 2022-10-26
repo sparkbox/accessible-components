@@ -20,13 +20,20 @@ See Story: [FSA22V2-ISSUE](https://sparkbox.atlassian.net/browse/FSA22V2-ISSUE)
 
 1. Make sure all PR Checks have passed (GitHub Actions, CircleCI, Code Climate, etc).
 2. Pull down all related branches.
-3. In terminal: `npm run dev`.
-4. Check [localhost:3000](http://localhost:3000/)for changes.
-5. Run `npm run lint`.
-6. Run axe Devtools on affected pages.
-7. Confirm all tests pass.
+3. Run `npm install` to make sure you have all proper dependencies. (this project requires Node 16+)
+4. Copy the `.env.example` file, making sure it's in the root of your project, and rename it `.env.local`. Search for "Accessible Components" in 1Password to find the API Key and Base ID. Add both of those secrets to your newly created `.env.local` file. That should establish your connection to our Airtable database.
+5. Run `npm run lint` to confirm no errors.
+6. Run `npm run test` to confirm all tests pass.
+7. In terminal: `npm run dev`.
+8. Check [localhost:3000](http://localhost:3000/) to see changes.
+9. Run axe Devtools on affected pages to confirm no urgent errors.
 
 <!-- Additional validation steps below -->
+
+### Pending Questions:
+
+1.
+2.
 
 ---
 
