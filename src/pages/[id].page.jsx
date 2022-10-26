@@ -75,14 +75,14 @@ export default function Details({ componentName }) {
               vel, animi fugiat."
             />
           </SpecificationBlock>
-          <SpecificationBlock heading="Keyboard Interactions">
+          <SpecificationBlock heading="Semantic Elements">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
               doloremque minima ducimus et voluptatem natus repudiandae porro
               vel, animi fugiat.
             </p>
           </SpecificationBlock>
-          <SpecificationBlock heading="Semantic Elements">
+          <SpecificationBlock heading="Keyboard Interactions">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
               doloremque minima ducimus et voluptatem natus repudiandae porro
