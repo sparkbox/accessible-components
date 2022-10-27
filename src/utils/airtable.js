@@ -26,6 +26,7 @@ export default function getComponentDetails(componentName) {
       .eachPage(
         (records) => {
           // compare the componentName argument to what's in Airtable
+          // console.log(records[1]._rawJson.fields['Slug (from Related Components)']);
           const matchingRecord = findMatchingRecord(records, componentName);
           if (matchingRecord != null) {
             // resolve the promise if you find a match, otherwise reject with an error

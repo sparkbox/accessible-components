@@ -16,6 +16,37 @@ $breakpoint-tablet: 820px;
     font-size: map.get($font-sizes, "sm"); // 1.25rem, 20px/16
   }
 
+  ul {
+    list-style: url("../../../public/teal-decorative-bullet.svg");
+  }
+
+  code {
+    color: map.get($colors, "blue");
+  }
+
+  a {
+    text-decoration: underline;
+    color: map.get($colors, "black");
+    background: linear-gradient(to left, rgb(0 0 0 / 0%) 50%, map.get($colors, accent-teal) 50%);
+    background-size: 201% 100%;
+    background-position: right bottom;
+    transition: ease-in-out all 250ms;
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+      &:hover,
+      &:focus-within {
+        background-position: left bottom;
+      }
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      &:hover,
+      &:focus-within {
+        background-color: #595959;
+      }
+    }
+  }
+
   @media only screen and (min-width: $breakpoint-tablet) {
     // grid of data fields & content (.cmp-specifications-block)
     margin: 3.125rem 8.4375rem; // 50px/16 top & bottom; 135px/16 left & right

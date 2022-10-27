@@ -7,37 +7,18 @@ import DetailsBanner from '../components/DetailsBanner';
 import UsageGuidelines from '../components/UsageGuidelines';
 import RichText from '../components/RichText';
 
-// Data will be replaced by Airtable
-const relatedComponents = [
-  {
-    name: 'Accordion',
-    slug: 'accordion',
-  },
-  {
-    name: 'Alert',
-    slug: 'alert',
-  },
-  {
-    name: 'Checkbox',
-    slug: 'checkbox',
-  },
-  {
-    name: 'Dialog',
-    slug: 'dialog',
-  },
-  {
-    name: 'Disclosure',
-    slug: 'disclosure',
-  },
-  {
-    name: 'Tabs',
-    slug: 'tabs',
-  },
-];
+export default function Details({ details }) {
+  const {
+    componentName,
+    slug,
+    definition,
+    specificationBlocks,
+    relatedComponents,
+    usageGuidelines,
+  } = details;
 
-export default function Details({ componentName }) {
   const image = {
-    src: '/details-banner.svg',
+    src: `/${slug}_artwork.svg`,
     alt: `${componentName} image`,
   };
 
@@ -46,77 +27,41 @@ export default function Details({ componentName }) {
       <div className="details-page">
         <DetailsBanner name={componentName} image={image} />
         <Definition>
-          {/* This content will be replaced with Air Table data */}
-          <p>
-            An Accordion is a group of interactive headings with corresponding
-            sections of content that are stacked vertically. Typically, these
-            are used to reduce the amount of vertical space that the content
-            occupies, which limits the amount of scrolling needed to bypass that
-            content.
-          </p>
-          <p>
-            Each group in an Accordion is composed of two parts: an Accordion
-            Header and an Accordion Panel. The Accordion Header describes the
-            content of its associated Accordion Panel, as well as controls
-            showing and hiding that content. The Accordion Panel contains
-            content that relates to the Accordion Header.
-          </p>
-          <p>
-            A common use-case for Accordions would be a Frequently Asked
-            Questions (FAQ) section, where each question is an Accordion header,
-            and the answer to that question is in the Accordion panel.
-          </p>
+          <p>{definition}</p>
         </Definition>
-        {/* This content will be replaced with Air Table data */}
         <UsageGuidelines>
-          <h3>Heading3</h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-          doloremque minima ducimus et voluptatem natus repudiandae porro vel,
-          animi fugiat. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quod doloremque minima ducimus et voluptatem natus repudiandae porro
-          vel, animi fugiat.
-          <h3>Heading3</h3>
-          Lorem psum dolor sit amet consectetur adipisicing elit. Quod
-          doloremque minima ducimus et voluptatem natus repudiandae porro vel,
-          animi fugiat. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quod doloremque minima ducimus et voluptatem natus repudiandae porro
-          vel, animi fugiat.
+          <RichText markdown={usageGuidelines} />
         </UsageGuidelines>
-
-        <SpecificationBlock heading="Focus Expectations">
-          <RichText
-            markdown="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              doloremque minima ducimus et voluptatem natus repudiandae porro
-              vel, animi fugiat."
-          />
-        </SpecificationBlock>
-        <SpecificationBlock heading="Semantic Elements">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-            doloremque minima ducimus et voluptatem natus repudiandae porro vel,
-            animi fugiat.
-          </p>
-        </SpecificationBlock>
-        <SpecificationBlock heading="Keyboard Interactions">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-            doloremque minima ducimus et voluptatem natus repudiandae porro vel,
-            animi fugiat.
-          </p>
-        </SpecificationBlock>
-        <SpecificationBlock heading="ARIA Roles and Attributes">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-            doloremque minima ducimus et voluptatem natus repudiandae porro vel,
-            animi fugiat.
-          </p>
-        </SpecificationBlock>
+        <div className="cmp-specifications-block">
+          {specificationBlocks.map((block) => (
+            <SpecificationBlock key={block.id} heading={block.heading}>
+              <RichText markdown={block.content} />
+            </SpecificationBlock>
+          ))}
+        </div>
         {/* List of links to other components */}
         <RelatedComponents components={relatedComponents} />
       </div>
     </Layout>
   );
 }
+
+// Returns related components with name and slug
+const getRelatedComponents = (details) => {
+  if (!details['Component Name (from Related Components)']) return [];
+  const relatedComponents = [];
+  const names = details['Component Name (from Related Components)'];
+  const slugs = details['Slug (from Related Components)'];
+  // The linter is auto formatting this for loop on commit
+  for (
+    let i = 0;
+    i < details['Component Name (from Related Components)'].length;
+    i += 1
+  ) {
+    relatedComponents.push({ name: names[i], slug: slugs[i] });
+  }
+  return relatedComponents;
+};
 
 export async function getStaticPaths() {
   return {
@@ -147,7 +92,46 @@ export async function getStaticProps({ params }) {
     // pass that details variable and its data into props to use elsewhere
     return {
       props: {
-        componentName: details['Component Name'],
+        // Creates a details object with our component properties and passes it in for props
+        details: {
+          componentName: details['Component Name'],
+          slug: details.Slug,
+          definition: details.Definition,
+          specificationBlocks: [
+            {
+              id: 1,
+              heading: 'Keyboard Interactions',
+              content: details['Keyboard Interactions'],
+            },
+            {
+              id: 2,
+              heading: 'Semantic Elements',
+              content: details['Semantic Elements'],
+            },
+            {
+              id: 3,
+              heading: 'ARIA Roles and Attributes',
+              content: details['ARIA Roles and Attributes'],
+            },
+            {
+              id: 4,
+              heading: 'Focus Expectations',
+              content: details['Focus Expectations'],
+            },
+            {
+              id: 5,
+              heading: 'Usage Guidelines',
+              content: details['Usage Guidelines'],
+            },
+            {
+              id: 6,
+              heading: 'Additional Resources',
+              content: details['Additional Resources'],
+            },
+          ],
+          relatedComponents: getRelatedComponents(details),
+          usageGuidelines: details['Usage Guidelines'],
+        },
       },
     };
   } catch {
