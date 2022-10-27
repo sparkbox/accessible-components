@@ -5,7 +5,9 @@ import Home from './index.page';
 describe('Home', () => {
   it('renders a heading', () => {
     render(<Home />);
-    const heading = screen.getByRole('heading');
+    const heading = screen.getByText(
+      'Accessibility Cheatsheets for Components',
+    );
     expect(heading).toBeInTheDocument();
   });
 

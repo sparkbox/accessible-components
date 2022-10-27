@@ -1,7 +1,33 @@
+$breakpoint-tablet: 820px;
+
+// sparkbox header
 .cmp-header {
-  &__logo {
-    max-width: 12rem;
-    width: 100%;
-    height: auto;
+  padding: 1rem; // 16px
+  max-width: 100rem; // 1600px/16
+
+  // anchor tag
+  &__link {
+    outline: none;
+
+    // sparkbox logo image
+    img {
+      max-width: 12rem; // 192px/16
+      width: 100%;
+      height: auto;
+      border: 2px solid transparent;
+      transition: all 150ms ease-in-out;
+    }
+
+    &:focus img {
+      border: 2px solid map.get($colors, "accent-teal");
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-tablet) {
+    padding: 1rem 1.25rem 0 8.5625rem; // top: 16px/16; right: 20px/16; bottom: 0; left: 137px/16
+  }
+
+  @media only screen and (min-width: 100rem) {
+    margin: auto;
   }
 }

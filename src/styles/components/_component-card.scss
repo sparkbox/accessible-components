@@ -9,7 +9,7 @@
     border: 2px solid black;
     display: flex;
     flex-direction: column-reverse;
-    height: 100%;
+    height: 21.875rem; // 350px/16
     width: 100%;
     cursor: pointer;
     transition: all 150ms ease-in-out;
@@ -21,18 +21,50 @@
       margin: auto;
     }
 
+    // the following breakpoints are where certain illustrations try to break out of their containers
+    @media only screen and (min-width: 475px) {
+      height: 30rem; // 480px/16px
+    }
+
+    @media only screen and (min-width: 690px) {
+      height: 40rem; // 640px/16px
+    }
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      height: 100%;
+    }
+
     &:hover img {
       scale: 102%;
     }
 
     &__header {
-      font-weight: 700;
-      font-size: 1.25rem; // 20px
+      font-family: "Oxygen Bold", sans-serif;
+      z-index: 1;
+      font-size: 1.125rem; // 18px/16
       line-height: 4.6667rem; // 75px
-      letter-spacing: 2%;
-      text-align: center;
-      display: block;
+      letter-spacing: 0.02em;
       border-top: 0.25rem solid map.get($colors, "black");
+      background-color: map.get($colors, "white");
+      position: relative;
+
+      @media only screen and (min-width: $breakpoint-tablet) {
+        font-size: map.get($font-sizes, "sm"); // 20px/16
+      }
+
+      &::after {
+        content: url("../../../public/teal-decorative-bullet.svg");
+        position: relative;
+        top: 0;
+        left: 1rem; // 16px/16
+      }
+
+      &::before {
+        content: url("../../../public/teal-decorative-bullet.svg");
+        position: relative;
+        top: 0;
+        left: -1rem; // 16px/16
+      }
     }
   }
 

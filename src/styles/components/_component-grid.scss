@@ -1,23 +1,114 @@
 $breakpoint-tablet: 820px;
 
+// grid section
 .components-grid {
-  width: 100%;
-  text-align: center;
-  padding: 1rem;
+  padding: 1.25rem; // 20px/16
+  max-width: 100rem; // 1600px/16
 
-  @include background-pattern;
+  @media only screen and (min-width: 100rem) {
+    margin: auto;
+  }
 
+  // grid heading
+  &__heading {
+    font-family: Viga, sans-serif;
+    font-size: 1.5625rem; // 25px/16
+    margin-bottom: 3.125rem; // 50px/16
+    font-weight: 400;
+    line-height: 2.125rem; // 34px/16
+  }
+
+  // grid list
+  &__list {
+    text-align: center;
+  }
+
+  // grid items/component cards
   &__item {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 0;
+    margin-bottom: 1.25rem;
     background-color: white;
     text-align: center;
     align-items: flex-start;
 
     &--accordion {
       grid-area: accordion;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        bottom: -6rem;
+      }
+
+      // the following breakpoints are where the accordion illustration starts breaking out of the container
+      @media only screen and (min-width: 355px) {
+        img {
+          bottom: -9rem;
+        }
+      }
+
+      @media only screen and (min-width: 390px) {
+        img {
+          bottom: -12rem;
+        }
+      }
+
+      @media only screen and (min-width: 420px) {
+        img {
+          bottom: -15rem;
+        }
+      }
+
+      @media only screen and (min-width: 460px) {
+        img {
+          bottom: -18rem;
+        }
+      }
+
+      @media only screen and (min-width: 475px) {
+        img {
+          bottom: -15rem;
+        }
+      }
+
+      @media only screen and (min-width: 550px) {
+        img {
+          bottom: -18rem;
+        }
+      }
+
+      @media only screen and (min-width: 580px) {
+        img {
+          bottom: -21rem;
+        }
+      }
+
+      @media only screen and (min-width: 620px) {
+        img {
+          bottom: -25rem;
+        }
+      }
+
+      @media only screen and (min-width: 665px) {
+        img {
+          bottom: -28rem;
+        }
+      }
+
+      @media only screen and (min-width: 690px) {
+        img {
+          bottom: -23rem;
+        }
+      }
+
+      @media only screen and (min-width: 755px) {
+        img {
+          bottom: -28rem;
+        }
+      }
     }
 
     &--dialog {
@@ -35,23 +126,42 @@ $breakpoint-tablet: 820px;
     &--max-scott {
       grid-area: max-scott;
       background-color: transparent;
+      width: 77%; // this closely matches the dimensions in Figma
+      margin: auto;
+      height: auto;
     }
   }
-}
 
-@media only screen and (min-width: $breakpoint-tablet) {
-  .components-grid {
-    display: grid;
-    gap: 1rem;
-    list-style: none;
-    grid-template-areas:
-      "accordion dialog disclosure"
-      "accordion tabs tabs"
-      ". max-scott .";
+  @media only screen and (min-width: $breakpoint-tablet) {
+    // grid section
+    padding: 5rem 8.5625rem; // top&bottom: 80px/16; left&right: 137px/16
+
+    &__heading {
+      font-size: map.get($font-sizes, "lg");
+    }
+
+    &__list {
+      display: grid;
+      gap: 1rem;
+      list-style: none;
+      grid-template-areas:
+        "accordion dialog disclosure"
+        "accordion tabs tabs"
+        ". max-scott .";
+    }
 
     &__item {
+      margin-bottom: 0;
+
       &--accordion {
         grid-area: accordion;
+        position: static;
+        overflow: visible;
+
+        img {
+          position: static;
+          bottom: 0;
+        }
       }
 
       &--dialog {

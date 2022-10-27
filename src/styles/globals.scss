@@ -1,7 +1,5 @@
 /* SETTINGS: variables, custom properties, etc. */
 @use "sass:map";
-
-/* SETTINGS: variables, custom properties, etc. */
 @import "./settings/colors";
 
 /* TOOLS: mixins, etc */
@@ -27,6 +25,8 @@
 @import "./components/definition";
 @import "./components/detailsBanner";
 @import "./components/related-components";
-@import "./components/usage-guidelines"
+@import "./components/usage-guidelines";
+
 /* VENDORS: third-party */
+
 /* UTILITIES: one offs, display:hidden, backgrounds, margin, padding, etc */

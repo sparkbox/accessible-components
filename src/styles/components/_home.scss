@@ -1,30 +1,101 @@
+// listing/home page
 $breakpoint-tablet: 820px;
 
+// everything below the SB logo & above the footer
 .home {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  @include background-pattern;
+
   width: 100%;
+
+  &-wrapper {
+    background-color: map.get($colors, "white");
+  }
+
+  // hero section
+  &-top {
+    padding: 0 1.25rem; // top&bottom: 0; left&right: 20px/16
+    background-color: map.get($colors, "white");
+    max-width: 100rem; // 1600px/16
+
+    @media only screen and (min-width: 100rem) {
+      margin: auto;
+    }
+  }
+
+  &-top__text-column {
+    h1 {
+      font-size: 1.5625rem; // 25px/16
+      font-weight: 400;
+      line-height: 2.125rem; // 34px/16
+    }
+
+    p {
+      font-size: map.get($font-sizes, "xs");
+      margin: 1.25rem 0 0; // top: 20px/16; bottom&left&right: 0
+      line-height: 1.75rem; // 28px/16
+      letter-spacing: 0.02em;
+    }
+  }
 
   &-top__top-image {
     width: 100%;
+    margin: 3.75rem 0; // top&bottom: 60px/16; left&right: 0
   }
 
+  &__date-updated {
+    font-family: Oxygen, sans-serif;
+    font-size: map.get($font-sizes, "xs");
+    text-align: center;
+    line-height: 1.75rem; // 28px/16
+    letter-spacing: 0.02em; // 2% in Figma
+  }
+
+  // the tablet breakpoint does leave some issues with the hero section
+  // these styles are NOT in the design, but are here to just fix up the
+  // visual experience for tablets
   @media only screen and (min-width: $breakpoint-tablet) {
     &-top {
+      padding: 0 1.25rem 1.25rem 8.5625rem; // top&bottom: 0; right: 20px/16; left: 137px/16
       display: flex;
       flex-basis: 100%;
       justify-content: space-between;
+      margin-top: 2rem;
 
       &__text-column {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        flex-basis: 50%;
+        flex-basis: 45%;
+        padding-right: 1.875rem; // 30px/16
 
         h1 {
-          font-size: map.get($font-sizes, "xl");
+          font-size: map.get($font-sizes, "md");
+          margin: 0;
         }
+      }
+
+      &__top-image {
+        margin: 0;
+      }
+    }
+
+    &__date-updated {
+      text-align: left;
+      font-size: map.get($font-sizes, "sm");
+    }
+  }
+
+  // this is where the font styles in the designs are officially applied
+  @media only screen and (min-width: 1115px) {
+    &-top {
+      h1 {
+        font-size: map.get($font-sizes, "xl");
+        margin: 0;
+        line-height: 4.1875rem; // 67px/16
+      }
+
+      p {
+        font-size: map.get($font-sizes, "sm");
       }
     }
   }
