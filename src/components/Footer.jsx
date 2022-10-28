@@ -17,19 +17,19 @@ export default function Footer() {
         <div className="default-footer__item">
           <div className="default-footer__links">
             <a href="https://twitter.com/hearsparkbox">
-              <img src="/icon_twitter.svg" alt="twitter-icon" />
+              <img src="/icons/icon_twitter.svg" alt="twitter-icon" />
             </a>
             <a href="https://github.com/sparkbox">
-              <img src="/icon_github.svg" alt="github-icon" />
+              <img src="/icons/icon_github.svg" alt="github-icon" />
             </a>
             <a href="https://dribbble.com/sparkbox">
-              <img src="/icon_dribble.svg" alt="dribbble-icon" />
+              <img src="/icons/icon_dribble.svg" alt="dribbble-icon" />
             </a>
             <a href="https://www.linkedin.com/company/sparkbox">
-              <img src="/icon_linkedin.svg" alt="linkedin-icon" />
+              <img src="/icons/icon_linkedin.svg" alt="linkedin-icon" />
             </a>
             <a href="https://www.youtube.com/channel/UCfsWcRy7Yh1WWDrrZS0Q7xw">
-              <img src="/icon_youtube.svg" alt="youtube-icon" />
+              <img src="/icons/icon_youtube.svg" alt="youtube-icon" />
             </a>
           </div>
         </div>

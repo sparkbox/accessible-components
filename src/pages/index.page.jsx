@@ -29,25 +29,29 @@ export default function Home() {
             <ComponentCard
               name="Accordion"
               slug="/accordion"
-              image="/accordion_artwork.svg"
+              image="/components/accordion_artwork.svg"
             />
           </li>
           <li className="components-grid__item components-grid__item--dialog">
             <ComponentCard
               name="Dialog"
               slug="/dialog"
-              image="/dialog_artwork.svg"
+              image="/components/dialog_artwork.svg"
             />
           </li>
           <li className="components-grid__item components-grid__item--disclosure">
             <ComponentCard
               name="Disclosure"
               slug="/disclosure"
-              image="/disclosure_artwork.svg"
+              image="/components/disclosure_artwork.svg"
             />
           </li>
           <li className="components-grid__item components-grid__item--tabs">
-            <ComponentCard name="Tabs" slug="/tabs" image="/tabs_artwork.svg" />
+            <ComponentCard
+              name="Tabs"
+              slug="/tabs"
+              image="/components/tabs_artwork.svg"
+            />
           </li>
           <li className="components-grid__item components-grid__item--max-scott">
             <img
