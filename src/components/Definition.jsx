@@ -4,7 +4,7 @@ export default function Definition({ children }) {
       <h2 className="cmp-definition__heading" data-testid="definition-heading">
         Definition
         <img
-          src="circle.svg"
+          src="/shapes/circle.svg"
           className="cmp-definition__heading-circle"
           alt=""
         />
