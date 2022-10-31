@@ -16,7 +16,7 @@ export default function Layout({ children, pageTitle }) {
       <Head>
         <title data-testid="layout-title">{formattedTitle}</title>
         <meta name="description" content="Sparkbox accessible components" />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/images/favicon.png" />
       </Head>
       <div className="page-container">
         <Header />

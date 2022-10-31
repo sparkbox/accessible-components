@@ -1,7 +1,7 @@
 $breakpoint-tablet: 820px;
 
 @mixin background-pattern() {
-  background: url("../../../public/background_image.png");
+  background: url("../../../public/images/background_image.png");
   background-size: 100%;
 
   @media only screen and (min-width: $breakpoint-tablet) {

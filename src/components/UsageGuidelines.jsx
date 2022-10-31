@@ -5,7 +5,7 @@ export default function UsageGuidelines({ children }) {
       <div className="cmp-usage-guidelines__content">{children}</div>
       <img
         className="cmp-usage-guidelines__image"
-        src="/usage-guidelines-image.svg"
+        src="/images/usage-guidelines-image.svg"
         alt="Sparkbox logo"
       />
     </div>

@@ -6,7 +6,7 @@ export default function Header() {
       <Link href="/" aria-label="To home page" className="cmp-header__link">
         <img
           className="cmp-header__logo"
-          src="/sparkbox-logo-text.svg"
+          src="/images/sparkbox-logo-text.svg"
           alt="Sparkbox logo"
         />
       </Link>

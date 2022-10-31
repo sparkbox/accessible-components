@@ -6,7 +6,7 @@ export default function RelatedComponents({ components }) {
       <h2 className="rel-component__heading">
         <img
           className="rel-component__heading--arrow"
-          src="cmt_inventory_arrow.svg"
+          src="/images/cmt_inventory_arrow.svg"
           alt=""
         />
         Component Inventory

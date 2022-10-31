@@ -18,7 +18,7 @@ export default function Details({ details }) {
   } = details;
 
   const image = {
-    src: `/${slug}_artwork.svg`,
+    src: `/images/components/${slug}.svg`,
     alt: `${componentName} image`,
   };
 

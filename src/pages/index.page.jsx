@@ -20,7 +20,7 @@ export default function Home() {
             <div>
               <img
                 className="home-top__top-image"
-                src="/home-header-image.svg"
+                src="/images/home-header-image.svg"
                 alt="Illustration of dog surrounded by accessible components"
               />
             </div>
@@ -33,33 +33,33 @@ export default function Home() {
               <ComponentCard
                 name="Accordion"
                 slug="/accordion"
-                image="/accordion_artwork.svg"
+                image="/images/components/accordion.svg"
               />
             </li>
             <li className="components-grid__item components-grid__item--dialog">
               <ComponentCard
                 name="Dialog"
                 slug="/dialog"
-                image="/dialog_artwork.svg"
+                image="/images/components/dialog.svg"
               />
             </li>
             <li className="components-grid__item components-grid__item--disclosure">
               <ComponentCard
                 name="Disclosure"
                 slug="/disclosure"
-                image="/disclosure_artwork.svg"
+                image="/images/components/disclosure.svg"
               />
             </li>
             <li className="components-grid__item components-grid__item--tabs">
               <ComponentCard
                 name="Tabs"
                 slug="/tabs"
-                image="/tabs_artwork.svg"
+                image="/images/components/tabs.svg"
               />
             </li>
             <li className="components-grid__item components-grid__item--max-scott">
               <img
-                src="/max-grid.svg"
+                src="/images/max-grid.svg"
                 alt="Illustration of cute small white terrier dog with tongue out and head turned left looking like he is curious"
               />
             </li>
