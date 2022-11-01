@@ -1,6 +1,8 @@
 $breakpoint-tablet: 820px;
 
 .cmp-definition {
+  min-height: 20rem;
+
   &__heading {
     position: relative;
     font-family: Viga, sans-serif;
