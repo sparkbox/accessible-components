@@ -1,0 +1,73 @@
+$breakpoint-tablet: 820px;
+
+.cmp-code-block {
+  width: 100%;
+
+  &__heading {
+    font-size: 1.5625rem; // 25px/16
+    font-family: Viga, sans-serif;
+    line-height: 2.125rem; // 34px/16
+    margin-inline: auto;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-image: url("../../../public/images/cmt_inventory_arrow.svg");
+      transform: rotate(-30deg);
+      position: absolute;
+      left: 11rem;
+      top: -0.5rem;
+      width: 2rem;
+      height: 2.5rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      font-size: map.get($font-sizes, "md");
+      line-height: 2.5rem; // 40px/16
+
+      &::after {
+        left: 13rem;
+        width: 2.5rem;
+        height: 3rem;
+      }
+    }
+  }
+
+  &__content {
+    padding: 1.875rem 1.25rem; // top&bottom: 30px/16; left&right: 20px/16
+    background-color: map.get($colors, "white");
+    color: map.get($colors, "black");
+    line-height: 1.75rem; // 28px/16
+    font-size: map.get($font-sizes, "xs");
+    font-family: Oxygen, sans-serif;
+    letter-spacing: 0.02em; // 2% in Figma
+    margin-top: 1rem;
+    border: 2px solid map.get($colors, "black");
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      padding: 2.5rem 3.75rem; // top&bottom: 40px/16; left&right: 60px/16
+      margin: 0;
+    }
+  }
+
+  pre {
+    margin: 0;
+    white-space: pre;
+    overflow-x: scroll;
+  }
+
+  code {
+    margin: 0;
+    font-size: map.get($font-sizes, "xs");
+    line-height: 1.75rem; // 28px/16
+    letter-spacing: 0.02em; // 2% in Figma
+    font-family: Oxygen, sans-serif;
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      font-size: map.get($font-sizes, "sm");
+    }
+  }
+}

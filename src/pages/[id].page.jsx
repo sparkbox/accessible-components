@@ -6,6 +6,7 @@ import Definition from '../components/Definition';
 import DetailsBanner from '../components/DetailsBanner';
 import UsageGuidelines from '../components/UsageGuidelines';
 import RichText from '../components/RichText';
+import CodeBlock from '../components/CodeBlock';
 
 export default function Details({ details }) {
   const {
@@ -29,6 +30,19 @@ export default function Details({ details }) {
         <Definition>
           <p>{definition}</p>
         </Definition>
+
+        <CodeBlock
+          exportedCodeString={`<article>
+  <h1>Button component demo</h1>
+  <p>These three examples demo the <a href="https://davatron5000.github.io/a11y-nutrition-cards/components/button">Accessiblity Nutrition Card</a> for a button component.</p>
+  <hr />
+  <h2>Standard button</h2>
+  <button>A standard button</button>
+  <hr />
+  <h2>Button that uses <code>aria-label</code></h2>
+  <button aria-label="This is the text a screen reader would read">The aria-label overrides this</button>
+</article>`}
+        />
         <UsageGuidelines>
           <RichText markdown={usageGuidelines} />
         </UsageGuidelines>
