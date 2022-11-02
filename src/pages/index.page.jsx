@@ -17,11 +17,16 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <img
-              className="home-top__top-image"
-              src="/home-header-image_light.svg"
-              alt="Illustration of dog surrounded by accessible components"
-            />
+            <picture className="home-top__top-image">
+              <source
+                srcset="/home-header-image_dark.svg"
+                media="(prefers-color-scheme: dark)"
+              />
+              <img
+                src="/home-header-image_light.svg"
+                alt="Illustration of dog surrounded by accessible component"
+              />
+            </picture>
           </div>
         </div>
         <ul className="components-grid">

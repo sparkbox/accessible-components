@@ -5,12 +5,10 @@ $breakpoint-tablet: 820px;
   grid-template-columns: 1fr;
   gap: 1rem;
   width: 100%;
-  background-color: var(--background-color);
   color: var(--font-color);
 
   &-top__top-image {
     width: 100%;
-    background-color: var(--background-color);
   }
 
   @media only screen and (min-width: $breakpoint-tablet) {
