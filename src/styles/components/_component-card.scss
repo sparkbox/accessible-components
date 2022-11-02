@@ -53,14 +53,14 @@
       }
 
       &::after {
-        content: url("../../../public/images/teal-decorative-bullet.svg");
+        content: url("../../../public/images/list_markers/teal-decorative-bullet.svg");
         position: relative;
         top: 0;
         left: 1rem; // 16px/16
       }
 
       &::before {
-        content: url("../../../public/images/teal-decorative-bullet.svg");
+        content: url("../../../public/images/list_markers/teal-decorative-bullet.svg");
         position: relative;
         top: 0;
         left: -1rem; // 16px/16

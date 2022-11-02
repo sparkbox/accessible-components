@@ -1,35 +1,81 @@
 $breakpoint-tablet: 820px;
 
 .cmp-definition {
-  min-height: 20rem;
+  position: relative;
+  line-height: 1.75rem;
 
   &__heading {
     position: relative;
     font-family: Viga, sans-serif;
     font-weight: 400;
-    font-size: map.get($font-sizes, "md");
+    font-size: 1.5625rem;
+    margin: 0;
+
+    /* Circle around "definition" */
+    &::after {
+      content: "";
+      position: absolute;
+      top: -1.8rem;
+      left: -1.8rem;
+      width: 15rem;
+      height: 6rem;
+      background-image: url("../../../public/images/shapes/circle.svg");
+      background-size: 80%;
+      background-repeat: no-repeat;
+    }
   }
 
-  &__heading-circle {
-    position: absolute;
-    width: 14rem;
-    height: auto;
-    top: -1.8rem;
-    left: -2rem;
+  &__text {
+    padding: 0;
+    max-width: 60ch;
+  }
+
+  &__content {
+    font-size: map.get($font-sizes, "xs");
+    letter-spacing: 0.02rem;
   }
 
   @media only screen and (min-width: $breakpoint-tablet) {
-    background:
-      linear-gradient(to right, white 50%, rgba(255 255 255 / 0%)),
-      url("../../../public/images/definition_text_light.svg");
-    background-size: contain;
-    background-position-x: right;
-    background-repeat: no-repeat;
-    margin: auto;
-    max-width: 59rem;
+    &__bg-text {
+      position: absolute;
+      top: 0;
+      right: -10rem;
+      width: 100%;
+      min-height: 100%;
+      background:
+        linear-gradient(to right, white 30ch, rgba(255 255 255 / 40%) 80ch, rgba(255 255 255 / 0%)),
+        url("../../../public/images/definition_text_light.svg");
+      background-size: contain;
+      background-position: right;
+      background-repeat: no-repeat;
+      margin: auto;
+      z-index: -1;
+
+      @media only screen and (max-width: 75rem) {
+        background-size: cover;
+      }
+    }
+
+    &__heading {
+      font-size: map.get($font-sizes, "md");
+
+      &::after {
+        content: "";
+        top: -2.5rem;
+        left: -2.2rem;
+        width: 15rem;
+        height: 6rem;
+        background-size: 100%;
+      }
+    }
 
     &__content {
-      max-width: 70%;
+      position: relative;
+      font-size: map.get($font-sizes, "sm");
+    }
+
+    &__text {
+      padding: 8rem 0;
     }
   }
 }

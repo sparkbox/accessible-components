@@ -44,7 +44,7 @@
     }
   }
 
-  &__item a {
+  &__item > a {
     text-decoration: underline;
     color: map.get($colors, "black");
     background: linear-gradient(to left, rgb(0 0 0 / 0%) 50%, map.get($colors, accent-teal) 50%);

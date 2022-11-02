@@ -9,13 +9,17 @@
 }
 
 @font-face {
-  font-family: "Oxygen Bold";
+  font-family: Oxygen;
   src: url("../../../fonts/Oxygen/Oxygen-Bold.ttf");
+  font-weight: 700;
+  font-style: bold;
 }
 
 @font-face {
-  font-family: "Oxygen Light";
+  font-family: Oxygen;
   src: url("../../../fonts/Oxygen/Oxygen-Light.ttf");
+  font-weight: 400;
+  font-style: normal;
 }
 
 // Reference figma for font sizes

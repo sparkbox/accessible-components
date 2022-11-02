@@ -1,55 +1,75 @@
-$breakpoint-tablet: 1220px;
+$breakpoint-tablet: 860px;
 
 .cmp-usage-guidelines {
-  background-color: #01f5ac;
-  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  letter-spacing: 0.02rem;
 
   &__heading {
     position: relative;
     font-family: Viga, sans-serif;
     font-weight: 400;
-    font-size: map.get($font-sizes, "md");
-    padding-top: 3.75rem;
-  }
-
-  &__content {
-    padding-right: 1.25rem;
-    padding-bottom: 1.25rem;
+    font-size: 1.5625rem;
+    margin-top: 0;
   }
 
   &__image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+    position: relative;
+    width: 80%;
+    max-width: 30rem;
+    margin: 0 auto -3rem;
+  }
+
+  p {
+    line-height: 1.875rem;
+    font-size: map.get($font-sizes, "xs");
+  }
+
+  ul {
+    margin-left: 1.5rem;
+  }
+
+  li {
+    position: relative;
+
+    &::before {
+      content: "";
+      background-image: url("../../../public/images/list_markers/emdash.png");
+      background-repeat: no-repeat;
+      background-size: 80%;
+      position: absolute;
+      width: 2rem;
+      height: 1rem;
+      left: -1.75rem;
+      top: 0.5rem;
+    }
   }
 }
 
 @media only screen and (min-width: $breakpoint-tablet) {
   .cmp-usage-guidelines {
-    background-color: #01f5ac;
-    background-image: url("../../../public/images/usage-guidelines-image.svg");
-    background-repeat: no-repeat;
-    background-position: top 50% right 3%;
-    background-size: 20rem;
-    width: 100%;
-    padding-left: 6rem;
+    max-width: 100rem;
+    display: flex;
+    flex-direction: row;
 
-    &__content {
-      max-width: 70%;
-      padding-bottom: 8.4rem;
+    p {
+      font-size: map.get($font-sizes, "sm");
     }
 
     &__heading {
-      position: relative;
-      font-family: Viga, sans-serif;
-      font-weight: 400;
       font-size: map.get($font-sizes, "md");
-      padding-top: 8.4rem;
+    }
+
+    &__text {
+      max-width: 60ch;
     }
 
     &__image {
-      display: none;
+      position: relative;
+      width: 60%;
+      max-width: 35rem;
+      margin: -5rem auto;
     }
   }
 }

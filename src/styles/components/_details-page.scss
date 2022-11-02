@@ -1,0 +1,44 @@
+.details-page {
+  &__header {
+    width: 100%;
+    margin: auto;
+    background-image: url("../../../public/images/background_image.png");
+  }
+
+  &__banner {
+    width: 100%;
+    margin: auto;
+    background-color: map.get($colors, "accent-teal");
+  }
+
+  &__primary {
+    display: flex;
+    flex-direction: column;
+    gap: 3.75rem;
+    width: 100%;
+    margin: auto;
+    padding: 3.75rem 1.25rem;
+    max-width: 100rem; // 1600px;
+    overflow: hidden;
+  }
+
+  &__secondary {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    padding: 3.75rem 1.25rem;
+    max-width: 100rem;
+  }
+
+  @media only screen and (min-width: $breakpoint-tablet) {
+    &__primary,
+    &__heading {
+      padding: 8.5625rem;
+      gap: 1rem;
+    }
+
+    &__secondary {
+      padding: 5.875rem;
+    }
+  }
+}

@@ -1,53 +1,64 @@
-$breakpoint-tablet: 900px;
+$breakpoint-tablet: 820px;
 
 .rel-component {
-  background-color: map.get($colors, "accent-teal");
-  padding: 6rem 2rem;
   display: flex;
-  flex-wrap: wrap;
+  gap: 1rem;
+  flex-direction: column;
 
   &__heading {
-    max-width: 15rem;
-    font-size: map.get($font-sizes, "md");
-    font-family: Viga, sans-serif;
-    margin: 0;
     position: relative;
+    font-size: 25px;
+    font-family: Viga, sans-serif;
+    margin: 4rem 0;
 
-    &--arrow {
+    &::before {
+      content: "";
       position: absolute;
+      width: 60px;
+      height: 75px;
       top: -5rem;
-      left: 3rem;
+      left: 1rem;
+      background-image: url("../../../public/images/cmt_inventory_arrow.svg");
     }
   }
 
   &__list {
-    display: flex;
-    max-height: 10rem;
-    flex-flow: nowrap column;
-    gap: 1rem;
-    margin-top: 0.6rem;
-
-    @media only screen and (min-width: $breakpoint-tablet) {
-      gap: 1rem 6rem;
-      flex-wrap: wrap;
-      margin-top: 0;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.6875rem;
+    padding: 1rem 0;
+    text-align: left;
+    font-size: 18px;
   }
 
   &__link {
     text-decoration: underline;
     transition: all ease-in-out 100ms;
+    width: fit-content;
 
     &:hover {
-      text-decoration: none;
-      transform: scale(1.04, 1.04);
+      filter: invert(30%);
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    gap: 15%;
+
+    &__heading {
+      margin-top: 1rem;
+      max-width: 10rem;
     }
 
-    @media (prefers-reduced-motion) {
-      &:hover {
-        text-decoration: none;
-        transform: scale(1, 1);
-      }
+    &__list {
+      display: flex;
+      gap: 1rem 6rem;
+      flex-grow: 2;
+      font-size: map.get($font-sizes, "sm");
+      flex-flow: wrap column;
+      max-height: 10rem;
+      align-self: left;
+      text-align: left;
     }
   }
 }

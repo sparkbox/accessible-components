@@ -45,17 +45,28 @@ export default function Details({ details }) {
 
   return (
     <Layout pageTitle={componentName}>
-      <div className="details-page">
-        <DetailsBanner name={componentName} image={image} />
+      <div className="details-page__header">
+        <div className="details-page__primary">
+          <DetailsBanner name={componentName} image={image} />
+        </div>
+      </div>
+      <div className="details-page__primary">
         <Definition>
-          <p>{definition}</p>
+          <RichText markdown={definition} />
         </Definition>
         <CodeBlock name="HTML" exportedCodeString={htmlCode} />
         <CodeBlock name="CSS" exportedCodeString={cssCode} />
         <CodeBlock name="JS" exportedCodeString={javascriptCode} />
-        <UsageGuidelines>
-          <RichText markdown={usageGuidelines} />
-        </UsageGuidelines>
+
+      </div>
+      <div className="details-page__banner">
+        <div className="details-page__secondary">
+          <UsageGuidelines>
+            <RichText markdown={usageGuidelines} />
+          </UsageGuidelines>
+        </div>
+      </div>
+      <div className="details-page__primary">
         <div className="cmp-specifications-block">
           {specificationBlocks.map((block) => (
             <SpecificationBlock key={block.id} heading={block.heading}>
@@ -63,9 +74,17 @@ export default function Details({ details }) {
             </SpecificationBlock>
           ))}
         </div>
-        {/* List of links to other components */}
-        <RelatedComponents components={relatedComponents} />
       </div>
+      {/* List of links to other components. Only renders when it contains content. */}
+      {relatedComponents.length ? (
+        <div className="details-page__banner">
+          <div className="details-page__secondary">
+            <RelatedComponents components={relatedComponents} />
+          </div>
+        </div>
+      ) : (
+        ''
+      )}
     </Layout>
   );
 }
@@ -124,8 +143,8 @@ export async function getStaticProps({ params }) {
           specificationBlocks: [
             {
               id: 1,
-              heading: 'Keyboard Interactions',
-              content: details['Keyboard Interactions'],
+              heading: 'Focus Expectations',
+              content: details['Focus Expectations'],
             },
             {
               id: 2,
@@ -139,8 +158,8 @@ export async function getStaticProps({ params }) {
             },
             {
               id: 4,
-              heading: 'Focus Expectations',
-              content: details['Focus Expectations'],
+              heading: 'Keyboard Interactions',
+              content: details['Keyboard Interactions'],
             },
             {
               id: 5,

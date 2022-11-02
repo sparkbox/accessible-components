@@ -1,16 +1,7 @@
 export default function RelatedComponents({ components }) {
-  if (!components.length) return '';
-
   return (
     <div className="rel-component" data-testid="rel-component">
-      <h2 className="rel-component__heading">
-        <img
-          className="rel-component__heading--arrow"
-          src="/images/cmt_inventory_arrow.svg"
-          alt=""
-        />
-        Component Inventory
-      </h2>
+      <h2 className="rel-component__heading">Component Inventory</h2>
       <div className="rel-component__list">
         {components.map((cmt) => (
           <a

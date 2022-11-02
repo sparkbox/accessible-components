@@ -4,11 +4,11 @@ import { act } from 'react-dom/test-utils';
 import RelatedComponents from './RelatedComponents';
 
 describe('RelatedComponents', () => {
-  it("Shouldn't render if props are empty", () => {
+  it('Should render even if props are empty', () => {
     act(() => {
       render(<RelatedComponents components={[]} />);
     });
     const component = screen.queryByTestId('rel-component');
-    expect(component).not.toBeInTheDocument();
+    expect(component).toBeInTheDocument();
   });
 });

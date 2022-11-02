@@ -1,18 +1,32 @@
+$breakpoint-tablet: 820px;
+
 .details-banner {
-  font-weight: 700;
-  font-size: font-size("sm");
-  line-height: 4.6667rem; // 28px
+  line-height: 2.1rem; // 28px
   letter-spacing: 2%;
-  margin: 1.25rem;
+
+  h1 {
+    font-size: 1.5625rem;
+    font-weight: 400;
+    margin: 1.875rem 0; // 30px
+  }
 }
 
 .details-banner-image {
   box-sizing: border-box;
   background-color: white;
-  padding: 1.25rem; // 20px
+  border: 3px solid black;
 
   & img {
     width: 100%;
     max-height: 45rem;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
+  .details-banner {
+    h1 {
+      font-size: 3.125rem;
+      margin: 2.5rem 0;
+    }
   }
 }

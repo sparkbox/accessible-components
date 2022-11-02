@@ -1,13 +1,18 @@
-$breakpoint-tablet: 820px;
+$breakpoint-tablet: 1150px;
 
 .cmp-specifications-block {
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+  line-height: 1.5625rem;
+  letter-spacing: 0.02rem;
+
   &__wrapper {
     display: block;
-    margin: 3.75rem 1.25rem; // top&bottom: 60px/16; left&right: 20px/16
   }
 
   &__heading {
-    font-size: map.get($font-sizes, "md");
+    font-size: 1.5625rem;
     font-family: Viga, sans-serif;
     margin: 0;
   }
@@ -17,11 +22,46 @@ $breakpoint-tablet: 820px;
   }
 
   ul {
-    list-style: url("../../../public/images/teal-decorative-bullet.svg");
+    line-height: 1.5625rem;
+    margin-left: 2rem;
+  }
+
+  p {
+    font-size: map.get($font-sizes, "xs");
+  }
+
+  li {
+    position: relative;
+    font-weight: 400;
+    font-size: map.get($font-sizes, "xs");
+    letter-spacing: 175%;
+
+    &::before {
+      content: "";
+      background-image: url("../../../public/images/list_markers/teal-decorative-bullet.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      width: 0.6rem;
+      height: 1rem;
+      left: -1.5rem;
+      top: 0.4rem;
+    }
+  }
+
+  /* Adjacent sibling selector */
+  li + li {
+    margin-top: 1.5rem;
   }
 
   code {
     color: map.get($colors, "blue");
+    font-family: Oxygen, sans-serif;
+  }
+
+  h3 {
+    font-size: map.get($font-sizes, "xs");
+    font-weight: bold;
   }
 
   a {
@@ -49,7 +89,6 @@ $breakpoint-tablet: 820px;
 
   @media only screen and (min-width: $breakpoint-tablet) {
     // grid of data fields & content (.cmp-specifications-block)
-    margin: 3.125rem 8.4375rem; // 50px/16 top & bottom; 135px/16 left & right
     display: grid;
     column-gap: 5rem; // 80px /16
     row-gap: 2.5rem; // 40px
@@ -59,6 +98,29 @@ $breakpoint-tablet: 820px;
       "focus focus"
       "aria aria"
       "additional .";
+
+    p {
+      font-size: map.get($font-sizes, "sm");
+    }
+
+    li {
+      font-size: map.get($font-sizes, "sm");
+
+      &::before {
+        width: 0.8rem;
+        height: 1rem;
+        left: -1.5rem;
+        top: 0.4rem;
+      }
+    }
+
+    h3 {
+      font-size: map.get($font-sizes, "sm");
+    }
+
+    &__heading {
+      font-size: map.get($font-sizes, "md");
+    }
 
     &__wrapper {
       margin: 0;

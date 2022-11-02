@@ -4,7 +4,9 @@ import { marked } from 'marked';
 import DOMPurify from 'isomorphic-dompurify';
 
 export default function RichText({ markdown }) {
-  const htmlFromMd = marked.parse(markdown.replace(/\\/g, ''));
+  const htmlFromMd = marked.parse(markdown.replace(/\\/g, ''), {
+    breaks: true,
+  });
   const cleanHtml = DOMPurify.sanitize(htmlFromMd, { FORBID_TAGS: ['title'] });
   return (
     <div
