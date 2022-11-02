@@ -120,11 +120,6 @@ export async function getStaticProps({ params }) {
             },
             {
               id: 5,
-              heading: 'Usage Guidelines',
-              content: details['Usage Guidelines'],
-            },
-            {
-              id: 6,
               heading: 'Additional Resources',
               content: details['Additional Resources'],
             },

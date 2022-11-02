@@ -42,7 +42,7 @@ $breakpoint-tablet: 820px;
     @media screen and (prefers-reduced-motion: reduce) {
       &:hover,
       &:focus-within {
-        background-color: #595959;
+        background-color: map.get($colors, "accent-teal");
       }
     }
   }
@@ -55,38 +55,45 @@ $breakpoint-tablet: 820px;
     row-gap: 2.5rem; // 40px
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "focus semantic"
-      "keyboard keyboard"
-      "aria aria";
+      "keyboard semantic"
+      "focus focus"
+      "aria aria"
+      "additional .";
 
     &__wrapper {
       margin: 0;
     }
 
-    // focus expectations
+    // keyboard interactions (1 column)
     &__wrapper:nth-child(1) {
       // border: 1px solid red;
-      grid-area: focus;
+      grid-area: keyboard;
     }
 
-    // keyboard interactions
+    // semantic elements (1 column)
     &__wrapper:nth-child(2) {
       // border: 1px solid blue;
       grid-area: semantic;
     }
 
-    // semantic elements (full width)
+    // aria roles & attributes (full width)
     &__wrapper:nth-child(3) {
       // border: 1px solid black;
-      grid-area: keyboard;
+      grid-area: aria;
       max-width: 75ch;
     }
 
-    // aria roles & attributes (full width)
+    // focus expectations (full-width)
     &__wrapper:nth-child(4) {
       // border: 1px solid green;
-      grid-area: aria;
+      grid-area: focus;
       max-width: 75ch;
+    }
+
+    // additional resources (1 column)
+    &__wrapper:nth-child(5) {
+      // border: 1px solid red;
+      grid-area: additional;
     }
   }
 }
