@@ -50,13 +50,9 @@ export default function Details({ details }) {
         <Definition>
           <p>{definition}</p>
         </Definition>
-
         <CodeBlock name="HTML" exportedCodeString={htmlCode} />
-
         <CodeBlock name="CSS" exportedCodeString={cssCode} />
-
         <CodeBlock name="JS" exportedCodeString={javascriptCode} />
-
         <UsageGuidelines>
           <RichText markdown={usageGuidelines} />
         </UsageGuidelines>
