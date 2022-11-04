@@ -3,6 +3,12 @@
     width: 100%;
     margin: auto;
     background-image: url("../../../public/images/background_image.png");
+    background-size: cover;
+    background-position: center;
+
+    @media (prefers-color-scheme: dark) {
+    background-image: url("../../../public/images/background_image-light.svg")
+  }
   }
 
   &__banner {
@@ -22,12 +28,23 @@
     overflow: hidden;
   }
 
+  
+
   &__secondary {
     position: relative;
     width: 100%;
     margin: auto;
     padding: 3.75rem 1.25rem;
     max-width: 100rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &__secondary--usage-guidelines {
+      background-color: var(--accent-color-background);
+    }
+    &__secondary--related-components {
+      background-color: var(--background-color);
+    }
   }
 
   @media only screen and (min-width: $breakpoint-tablet) {

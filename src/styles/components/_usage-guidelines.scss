@@ -6,7 +6,13 @@ $breakpoint-tablet: 860px;
   margin: auto;
   letter-spacing: 0.02rem;
   background-color: var(--accent-color);
-  color: var(--font-color);
+  padding-left: 1.25rem;
+  color: var(--font-color-dark);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--accent-color-background);
+    color: var(--font-color-dark);
+  }
 
   &__heading {
     position: relative;
@@ -52,10 +58,6 @@ $breakpoint-tablet: 860px;
 @media only screen and (min-width: $breakpoint-tablet) {
   .cmp-usage-guidelines {
     background-color: var(--accent-color-background);
-    // background-image: url("../../../public/images/usage-guidelines-image.svg");
-    // background-repeat: no-repeat;
-    // background-position: top 50% right 10%;
-    background-size: 20rem;
     width: 100%;
     max-width: 100rem;
     display: flex;
@@ -81,3 +83,4 @@ $breakpoint-tablet: 860px;
     }
   }
 }
+

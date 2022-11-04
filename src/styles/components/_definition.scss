@@ -23,6 +23,10 @@ $breakpoint-tablet: 820px;
       background-image: url("../../../public/images/shapes/circle.svg");
       background-size: 80%;
       background-repeat: no-repeat;
+
+      @media (prefers-color-scheme: dark) {
+        filter: invert(1);
+      }
     }
   }
 
@@ -44,7 +48,7 @@ $breakpoint-tablet: 820px;
       width: 100%;
       min-height: 100%;
       background:
-        linear-gradient(to right, var(--background-color) 50%, transparent 100%),
+        linear-gradient(to right, var(--background-color) 50%, transparent),
         url("../../../public/images/definition_text_light.svg");
       background-size: contain;
       background-position: right;
@@ -54,6 +58,16 @@ $breakpoint-tablet: 820px;
 
       @media only screen and (max-width: 75rem) {
         background-size: cover;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        right: -7rem;
+        background: linear-gradient(to right, var(--background-color) 50%, transparent), url("../../../public/images/definition_text_dark.svg");
+        background-size: contain;
+        background-position: right;
+        background-repeat: no-repeat;
+        margin: auto;
+        z-index: -1;
       }
     }
 

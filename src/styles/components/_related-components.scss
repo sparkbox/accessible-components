@@ -2,10 +2,14 @@ $breakpoint-tablet: 820px;
 
 .rel-component {
   background-color: var(--accent-color);
+  color: var(--font-color-highlight);
   display: flex;
   gap: 1rem;
   flex-direction: column;
-  color: var(--font-color-highlight);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--background-color);
+  }
 
   &__heading {
     position: relative;
@@ -13,14 +17,30 @@ $breakpoint-tablet: 820px;
     font-family: Viga, sans-serif;
     margin: 4rem 0;
 
-    &::before {
+    &::after {
       content: "";
-      position: absolute;
-      width: 60px;
-      height: 75px;
-      top: -5rem;
-      left: 1rem;
       background-image: url("../../../public/images/cmt_inventory_arrow.svg");
+      position: absolute;
+      right: 65%;
+      top: -5.5rem;
+      width: 3.75rem; // 60px/16
+      height: 4.6875rem; // 75px/16
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @media (prefers-color-scheme: dark) {
+        filter: invert(1);
+      }
+    }
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      &::after {
+        right: 6rem;
+        top: -3.25rem;
+        width: 2.875rem; // 46px/16
+        height: 3.5625rem; // 57px/16
+      }
     }
   }
 
@@ -38,11 +58,25 @@ $breakpoint-tablet: 820px;
     transition: all ease-in-out 100ms;
     width: fit-content;
 
-    &:hover {
-      filter: invert(30%);
+    &:hover,
+    &:focus {
+      outline: 1px solid var(--foreground-color);
+      text-decoration: none;
+
+      @media (prefers-color-scheme: dark) {
+        outline: 1px solid var(--accent-color);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      &:hover,
+      &:focus {
+        outline: 1px solid var(--foreground-color);
+        text-decoration: none;
+      }
     }
   }
-
+  
   @media only screen and (min-width: $breakpoint-tablet) {
     flex-direction: row;
     gap: 15%;

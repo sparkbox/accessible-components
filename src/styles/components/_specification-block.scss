@@ -46,6 +46,12 @@ $breakpoint-tablet: 1150px;
       height: 1rem;
       left: -1.5rem;
       top: 0.4rem;
+
+      @media (prefers-color-scheme: dark) {
+        background-image: url("../../../public/images/pink-decorative-bullet.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
     }
   }
 
@@ -55,34 +61,44 @@ $breakpoint-tablet: 1150px;
   }
 
   code {
-    color: map.get($colors, "blue");
+    color: var(--code-color);
     font-family: Oxygen, sans-serif;
   }
 
   h3 {
     font-size: map.get($font-sizes, "xs");
-    font-weight: bold;
+    font-weight: 700;
   }
 
   a {
     text-decoration: underline;
-    color: map.get($colors, "black");
-    background: linear-gradient(to left, rgb(0 0 0 / 0%) 50%, map.get($colors, accent-teal) 50%);
-    background-size: 201% 100%;
-    background-position: right bottom;
-    transition: ease-in-out all 250ms;
+    color: var(--foreground-color);
+    transition: all ease-in-out 100ms;
+    display: inline-block;
+  }
 
-    @media screen and (prefers-reduced-motion: no-preference) {
-      &:hover,
-      &:focus-within {
-        background-position: left bottom;
+  // hover/focus matched the footer text-links
+  @media (prefers-reduced-motion: no-preference) {
+    a:hover,
+    a:focus {
+      outline: 1px solid var(--foreground-color);
+      text-decoration: none;
+
+      @media (prefers-color-scheme: dark) {
+        outline: 1px solid var(--accent-color);
       }
     }
+  }
 
-    @media screen and (prefers-reduced-motion: reduce) {
+  // matches the related components text-links
+  @media screen and (prefers-reduced-motion: reduce) {
+    a {
+      transition: all ease-in-out 100ms;
+
       &:hover,
-      &:focus-within {
-        background-color: map.get($colors, "accent-teal");
+      &:focus {
+        outline: 1px solid var(--accent-color);
+        text-decoration: none;
       }
     }
   }
@@ -152,10 +168,10 @@ $breakpoint-tablet: 1150px;
       max-width: 75ch;
     }
 
-    // additional resources (1 column)
-    &__wrapper:nth-child(5) {
-      // border: 1px solid red;
-      grid-area: additional;
+    &__wrapper:last-child {
+      li {
+        padding: 0.25rem 0; // top&bottom: 4px/16
+      }
     }
   }
 }

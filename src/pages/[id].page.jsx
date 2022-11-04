@@ -60,7 +60,7 @@ export default function Details({ details }) {
 
       </div>
       <div className="details-page__banner">
-        <div className="details-page__secondary">
+        <div className="details-page__secondary details-page__secondary--usage-guidelines">
           <UsageGuidelines>
             <RichText markdown={usageGuidelines} />
           </UsageGuidelines>
@@ -78,7 +78,7 @@ export default function Details({ details }) {
       {/* List of links to other components. Only renders when it contains content. */}
       {relatedComponents.length ? (
         <div className="details-page__banner">
-          <div className="details-page__secondary">
+          <div className="details-page__secondary details-page__secondary--related-components">
             <RelatedComponents components={relatedComponents} />
           </div>
         </div>

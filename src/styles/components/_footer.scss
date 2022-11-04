@@ -29,6 +29,7 @@
 
   // Flex items of content wrapper
   &__item {
+    color: var(--foreground-color);
     width: 100%;
 
     // the first line of the footer has a smaller margin-bottom than the rest of the footer items.
@@ -44,6 +45,7 @@
     }
   }
 
+  // text-links
   &__item > a {
     text-decoration: underline;
     color: var(--font-color);
@@ -52,23 +54,25 @@
     background-position: right bottom;
     transition: ease-in-out all 250ms;
     outline: none;
-  }
 
-  @media screen and (prefers-reduced-motion: no-preference) {
-    &__item > a:hover,
-    &__item > a:focus-within {
-      background-position: left bottom;
+    @media screen and (prefers-reduced-motion: no-preference) {
+      &:hover,
+      &:focus-within {
+        color: var(--font-color-dark);
+        background-position: left bottom;
+      }
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      &:hover,
+      &:focus-within {
+        color: var(--font-color-dark);
+        background-color: var(--accent-color);
+      }
     }
   }
 
-  @media screen and (prefers-reduced-motion: reduce) {
-    &__item > a:hover,
-    &__item > a:focus-within {
-      background-color: var(--accent-color);
-    }
-  }
-
-  // Container for icons that link to other websites
+  // Container for social media icons
   &__links {
     margin: 0 1rem; // top&bottom: 24px; left&right: 0
     display: flex;
@@ -76,39 +80,60 @@
     justify-content: space-between;
     align-items: center;
     max-width: 325px;
+    position: relative;
+
+    // each social media icon is an SVG with className="icon"
+    .icon {
+      fill: currentcolor;
+      position: relative;
+      transition: all ease-in-out 150ms;
+      bottom: 0;
+      right: 0;
+    }
 
     @media only screen and (min-width: 400px) {
       margin: auto;
     }
 
     a {
-      height: 2.6875rem; // 43px/16
-      min-width: 41px; /* 41px/16px */
       position: relative;
       outline: none;
-    }
+      border: 2px solid transparent;
 
-    img {
-      position: absolute;
-      min-width: 2.5625rem; /* 41px/16px */
-      min-height: auto;
-      bottom: 0;
-      right: 0;
-      transition: 200ms;
+      svg {
+        transition: all ease-in-out 150ms;
+        width: 2.5625rem; /* 41px/16px */
+        height: auto;
+      }
     }
 
     @media screen and (prefers-reduced-motion: reduce) {
-      & a:hover > img,
-      & a:focus-within > img {
-        filter: invert(0.7);
+      a:hover .icon,
+      a:focus-within .icon {
+        fill: var(--accent-color-icons);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        a:hover .icon,
+        a:focus-within .icon {
+          fill: var(--accent-color);
+        }
       }
     }
 
     @media screen and (prefers-reduced-motion: no-preference) {
-      a:hover > img,
-      a:focus-within > img {
-        filter: invert(0.7);
+      a:hover .icon,
+      a:focus-within .icon {
         bottom: 0.5rem; // 8px/16
+        fill: var(--accent-color-icons);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        a:hover .icon,
+        a:focus-within .icon {
+          bottom: 0.5rem; // 8px/16
+          fill: var(--accent-color);
+        }
       }
     }
   }

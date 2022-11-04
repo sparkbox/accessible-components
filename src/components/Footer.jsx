@@ -1,3 +1,9 @@
+import Twitter from './TwitterIcon';
+import GitHub from './GitHubIcon';
+import Dribble from './DribbleIcon';
+import LinkedIn from './LinkedInIcon';
+import YouTube from './YouTubeIcon';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -16,20 +22,29 @@ export default function Footer() {
         </div>
         <div className="default-footer__item">
           <div className="default-footer__links">
-            <a href="https://twitter.com/hearsparkbox">
-              <img src="/images/icons/icon_twitter.svg" alt="twitter-icon" />
+            <a
+              href="https://twitter.com/hearsparkbox"
+              aria-label="Twitter link"
+            >
+              <Twitter />
             </a>
-            <a href="https://github.com/sparkbox">
-              <img src="/images/icons/icon_github.svg" alt="github-icon" />
+            <a href="https://github.com/sparkbox" aria-label="Git Hub link">
+              <GitHub />
             </a>
-            <a href="https://dribbble.com/sparkbox">
-              <img src="/images/icons/icon_dribble.svg" alt="dribbble-icon" />
+            <a href="https://dribbble.com/sparkbox" aria-label="Dribble link">
+              <Dribble />
             </a>
-            <a href="https://www.linkedin.com/company/sparkbox">
-              <img src="/images/icons/icon_linkedin.svg" alt="linkedin-icon" />
+            <a
+              href="https://www.linkedin.com/company/sparkbox"
+              aria-label="Linked In link"
+            >
+              <LinkedIn />
             </a>
-            <a href="https://www.youtube.com/channel/UCfsWcRy7Yh1WWDrrZS0Q7xw">
-              <img src="/images/icons/icon_youtube.svg" alt="youtube-icon" />
+            <a
+              href="https://www.youtube.com/channel/UCfsWcRy7Yh1WWDrrZS0Q7xw"
+              aria-label="You Tube link"
+            >
+              <YouTube />
             </a>
           </div>
         </div>

@@ -1,24 +1,42 @@
 $breakpoint-tablet: 820px;
 
 .details-banner {
+  // background-image: url("../../../public/images/background_image.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   line-height: 2.125rem; // 28px
   letter-spacing: 0.02em; // 2% in Figma
 
-  h1 {
-    font-size: 1.5625rem;
-    font-weight: 400;
-    margin: 1.875rem 0; // 30px
-  }
-}
+  
 
-.details-banner-image {
-  box-sizing: border-box;
+  h1 {
+    margin: 1.875rem 0; // top&bottom: 30px/16; left&right: 0
+    line-height: 2.125rem; // 34px/16
+    letter-spacing: 0;
+    font-family: Viga, sans-serif;
+    font-size: 1.5625rem; // 25px/16
+
+    @media only screen and (min-width: $breakpoint-tablet) {
+      font-size: map.get($font-sizes, "xl");
+      line-height: 4.1875rem; // 67px/16
+      margin: 2.5rem 0; // top&bottom: 40px/16; left&right: 0
+    }
+  }
+
+  &-image {
+    box-sizing: border-box;
   background-color: var(--light-background-color);
   border: 2px solid var(--foreground-color);
 
-  & img {
-    width: 100%;
-    max-height: 45rem;
+  @media (prefers-color-scheme: dark) {
+    border: 2px solid var(--background-color);
+  }
+
+    img {
+      width: 100%;
+      max-height: 45rem;
+    }
   }
 }
 
