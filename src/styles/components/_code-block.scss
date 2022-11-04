@@ -2,6 +2,7 @@ $breakpoint-tablet: 820px;
 
 .cmp-code-block {
   width: 100%;
+  background-color: var(--background-color);
 
   &__heading {
     font-size: 1.5625rem; // 25px/16
@@ -21,6 +22,10 @@ $breakpoint-tablet: 820px;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      @media (prefers-color-scheme: dark) {
+        filter: invert(1);
+      }
     }
 
     @media only screen and (min-width: $breakpoint-tablet) {
@@ -36,14 +41,14 @@ $breakpoint-tablet: 820px;
 
   &__content {
     padding: 1.875rem 1.25rem; // top&bottom: 30px/16; left&right: 20px/16
-    background-color: map.get($colors, "white");
-    color: map.get($colors, "black");
+    // background-color: map.get($colors, "white");
+    color: var(--foreground-color);
     line-height: 1.75rem; // 28px/16
     font-size: map.get($font-sizes, "xs");
     font-family: Oxygen, sans-serif;
     letter-spacing: 0.02em; // 2% in Figma
     margin-top: 1rem;
-    border: 2px solid map.get($colors, "black");
+    border: 2px solid var(--foreground-color);
 
     @media only screen and (min-width: $breakpoint-tablet) {
       padding: 2.5rem 3.75rem; // top&bottom: 40px/16; left&right: 60px/16
@@ -55,6 +60,11 @@ $breakpoint-tablet: 820px;
     margin: 0;
     white-space: pre;
     overflow-x: scroll;
+    outline: none;
+
+    &:focus {
+      border: 2px solid var(--accent-color);
+    }
   }
 
   code {

@@ -10,20 +10,17 @@ $breakpoint-tablet: 820px;
     outline: none;
 
     // sparkbox logo image
-    img {
+    svg {
       max-width: 12rem; // 192px/16
       width: 100%;
       height: auto;
       border: 2px solid transparent;
       transition: all 150ms ease-in-out;
+      fill: currentcolor;
     }
 
-    &:focus img {
+    &:focus svg {
       border: 2px solid var(--accent-color);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      filter: invert(1);
     }
   }
 

@@ -17,17 +17,29 @@ $breakpoint-tablet: 820px;
     height: auto;
     top: -1.8rem;
     left: -2rem;
+
+    @media (prefers-color-scheme: dark) {
+      filter: invert(1);
+    }
   }
 
   @media only screen and (min-width: $breakpoint-tablet) {
     background:
-      linear-gradient(to right, var(--background-color) 50%, transparent),
+      linear-gradient(to right, var(--background-color) 70%, transparent),
       url("../../../public/images/definition_text_light.svg");
     background-size: contain;
-    background-position-x: right;
+    background-position: center right -15px;
     background-repeat: no-repeat;
     margin: auto;
-    max-width: 59rem;
+
+    // max-width: 59rem;
+
+    @media (prefers-color-scheme: dark) {
+      background: linear-gradient(to right, var(--background-color) 70%, transparent), url("../../../public/images/definition_text_dark.svg");
+      background-size: contain;
+      background-position: center right -15px;
+      background-repeat: no-repeat;
+    }
 
     &__content {
       max-width: 70%;

@@ -50,7 +50,7 @@
       line-height: 4.6667rem; // 75px
       letter-spacing: 0.02em;
       border-top: 0.25rem solid var(--foreground-color);
-      background-color: var(--background-color);
+      background-color: var(--light-background-color);
       position: relative;
       text-align: center;
       display: block;
@@ -58,6 +58,10 @@
       @media (prefers-color-scheme: dark) {
         border-top: 0.25rem solid var(--background-color);
         background-color: var(--foreground-color);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        border-top: 0.25rem solid var(--background-color);
       }
 
       @media only screen and (min-width: $breakpoint-tablet) {

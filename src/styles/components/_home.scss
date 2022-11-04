@@ -6,8 +6,6 @@ $breakpoint-tablet: 820px;
   @include background-pattern;
 
   width: 100%;
-  background-color: var(--background-color);
-  color: var(--font-color);
 
   &-wrapper {
     background-color: var(--background-color);

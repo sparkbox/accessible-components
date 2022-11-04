@@ -17,13 +17,17 @@ export default function Home() {
                 we&#39;re adding new components frequently!
               </p>
             </div>
-            <div>
+            <picture>
+              <source
+                srcSet="/images/home-header-image_dark.svg"
+                media="(prefers-color-scheme: dark)"
+              />
               <img
                 className="home-top__top-image"
                 src="/images/home-header-image_light.svg"
                 alt="Illustration of dog surrounded by accessible components"
               />
-            </div>
+            </picture>
           </div>
         </div>
         <article className="components-grid">
