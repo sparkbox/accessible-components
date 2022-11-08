@@ -44,8 +44,8 @@ $breakpoint-tablet: 820px;
       width: 100%;
       min-height: 100%;
       background:
-    linear-gradient(to right, var(--background-color) 50%, transparent 0%),
-    url("../../../public/images/definition_text_light.svg");
+        linear-gradient(to right, var(--background-color) 50%, transparent 100%),
+        url("../../../public/images/definition_text_light.svg");
       background-size: contain;
       background-position: right;
       background-repeat: no-repeat;

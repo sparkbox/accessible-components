@@ -20,7 +20,7 @@ export default function Home() {
             <div>
               <img
                 className="home-top__top-image"
-                src="/images/home-header-image.svg"
+                src="/images/home-header-image_light.svg"
                 alt="Illustration of dog surrounded by accessible components"
               />
             </div>

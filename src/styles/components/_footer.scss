@@ -29,7 +29,6 @@
 
   // Flex items of content wrapper
   &__item {
-    //color: var(--foreground-color);
     width: 100%;
 
     // the first line of the footer has a smaller margin-bottom than the rest of the footer items.
@@ -48,7 +47,7 @@
   &__item > a {
     text-decoration: underline;
     color: var(--font-color);
-    background: linear-gradient(to left, transparent, var(--accent-color) 50%);
+    background: linear-gradient(to left, transparent 50%, var(--accent-color) 50%);
     background-size: 201% 100%;
     background-position: right bottom;
     transition: ease-in-out all 250ms;
@@ -65,7 +64,7 @@
   @media screen and (prefers-reduced-motion: reduce) {
     &__item > a:hover,
     &__item > a:focus-within {
-      background-color: var(--accent-color-icons);
+      background-color: var(--accent-color);
     }
   }
 
