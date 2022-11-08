@@ -21,8 +21,8 @@ $breakpoint-tablet: 820px;
 
   @media only screen and (min-width: $breakpoint-tablet) {
     background:
-    linear-gradient(to right, var(--background-color) 50%, transparent 0%),
-    url("../../../public/images/definition_text_light.svg");
+      linear-gradient(to right, var(--background-color) 50%, transparent),
+      url("../../../public/images/definition_text_light.svg");
     background-size: contain;
     background-position-x: right;
     background-repeat: no-repeat;

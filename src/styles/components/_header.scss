@@ -19,7 +19,11 @@ $breakpoint-tablet: 820px;
     }
 
     &:focus img {
-      border: 2px solid map.get($colors, "accent-teal");
+      border: 2px solid var(--accent-color);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      filter: invert(1);
     }
   }
 

@@ -6,14 +6,18 @@
 
   .component-card {
     margin: 0;
-    border: 2px solid var(--background-color);
+    border: 2px solid var(--foreground-color);
     display: flex;
     flex-direction: column-reverse;
     height: 21.875rem; // 350px/16
     width: 100%;
     cursor: pointer;
     transition: all 150ms ease-in-out;
-    color: var(--font-color);
+    color: var(--font-color-dark);
+
+    @media (prefers-color-scheme: dark) {
+      border: 2px solid var(--background-color);
+    }
 
     img {
       transition: all 150ms ease-in-out;
@@ -45,11 +49,16 @@
       font-size: 1.125rem; // 18px/16
       line-height: 4.6667rem; // 75px
       letter-spacing: 0.02em;
-      border-top: 0.25rem solid var(--background-color);
-      background-color: var(--foreground-color);
+      border-top: 0.25rem solid var(--foreground-color);
+      background-color: var(--background-color);
       position: relative;
       text-align: center;
       display: block;
+
+      @media (prefers-color-scheme: dark) {
+        border-top: 0.25rem solid var(--background-color);
+        background-color: var(--foreground-color);
+      }
 
       @media only screen and (min-width: $breakpoint-tablet) {
         font-size: map.get($font-sizes, "sm"); // 20px/16
