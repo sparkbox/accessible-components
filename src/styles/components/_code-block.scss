@@ -13,9 +13,8 @@ $breakpoint-tablet: 820px;
     &::after {
       content: "";
       background-image: url("../../../public/images/cmt_inventory_arrow.svg");
-      transform: rotate(-30deg);
+      transform: translateX(0.5rem) rotate(-30deg);
       position: absolute;
-      left: 11rem;
       top: -0.5rem;
       width: 2rem;
       height: 2.5rem;
@@ -29,7 +28,6 @@ $breakpoint-tablet: 820px;
       line-height: 2.5rem; // 40px/16
 
       &::after {
-        left: 13rem;
         width: 2.5rem;
         height: 3rem;
       }

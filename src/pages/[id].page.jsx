@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import getComponentDetails from '../utils/airtable';
 import RelatedComponents from '../components/RelatedComponents';
@@ -23,6 +24,25 @@ export default function Details({ details }) {
     alt: `${componentName} image`,
   };
 
+  const [htmlCode, setHtmlCode] = useState('');
+  const [cssCode, setCssCode] = useState('');
+  const [javascriptCode, setJavascriptCode] = useState('');
+
+  // dynamic imports need to be asynchronous
+  useEffect(() => {
+    const updateCodeBlocks = async () => {
+      const html = await import(`../code-examples/${slug}/html.js`);
+      setHtmlCode(html.default);
+
+      const css = await import(`../code-examples/${slug}/css.js`);
+      setCssCode(css.default);
+
+      const javascript = await import(`../code-examples/${slug}/javascript.js`);
+      setJavascriptCode(javascript.default);
+    };
+    updateCodeBlocks();
+  });
+
   return (
     <Layout pageTitle={componentName}>
       <div className="details-page">
@@ -31,18 +51,12 @@ export default function Details({ details }) {
           <p>{definition}</p>
         </Definition>
 
-        <CodeBlock
-          exportedCodeString={`<article>
-  <h1>Button component demo</h1>
-  <p>These three examples demo the <a href="https://davatron5000.github.io/a11y-nutrition-cards/components/button">Accessiblity Nutrition Card</a> for a button component.</p>
-  <hr />
-  <h2>Standard button</h2>
-  <button>A standard button</button>
-  <hr />
-  <h2>Button that uses <code>aria-label</code></h2>
-  <button aria-label="This is the text a screen reader would read">The aria-label overrides this</button>
-</article>`}
-        />
+        <CodeBlock name="HTML" exportedCodeString={htmlCode} />
+
+        <CodeBlock name="CSS" exportedCodeString={cssCode} />
+
+        <CodeBlock name="JS" exportedCodeString={javascriptCode} />
+
         <UsageGuidelines>
           <RichText markdown={usageGuidelines} />
         </UsageGuidelines>
