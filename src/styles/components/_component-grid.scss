@@ -4,18 +4,33 @@ $breakpoint-tablet: 820px;
 .components-grid {
   padding: 1.25rem; // 20px/16
   max-width: 100rem; // 1600px/16
+  place-items: center;
 
   @media only screen and (min-width: 100rem) {
-    margin: auto;
+    margin-inline: auto;
   }
 
   // grid heading
   &__heading {
+    position: relative;
     font-family: Viga, sans-serif;
     font-size: 1.5625rem; // 25px/16
     margin-bottom: 3.125rem; // 50px/16
     font-weight: 400;
     line-height: 2.125rem; // 34px/16
+
+    &::after {
+      @include doodle;
+
+      width: 50%;
+      height: 5rem;
+      background-image: url("../../../public/images/doodles/doodle_line.png");
+      background-size: 80%;
+      rotate: -10deg;
+      top: 0.5rem;
+      right: 4rem;
+      background-position: 0;
+    }
   }
 
   // grid list
@@ -35,7 +50,6 @@ $breakpoint-tablet: 820px;
 
     &--accordion {
       grid-area: accordion;
-      position: relative;
       overflow: hidden;
 
       img {
@@ -126,9 +140,126 @@ $breakpoint-tablet: 820px;
     &--max-scott {
       grid-area: max-scott;
       background-color: transparent;
-      width: 77%; // this closely matches the dimensions in Figma
-      margin: auto;
+      max-width: 275px; // this closely matches the dimensions in Figma
       height: auto;
+      margin: auto;
+    }
+
+    /* Add a squiggly line to every 5th list item, starting with the first */
+    &:nth-child(5n-4) {
+      position: relative;
+
+      &::before {
+        @include doodle;
+
+        width: 35%;
+        height: 8%;
+        background-image: url("../../../public/images/doodles/doodle_line.png");
+        top: -5%;
+        right: 0;
+        rotate: -10deg;
+        background-size: contain;
+        display: none;
+      }
+    }
+
+    /* Add a circle to every 5th list item, starting with second */
+    &:nth-child(5n-3) {
+      position: relative;
+
+      &::before {
+        @include doodle;
+
+        width: 12%;
+        height: 12%;
+        background-image: url("../../../public/images/doodles/doodle_o.png");
+        bottom: 7%;
+        right: -6%;
+        background-size: contain;
+        display: none;
+      }
+    }
+
+    /* Add a diamond to every 5th list item, starting with third */
+    &:nth-child(5n-2) {
+      position: relative;
+
+      &::before {
+        @include doodle;
+
+        width: 20%;
+        height: 20%;
+        background-image: url("../../../public/images/doodles/doodle_diamond.png");
+        background-size: contain;
+        rotate: 15deg;
+        top: -6%;
+        right: -10%;
+        display: none;
+      }
+    }
+
+    /* Add an 'X' doodle to every 5th list item, starting with the fourth */
+    &:nth-child(5n-1) {
+      position: relative;
+
+      &::before {
+        @include doodle;
+
+        width: 12%;
+        height: 12%;
+        background-image: url("../../../public/images/doodles/doodle_x.png");
+        background-size: contain;
+        top: -5%;
+        left: -2%;
+        display: none;
+      }
+    }
+
+    /* Add an arrow to every 5th list item, starting with fifth */
+    &:nth-child(5n) {
+      position: relative;
+
+      &::before {
+        @include doodle;
+
+        width: 30%;
+        height: 30%;
+        background-image: url("../../../public/images/doodles/doodle_arrow.png");
+        background-size: contain;
+        bottom: -15%;
+        left: -5%;
+        display: none;
+      }
+    }
+
+    /* Max is the last element and has unique doodle positions */
+    &:last-child {
+      position: relative;
+
+      &::before {
+        @include doodle;
+
+        width: 25%;
+        height: 25%;
+        background-image: url("../../../public/images/doodles/doodle_diamond.png");
+        background-size: contain;
+        display: inline-block;
+        top: 0%;
+        left: -15%;
+      }
+
+      &::after {
+        @include doodle;
+
+        width: 60%;
+        height: 25%;
+        background-image: url("../../../public/images/doodles/doodle_line.png");
+        rotate: -30deg;
+        bottom: -5%;
+        right: -28%;
+        background-size: contain;
+        background-position: 0;
+      }
     }
   }
 
@@ -138,6 +269,10 @@ $breakpoint-tablet: 820px;
 
     &__heading {
       font-size: map.get($font-sizes, "lg");
+
+      &::after {
+        display: none;
+      }
     }
 
     &__list {
@@ -178,6 +313,20 @@ $breakpoint-tablet: 820px;
 
       &--max-scott {
         grid-area: max-scott;
+        width: 77%;
+      }
+
+      // Show doodle
+      &:nth-child(n) {
+        &::before {
+          display: inline-block;
+        }
+      }
+
+      &:last-child {
+        &::before {
+          display: block;
+        }
       }
     }
   }

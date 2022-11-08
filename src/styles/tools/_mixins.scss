@@ -8,3 +8,10 @@ $breakpoint-tablet: 820px;
     background-size: 30%;
   }
 }
+
+@mixin doodle {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
