@@ -1,4 +1,6 @@
-$breakpoint-tablet: 820px;
+$breakpoint-increase-content-font-size: $breakpoint-scale-up;
+$breakpoint-increase-codeblock-font: $breakpoint-scale-up;
+$breakpoint-increase-padding: $breakpoint-scale-up;
 
 .cmp-code-block {
   width: 100%;
@@ -28,7 +30,7 @@ $breakpoint-tablet: 820px;
       }
     }
 
-    @media only screen and (min-width: $breakpoint-tablet) {
+    @media only screen and (min-width: $breakpoint-increase-content-font-size) {
       font-size: map.get($font-sizes, "md");
       line-height: 2.5rem; // 40px/16
 
@@ -50,7 +52,7 @@ $breakpoint-tablet: 820px;
     margin-top: 1rem;
     border: 2px solid var(--foreground-color);
 
-    @media only screen and (min-width: $breakpoint-tablet) {
+    @media (min-width: $breakpoint-scale-up) {
       padding: 2.5rem 3.75rem; // top&bottom: 40px/16; left&right: 60px/16
       margin: 0;
     }
@@ -74,7 +76,7 @@ $breakpoint-tablet: 820px;
     letter-spacing: 0.02em; // 2% in Figma
     font-family: Oxygen, sans-serif;
 
-    @media only screen and (min-width: $breakpoint-tablet) {
+    @media (min-width: $breakpoint-increase-codeblock-font) {
       font-size: map.get($font-sizes, "sm");
     }
   }

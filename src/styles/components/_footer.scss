@@ -1,3 +1,5 @@
+$breakpoint-footer-margin: 25em;
+
 .default-footer {
   background-color: var(--background-color);
   width: 100%;
@@ -21,7 +23,7 @@
     transition: 500ms color;
     letter-spacing: 0.02em; // 2% in Figma
 
-    @media only screen and (min-width: $breakpoint-tablet) {
+    @media (min-width: $breakpoint-large-screen-860) {
       line-height: 1.0625rem; /* 17px/16px */
       font-size: 1.25rem; /* 20px/16px */
     }
@@ -38,7 +40,7 @@
       margin-bottom: -1.875rem; // 30px/16
     }
 
-    @media only screen and (min-width: $breakpoint-tablet) {
+    @media (min-width: $breakpoint-large-screen-860) {
       &:first-child {
         margin-bottom: -43px; // this is to compensate for the 17px line-height once at tablet size
       }
@@ -55,7 +57,7 @@
     transition: ease-in-out all 250ms;
     outline: none;
 
-    @media screen and (prefers-reduced-motion: no-preference) {
+    @media (prefers-reduced-motion: no-preference) {
       &:hover,
       &:focus-within {
         color: var(--font-color-dark);
@@ -63,7 +65,7 @@
       }
     }
 
-    @media screen and (prefers-reduced-motion: reduce) {
+    @media (prefers-reduced-motion: reduce) {
       &:hover,
       &:focus-within {
         color: var(--font-color-dark);
@@ -91,7 +93,7 @@
       right: 0;
     }
 
-    @media only screen and (min-width: 400px) {
+    @media (min-width: $breakpoint-footer-margin) {
       margin: auto;
     }
 

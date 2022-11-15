@@ -2,6 +2,7 @@
 @use "sass:map";
 @import "./settings/colors";
 @import "./settings/font_map";
+@import "./settings/breakpoints";
 
 /* TOOLS: mixins, etc */
 @import "./tools/mixins";

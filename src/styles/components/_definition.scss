@@ -1,4 +1,4 @@
-$breakpoint-tablet: 820px;
+$breakpoint-background-image-size: 75rem;
 
 .cmp-definition {
   position: relative;
@@ -40,7 +40,7 @@ $breakpoint-tablet: 820px;
     letter-spacing: 0.02rem;
   }
 
-  @media only screen and (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-large-screen-860) {
     &__bg-text {
       position: absolute;
       top: 0;
@@ -56,7 +56,7 @@ $breakpoint-tablet: 820px;
       margin: auto;
       z-index: -1;
 
-      @media only screen and (max-width: 75rem) {
+      @media (max-width: $breakpoint-background-image-size) {
         background-size: cover;
       }
 

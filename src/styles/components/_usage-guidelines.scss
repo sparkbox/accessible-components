@@ -1,4 +1,4 @@
-$breakpoint-tablet: 860px;
+$breakpoint-usage-guidelines-display: 70rem;
 
 .cmp-usage-guidelines {
   display: flex;
@@ -55,7 +55,7 @@ $breakpoint-tablet: 860px;
   }
 }
 
-@media only screen and (min-width: $breakpoint-tablet) {
+@media (min-width: $breakpoint-usage-guidelines-display) {
   .cmp-usage-guidelines {
     background-color: var(--accent-color-background);
     width: 100%;

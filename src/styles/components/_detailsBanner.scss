@@ -1,5 +1,3 @@
-$breakpoint-tablet: 820px;
-
 .details-banner {
   // background-image: url("../../../public/images/background_image.svg");
   background-position: center;
@@ -15,7 +13,7 @@ $breakpoint-tablet: 820px;
     font-family: Viga, sans-serif;
     font-size: 1.5625rem; // 25px/16
 
-    @media only screen and (min-width: $breakpoint-tablet) {
+    @media (min-width: $breakpoint-scale-up) {
       font-size: map.get($font-sizes, "xl");
       line-height: 4.1875rem; // 67px/16
       margin: 2.5rem 0; // top&bottom: 40px/16; left&right: 0
@@ -38,7 +36,7 @@ $breakpoint-tablet: 820px;
   }
 }
 
-@media only screen and (min-width: $breakpoint-tablet) {
+@media (min-width: $breakpoint-large-screen-860) {
   .details-banner {
     h1 {
       font-size: 3.125rem;

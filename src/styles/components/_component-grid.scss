@@ -1,4 +1,14 @@
-$breakpoint-tablet: 820px;
+$breakpoint-accordion-small-355: 22rem;
+$breakpoint-accordion-small-390: 24rem;
+$breakpoint-accordion-small-420: 26rem;
+$breakpoint-accordion-small-460: 29rem;
+$breakpoint-accordion-small-475: 30rem;
+$breakpoint-accordion-medium-550: 34rem;
+$breakpoint-accordion-medium-580: 36rem;
+$breakpoint-accordion-medium-620: 39rem;
+$breakpoint-accordion-medium-665: 42rem;
+$breakpoint-accordion-medium-690: 43rem;
+$breakpoint-accordion-large-755: 47rem;
 
 // grid section
 .components-grid {
@@ -6,7 +16,7 @@ $breakpoint-tablet: 820px;
   max-width: 100rem; // 1600px/16
   place-items: center;
 
-  @media only screen and (min-width: 100rem) {
+  @media (min-width: 100rem) {
     margin-inline: auto;
   }
 
@@ -59,67 +69,67 @@ $breakpoint-tablet: 820px;
       }
 
       // the following breakpoints are where the accordion illustration starts breaking out of the container
-      @media only screen and (min-width: 355px) {
+      @media (min-width: $breakpoint-accordion-small-355) {
         img {
           bottom: -9rem;
         }
       }
 
-      @media only screen and (min-width: 390px) {
+      @media (min-width: $breakpoint-accordion-small-390) {
         img {
           bottom: -12rem;
         }
       }
 
-      @media only screen and (min-width: 420px) {
+      @media (min-width: $breakpoint-accordion-small-420) {
         img {
           bottom: -15rem;
         }
       }
 
-      @media only screen and (min-width: 460px) {
+      @media (min-width: $breakpoint-accordion-small-460) {
         img {
           bottom: -18rem;
         }
       }
 
-      @media only screen and (min-width: 475px) {
+      @media (min-width: $breakpoint-accordion-small-475) {
         img {
           bottom: -15rem;
         }
       }
 
-      @media only screen and (min-width: 550px) {
+      @media (min-width: $breakpoint-accordion-medium-550) {
         img {
           bottom: -18rem;
         }
       }
 
-      @media only screen and (min-width: 580px) {
+      @media (min-width: $breakpoint-accordion-medium-580) {
         img {
           bottom: -21rem;
         }
       }
 
-      @media only screen and (min-width: 620px) {
+      @media only screen and (min-width: $breakpoint-accordion-medium-620) {
         img {
           bottom: -25rem;
         }
       }
 
-      @media only screen and (min-width: 665px) {
+      @media only screen and (min-width: $breakpoint-accordion-medium-665) {
         img {
           bottom: -28rem;
         }
       }
 
-      @media only screen and (min-width: 690px) {
+      @media only screen and (min-width: $breakpoint-accordion-medium-690) {
         img {
           bottom: -23rem;
         }
       }
 
-      @media only screen and (min-width: 755px) {
+      @media (min-width: $breakpoint-accordion-large-755) {
         img {
           bottom: -28rem;
         }
@@ -264,7 +274,7 @@ $breakpoint-tablet: 820px;
     }
   }
 
-  @media only screen and (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-grid-large-screen-1115) {
     // grid section
     padding: 5rem 8.5625rem; // top&bottom: 80px/16; left&right: 137px/16
 
