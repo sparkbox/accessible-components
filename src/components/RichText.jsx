@@ -7,7 +7,11 @@ export default function RichText({ markdown }) {
   const htmlFromMd = marked.parse(markdown.replace(/\\/g, ''), {
     breaks: true,
   });
-  const cleanHtml = DOMPurify.sanitize(htmlFromMd, { FORBID_TAGS: ['title'] });
+  const withKbdElements = htmlFromMd.replace(/\[\[(.+?)\]\]/g, '<kbd>$1</kbd>');
+
+  const cleanHtml = DOMPurify.sanitize(withKbdElements, {
+    FORBID_TAGS: ['title'],
+  });
   return (
     <div
       data-testid="richtext"

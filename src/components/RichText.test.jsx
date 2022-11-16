@@ -36,7 +36,15 @@ it('Generates <code> tags from markdown with text in `backticks` and creates nec
   expect(codeTagOutput).toMatch(expectedHtml);
 });
 
-/* Sanitiation */
+it('Replaces double brackets from markdown with <kbd> HTML elements', () => {
+  const bracketMd = '[[Enter]] or [[Space]]: some test code';
+  const expectedHtml = '<p><kbd>Enter</kbd> or <kbd>Space</kbd>: some test code</p>';
+  render(<RichText markdown={bracketMd} />);
+  const newKbdElements = screen.queryByTestId('richtext').innerHTML;
+  expect(newKbdElements).toMatch(expectedHtml);
+});
+
+/* Sanitation */
 // This can be adjusted if we decide we need stricter sanitation.
 it('Removes dangerous <html>, <body>, and <head> tags from strings, leaving their contents', () => {
   const htmlMd = "Shouldn't <body>have</body> <head>any</head> breaking <html>tags</html> in the output.";
