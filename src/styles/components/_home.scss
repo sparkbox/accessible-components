@@ -43,14 +43,6 @@ $breakpoint-tablet: 820px;
     margin: 3.75rem 0; // top&bottom: 60px/16; left&right: 0
   }
 
-  &__date-updated {
-    font-family: Oxygen, sans-serif;
-    font-size: map.get($font-sizes, "xs");
-    text-align: center;
-    line-height: 1.75rem; // 28px/16
-    letter-spacing: 0.02em; // 2% in Figma
-  }
-
   // the tablet breakpoint does leave some issues with the hero section
   // these styles are NOT in the design, but are here to just fix up the
   // visual experience for tablets
@@ -78,11 +70,6 @@ $breakpoint-tablet: 820px;
       &__top-image {
         margin: 0;
       }
-    }
-
-    &__date-updated {
-      text-align: left;
-      font-size: map.get($font-sizes, "sm");
     }
   }
 

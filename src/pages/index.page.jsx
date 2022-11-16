@@ -70,10 +70,6 @@ export default function Home() {
               />
             </li>
           </ul>
-          <p className="home__date-updated">
-            Updated:
-            <time dateTime="2022-12-16"> mm/dd/yyyy</time>
-          </p>
         </article>
       </div>
     </Layout>
