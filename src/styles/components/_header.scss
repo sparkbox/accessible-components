@@ -1,29 +1,28 @@
-// sparkbox header
+$breakpoint-tablet: 820px;
+
+// "accessible components" header
 .cmp-header {
   padding: 1rem; // 16px
   max-width: 100rem; // 1600px/16
+  letter-spacing: 0.02em; // other letter-spacing in Figma is the same
+  font-size: map.get($font-sizes, "xs");
+  color: var(--foreground-color);
 
   // anchor tag
   &__link {
     outline: none;
+    border-bottom: 2px solid transparent;
+    transition: all 150ms ease-in-out;
 
-    // sparkbox logo image
-    svg {
-      max-width: 12rem; // 192px/16
-      width: 100%;
-      height: auto;
-      border: 2px solid transparent;
-      transition: all 150ms ease-in-out;
-      fill: currentcolor;
-    }
-
-    &:focus svg {
-      border: 2px solid var(--accent-color);
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid var(--accent-color);
     }
   }
 
   @media (min-width: $breakpoint-large-screen-860) {
-    padding: 1rem 1.25rem 0 8.5625rem; // top: 16px/16; right: 20px/16; bottom: 0; left: 137px/16
+    padding: 1rem 1.25rem 1rem 8.5625rem; // top: 16px/16; right: 20px/16; bottom: 16px/16; left: 137px/16
+    font-size: map.get($font-sizes, "sm");
   }
 
   @media (min-width: 100rem) {
