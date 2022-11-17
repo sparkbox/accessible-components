@@ -1,12 +1,15 @@
 .details-banner {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   line-height: 2.125rem; // 28px
   letter-spacing: 0.02em; // 2% in Figma
+  max-width: 82.875rem; // compensates for 8.5625rem padding on left/right
 
-  @media (min-width: $breakpoint-large-screen-860) {
-    margin: -8.5625rem;
+  @media only screen and (min-width: 100rem) {
+    margin: auto;
+  }
+
+  @media (min-width: $breakpoint-scale-up) {
+    font-size: map.get($font-sizes, "xl");
+    line-height: 1.4; // 70px/16 (get the line-height number from the target-line-height/font-size; 70 / 50)
   }
 
   h1 {
@@ -16,15 +19,15 @@
     font-family: Viga, sans-serif;
     font-size: 1.5625rem; // 25px/16
 
-    @media (min-width: $breakpoint-large-screen-860) {
+    @media (min-width: $breakpoint-scale-up) {
       font-size: map.get($font-sizes, "xl");
-      line-height: 4.1875rem; // 67px/16
-      margin: 2.5rem 0; // top&bottom: 40px/16; left&right: 0
+      line-height: 1.4; // 70px/16
     }
   }
 
   &-image {
     box-sizing: border-box;
+    width: 100%;
     background-color: var(--light-background-color);
     border: 2px solid var(--foreground-color);
 

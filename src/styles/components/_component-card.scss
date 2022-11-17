@@ -37,7 +37,7 @@ $breakpoint-illustration-large: $breakpoint-large-screen-860;
       height: 40rem; // 640px/16px
     }
 
-    @media (min-width: $breakpoint-illustration-large) {
+    @media (min-width: $breakpoint-scale-up) {
       height: 100%;
     }
 
@@ -46,7 +46,8 @@ $breakpoint-illustration-large: $breakpoint-large-screen-860;
     }
 
     &__header {
-      font-family: "Oxygen Bold", sans-serif;
+      font-family: Oxygen, sans-serif;
+      font-weight: 700;
       z-index: 1;
       font-size: 1.125rem; // 18px/16
       line-height: 4.6667rem; // 75px

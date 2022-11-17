@@ -62,6 +62,7 @@ $breakpoint-increase-padding: $breakpoint-scale-up;
     margin: 0;
     white-space: pre;
     overflow-x: scroll;
+    border: 2px solid transparent;
     outline: none;
 
     &:focus {

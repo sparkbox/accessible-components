@@ -16,7 +16,7 @@ $breakpoint-accordion-large-755: 47rem;
   max-width: 100rem; // 1600px/16
   place-items: center;
 
-  @media (min-width: $breakpoint-grid-large-screen-1115) {
+  @media (min-width: $breakpoint-scale-up) {
     padding: 5rem 8.5625rem; // top&bottom: 80px/16; left&right: 137px/16
   }
 
@@ -37,16 +37,20 @@ $breakpoint-accordion-large-755: 47rem;
       @include doodle;
 
       width: 50%;
-      height: 5rem;
+      height: 100%;
       background-image: url("../../../public/images/doodles/doodle_line.png");
       background-size: 80%;
       rotate: -10deg;
       top: 0.5rem;
-      right: 4rem;
+      right: -1rem;
       background-position: 0;
+
+      @media only screen and (min-width: $breakpoint-accordion-medium-550) {
+        height: 5rem;
+      }
     }
 
-    @media (min-width: $breakpoint-grid-large-screen-1115) {
+    @media (min-width: $breakpoint-scale-up) {
       font-size: map.get($font-sizes, "lg");
 
       &::after {
@@ -59,7 +63,7 @@ $breakpoint-accordion-large-755: 47rem;
   &__list {
     text-align: center;
 
-    @media (min-width: $breakpoint-grid-large-screen-1115) {
+    @media (min-width: $breakpoint-scale-up) {
       display: grid;
       gap: 1rem;
       list-style: none;
@@ -81,7 +85,7 @@ $breakpoint-accordion-large-755: 47rem;
     align-items: flex-start;
     color: var(--font-color-dark);
 
-    @media (min-width: $breakpoint-grid-large-screen-1115) {
+    @media (min-width: $breakpoint-scale-up) {
       margin-bottom: 0;
     }
 
@@ -89,7 +93,7 @@ $breakpoint-accordion-large-755: 47rem;
       grid-area: accordion;
       overflow: hidden;
 
-      @media (min-width: $breakpoint-grid-large-screen-1115) {
+      @media (min-width: $breakpoint-scale-up) {
         position: static;
         overflow: visible;
       }
@@ -143,7 +147,7 @@ $breakpoint-accordion-large-755: 47rem;
           bottom: -28rem;
         }
 
-        @media (min-width: $breakpoint-grid-large-screen-1115) {
+        @media (min-width: $breakpoint-scale-up) {
           position: static;
           bottom: 0;
         }
@@ -186,7 +190,7 @@ $breakpoint-accordion-large-755: 47rem;
         background-size: contain;
         display: none;
 
-        @media (min-width: $breakpoint-grid-large-screen-1115) {
+        @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
         }
       }
@@ -284,30 +288,39 @@ $breakpoint-accordion-large-755: 47rem;
       &::before {
         @include doodle;
 
-        width: 25%;
-        height: 25%;
+        width: 20%;
+        height: 20%;
+        min-width: 3rem;
+        min-height: 3rem;
         background-image: url("../../../public/images/doodles/doodle_diamond.png");
         background-size: contain;
         display: inline-block;
         top: 0%;
-        left: -15%;
+        left: 0.25rem;
 
-        @media (min-width: $breakpoint-grid-large-screen-1115) {
-          display: block;
+        @media (min-width: $breakpoint-accordion-small-475) {
+          width: 25%;
+          height: 25%;
+          left: -15%;
         }
       }
 
       &::after {
         @include doodle;
 
-        width: 60%;
+        width: 40%;
         height: 25%;
         background-image: url("../../../public/images/doodles/doodle_line.png");
         rotate: -30deg;
-        bottom: -5%;
-        right: -28%;
+        bottom: -8%;
+        right: -3%;
         background-size: contain;
         background-position: 0;
+
+        @media (min-width: $breakpoint-accordion-small-475) {
+          width: 60%;
+          right: -30%;
+        }
       }
     }
   }

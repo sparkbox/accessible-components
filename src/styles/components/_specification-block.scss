@@ -147,11 +147,11 @@
     @media (prefers-reduced-motion: no-preference) {
       &:hover,
       &:focus {
-        outline: 1px solid var(--foreground-color);
+        outline: 2px solid var(--foreground-color);
         text-decoration: none;
 
         @media (prefers-color-scheme: dark) {
-          outline: 1px solid var(--accent-color);
+          outline: 2px solid var(--accent-color);
         }
       }
     }

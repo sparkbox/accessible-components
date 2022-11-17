@@ -19,60 +19,64 @@ $breakpoint-top-section-scale-up: 70rem;
     color: var(--foreground-color);
     max-width: 100rem; // 1600px/16
 
-    @media (min-width: $breakpoint-top-section-margin) {
-      margin: auto;
-    }
-
-    @media (min-width: $breakpoint-large-screen-860) {
+    @media (min-width: $breakpoint-scale-up) {
       padding: 0 1.25rem 1.25rem 8.5625rem; // top&bottom: 0; right: 20px/16; left: 137px/16
       display: flex;
       flex-basis: 100%;
       justify-content: space-between;
       margin-top: 2rem;
     }
-  }
 
-  &-top__text-column {
-    @media (min-width: $breakpoint-large-screen-860) {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex-basis: 0 0 60%;
-      padding-right: 1.875rem; // 30px/16
+    @media (min-width: $breakpoint-top-section-margin) {
+      margin: auto;
     }
 
-    h1 {
-      font-size: 1.5625rem; // 25px/16
-      font-weight: 400;
-      line-height: 2.125rem; // 34px/16
-
-      @media (min-width: $breakpoint-large-screen-860) {
-        font-size: map.get($font-sizes, "md");
-        margin: 0;
+    &__text-column {
+      @media (min-width: $breakpoint-scale-up) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-basis: 0 0 60%;
+        padding-right: 1.875rem; // 30px/16
       }
 
-      @media (min-width: $breakpoint-top-section-scale-up) {
-        font-size: map.get($font-sizes, "xl");
-        margin: 0;
-        line-height: 4.1875rem; // 67px/16
+      h1 {
+        font-size: 1.5625rem; // 25px/16
+        font-weight: 400;
+        line-height: 1.36; // 34px/25
+
+        @media (min-width: $breakpoint-scale-up) {
+          font-size: map.get($font-sizes, "md");
+          margin: 0;
+        }
+
+        @media (min-width: $breakpoint-grid-large-screen-1115) {
+          font-size: map.get($font-sizes, "xl");
+          margin: 0;
+          line-height: 1.4; // 70px/50
+        }
+      }
+
+      p {
+        font-size: map.get($font-sizes, "xs");
+        margin: 1.25rem 0 0; // top: 20px/16; bottom&left&right: 0
+        line-height: 1.75; // 28px/16
+        letter-spacing: 0.02em;
+        max-width: 70ch;
+
+        @media (min-width: $breakpoint-scale-up) {
+          font-size: map.get($font-sizes, "sm");
+        }
       }
     }
 
-    p {
-      font-size: map.get($font-sizes, "xs");
-      margin: 1.25rem 0 0; // top: 20px/16; bottom&left&right: 0
-      line-height: 1.75rem; // 28px/16
-      letter-spacing: 0.02em;
-      max-width: 70ch;
-    }
-  }
+    &__top-image {
+      width: 100%;
+      margin: 3.75rem 0; // top&bottom: 60px/16; left&right: 0
 
-  &-top__top-image {
-    width: 100%;
-    margin: 3.75rem 0; // top&bottom: 60px/16; left&right: 0
-
-    @media (min-width: $breakpoint-large-screen-860) {
-      margin: 0;
+      @media (min-width: $breakpoint-scale-up) {
+        margin: 0;
+      }
     }
   }
 }

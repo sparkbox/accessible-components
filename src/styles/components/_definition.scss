@@ -1,17 +1,52 @@
 $breakpoint-background-image-size: 75rem;
 
 .cmp-definition {
-  position: relative;
   line-height: 1.75rem;
   color: var(--foreground-color);
+  width: 100%;
+  position: relative;
+  margin: 2.5rem 0 0; // top: 40px; left&right: 0; bottom: 0;
 
-  // the text column
-  &__text {
-    padding: 0;
-    max-width: 60ch;
+  @media (min-width: $breakpoint-scale-up) {
+    margin-bottom: -8.5625rem; // compensates for code example padding
+    background-image: url("../../../public/images/definition_text_light.svg");
+    background-size: contain;
+    background-position: center right -3rem;
+    background-repeat: repeat-x;
 
-    @media (min-width: $breakpoint-large-screen-860) {
-      padding: 8rem 0;
+    @media (prefers-color-scheme: dark) {
+      background-image: url("../../../public/images/definition_text_dark.svg");
+    }
+  }
+
+  &__container {
+    width: 100%;
+    background: linear-gradient(to right, var(--background-color) 80%, transparent);
+    padding: 1.25rem;
+
+    @media (min-width: $breakpoint-background-image-size) {
+      background: linear-gradient(to right, var(--background-color) 70%, transparent);
+    }
+
+    @media (min-width: 100rem) {
+      background: linear-gradient(to right, var(--background-color) 50%, transparent);
+    }
+  }
+
+  // the entire text column
+  &__content {
+    font-size: map.get($font-sizes, "xs");
+    letter-spacing: 0.02rem;
+    max-width: 100rem;
+
+    @media (min-width: 100rem) {
+      margin: auto;
+    }
+
+    @media (min-width: $breakpoint-scale-up) {
+      position: relative;
+      font-size: map.get($font-sizes, "sm");
+      padding: 2.5rem 8.5625rem;
     }
   }
 
@@ -39,57 +74,20 @@ $breakpoint-background-image-size: 75rem;
       }
     }
 
-    @media (min-width: $breakpoint-large-screen-860) {
+    @media (min-width: $breakpoint-scale-up) {
       font-size: map.get($font-sizes, "md");
 
       &::after {
-        content: "";
         top: -2.5rem;
         left: -2.2rem;
-        width: 15rem;
-        height: 6rem;
         background-size: 100%;
       }
     }
   }
 
-  // airtable paragraphs, not including the heading
-  &__content {
-    font-size: map.get($font-sizes, "xs");
-    letter-spacing: 0.02rem;
-
-    @media (min-width: $breakpoint-large-screen-860) {
-      position: relative;
-      font-size: map.get($font-sizes, "sm");
-    }
-  }
-
-  // show the background definition text
-  @media (min-width: $breakpoint-large-screen-860) {
-    &__bg-text {
-      position: absolute;
-      top: 0;
-      right: -10rem;
-      width: 100%;
-      min-height: 100%;
-      background:
-        linear-gradient(to right, var(--background-color) 50%, transparent),
-        url("../../../public/images/definition_text_light.svg");
-      background-size: contain;
-      background-position: right;
-      background-repeat: no-repeat;
-      margin: auto;
-      z-index: -1;
-
-      @media (prefers-color-scheme: dark) {
-        right: -7rem;
-        background: linear-gradient(to right, var(--background-color) 50%, transparent), url("../../../public/images/definition_text_dark.svg");
-        background-size: contain;
-        background-position: right;
-        background-repeat: no-repeat;
-        margin: auto;
-        z-index: -1;
-      }
-    }
+  // the airtable data, not including the heading
+  &__text {
+    padding: 0;
+    max-width: 60ch;
   }
 }

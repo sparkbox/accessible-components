@@ -46,14 +46,12 @@ export default function Details({ details }) {
   return (
     <Layout pageTitle={componentName}>
       <div className="details-page__header">
-        <div className="details-page__primary">
-          <DetailsBanner name={componentName} image={image} />
-        </div>
+        <DetailsBanner name={componentName} image={image} />
       </div>
+      <Definition>
+        <RichText markdown={definition} />
+      </Definition>
       <div className="details-page__primary">
-        <Definition>
-          <RichText markdown={definition} />
-        </Definition>
         <CodeBlock name="HTML" exportedCodeString={htmlCode} />
         <CodeBlock name="CSS" exportedCodeString={cssCode} />
         <CodeBlock name="JS" exportedCodeString={javascriptCode} />

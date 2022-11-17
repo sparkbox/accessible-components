@@ -1,3 +1,5 @@
+$breakpoint-move-arrow-left: 38.125rem; // 610px/16
+
 .rel-component {
   background-color: var(--accent-color);
   color: var(--font-color-highlight);
@@ -41,11 +43,14 @@
         filter: invert(1);
       }
 
-      @media (min-width: $breakpoint-scale-up) {
-        right: 6rem;
-        top: -3.25rem;
+      @media (min-width: $breakpoint-move-arrow-left) {
+        right: 85%;
         width: 2.875rem; // 46px/16
         height: 3.5625rem; // 57px/16
+      }
+
+      @media (min-width: $breakpoint-large-screen-860) {
+        right: 50%;
       }
     }
   }
@@ -77,11 +82,19 @@
 
     &:hover,
     &:focus {
-      outline: 1px solid var(--foreground-color);
+      outline: 2px solid var(--foreground-color);
       text-decoration: none;
 
       @media (prefers-color-scheme: dark) {
-        outline: 1px solid var(--accent-color);
+        outline: 2px solid var(--accent-color);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      &:hover,
+      &:focus {
+        outline: 2px solid var(--foreground-color);
+        text-decoration: none;
       }
     }
   }
