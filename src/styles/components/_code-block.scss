@@ -30,7 +30,7 @@ $breakpoint-increase-padding: $breakpoint-scale-up;
       }
     }
 
-    @media only screen and (min-width: $breakpoint-increase-content-font-size) {
+    @media (min-width: $breakpoint-increase-content-font-size) {
       font-size: map.get($font-sizes, "md");
       line-height: 2.5rem; // 40px/16
 

@@ -8,6 +8,15 @@ $breakpoint-tablet: 820px;
   font-size: map.get($font-sizes, "xs");
   color: var(--foreground-color);
 
+  @media (min-width: $breakpoint-scale-up) {
+    padding: 1rem 1.25rem 1rem 8.5625rem; // top: 16px/16; right: 20px/16; bottom: 16px/16; left: 137px/16
+    font-size: map.get($font-sizes, "sm");
+  }
+
+  @media (min-width: 100rem) {
+    margin: auto;
+  }
+
   // anchor tag
   &__link {
     outline: none;
@@ -18,14 +27,5 @@ $breakpoint-tablet: 820px;
     &:focus {
       border-bottom: 2px solid var(--accent-color);
     }
-  }
-
-  @media (min-width: $breakpoint-large-screen-860) {
-    padding: 1rem 1.25rem 1rem 8.5625rem; // top: 16px/16; right: 20px/16; bottom: 16px/16; left: 137px/16
-    font-size: map.get($font-sizes, "sm");
-  }
-
-  @media (min-width: 100rem) {
-    margin: auto;
   }
 }

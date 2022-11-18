@@ -1,10 +1,13 @@
 .details-banner {
-  // background-image: url("../../../public/images/background_image.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   line-height: 2.125rem; // 28px
   letter-spacing: 0.02em; // 2% in Figma
+
+  @media (min-width: $breakpoint-large-screen-860) {
+    margin: -8.5625rem;
+  }
 
   h1 {
     margin: 1.875rem 0; // top&bottom: 30px/16; left&right: 0
@@ -13,7 +16,7 @@
     font-family: Viga, sans-serif;
     font-size: 1.5625rem; // 25px/16
 
-    @media (min-width: $breakpoint-scale-up) {
+    @media (min-width: $breakpoint-large-screen-860) {
       font-size: map.get($font-sizes, "xl");
       line-height: 4.1875rem; // 67px/16
       margin: 2.5rem 0; // top&bottom: 40px/16; left&right: 0
@@ -32,15 +35,6 @@
     img {
       width: 100%;
       max-height: 45rem;
-    }
-  }
-}
-
-@media (min-width: $breakpoint-large-screen-860) {
-  .details-banner {
-    h1 {
-      font-size: 3.125rem;
-      margin: 2.5rem 0;
     }
   }
 }

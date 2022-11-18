@@ -17,15 +17,15 @@ $breakpoint-illustration-large: $breakpoint-large-screen-860;
     transition: all 150ms ease-in-out;
     border: 2px solid var(--foreground-color);
 
-    @media (prefers-color-scheme: dark) {
-      border: 2px solid var(--background-color);
-    }
-
     img {
       transition: all 150ms ease-in-out;
       width: 100%;
       height: auto;
       margin: auto;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      border: 2px solid var(--background-color);
     }
 
     // the following breakpoints are where certain illustrations try to break out of their containers
@@ -62,11 +62,7 @@ $breakpoint-illustration-large: $breakpoint-large-screen-860;
         background-color: var(--foreground-color);
       }
 
-      @media (prefers-color-scheme: dark) {
-        border-top: 0.25rem solid var(--background-color);
-      }
-
-      @media only screen and (min-width: $breakpoint-scale-up) {
+      @media (min-width: $breakpoint-scale-up) {
         font-size: map.get($font-sizes, "sm"); // 20px/16
       }
 

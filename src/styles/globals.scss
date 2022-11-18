@@ -18,15 +18,15 @@
 @import "./elements/kbd";
 
 /* LAYOUT/OBJECTS: objects, grids, flexbox etc */
+@import "./components/layout";
+@import "./components/component-grid";
 
 /* COMPONENTS: most of the work goes here! BEM classes, headers/footers/carousels, etc */
 @import "./components/home";
 @import "./components/details-page";
 @import "./components/header";
 @import "./components/component-card";
-@import "./components/component-grid";
 @import "./components/footer";
-@import "./components/layout";
 @import "./components/specification-block";
 @import "./components/definition";
 @import "./components/detailsBanner";

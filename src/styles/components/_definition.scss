@@ -5,6 +5,16 @@ $breakpoint-background-image-size: 75rem;
   line-height: 1.75rem;
   color: var(--foreground-color);
 
+  // the text column
+  &__text {
+    padding: 0;
+    max-width: 60ch;
+
+    @media (min-width: $breakpoint-large-screen-860) {
+      padding: 8rem 0;
+    }
+  }
+
   &__heading {
     position: relative;
     font-family: Viga, sans-serif;
@@ -28,18 +38,33 @@ $breakpoint-background-image-size: 75rem;
         filter: invert(1);
       }
     }
+
+    @media (min-width: $breakpoint-large-screen-860) {
+      font-size: map.get($font-sizes, "md");
+
+      &::after {
+        content: "";
+        top: -2.5rem;
+        left: -2.2rem;
+        width: 15rem;
+        height: 6rem;
+        background-size: 100%;
+      }
+    }
   }
 
-  &__text {
-    padding: 0;
-    max-width: 60ch;
-  }
-
+  // airtable paragraphs, not including the heading
   &__content {
     font-size: map.get($font-sizes, "xs");
     letter-spacing: 0.02rem;
+
+    @media (min-width: $breakpoint-large-screen-860) {
+      position: relative;
+      font-size: map.get($font-sizes, "sm");
+    }
   }
 
+  // show the background definition text
   @media (min-width: $breakpoint-large-screen-860) {
     &__bg-text {
       position: absolute;
@@ -56,10 +81,6 @@ $breakpoint-background-image-size: 75rem;
       margin: auto;
       z-index: -1;
 
-      @media (max-width: $breakpoint-background-image-size) {
-        background-size: cover;
-      }
-
       @media (prefers-color-scheme: dark) {
         right: -7rem;
         background: linear-gradient(to right, var(--background-color) 50%, transparent), url("../../../public/images/definition_text_dark.svg");
@@ -69,28 +90,6 @@ $breakpoint-background-image-size: 75rem;
         margin: auto;
         z-index: -1;
       }
-    }
-
-    &__heading {
-      font-size: map.get($font-sizes, "md");
-
-      &::after {
-        content: "";
-        top: -2.5rem;
-        left: -2.2rem;
-        width: 15rem;
-        height: 6rem;
-        background-size: 100%;
-      }
-    }
-
-    &__content {
-      position: relative;
-      font-size: map.get($font-sizes, "sm");
-    }
-
-    &__text {
-      padding: 8rem 0;
     }
   }
 }

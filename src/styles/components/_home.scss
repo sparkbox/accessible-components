@@ -22,13 +22,40 @@ $breakpoint-top-section-scale-up: 70rem;
     @media (min-width: $breakpoint-top-section-margin) {
       margin: auto;
     }
+
+    @media (min-width: $breakpoint-large-screen-860) {
+      padding: 0 1.25rem 1.25rem 8.5625rem; // top&bottom: 0; right: 20px/16; left: 137px/16
+      display: flex;
+      flex-basis: 100%;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
   }
 
   &-top__text-column {
+    @media (min-width: $breakpoint-large-screen-860) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-basis: 45%;
+      padding-right: 1.875rem; // 30px/16
+    }
+
     h1 {
       font-size: 1.5625rem; // 25px/16
       font-weight: 400;
       line-height: 2.125rem; // 34px/16
+
+      @media (min-width: $breakpoint-large-screen-860) {
+        font-size: map.get($font-sizes, "md");
+        margin: 0;
+      }
+
+      @media (min-width: $breakpoint-top-section-scale-up) {
+        font-size: map.get($font-sizes, "xl");
+        margin: 0;
+        line-height: 4.1875rem; // 67px/16
+      }
     }
 
     p {
@@ -42,57 +69,9 @@ $breakpoint-top-section-scale-up: 70rem;
   &-top__top-image {
     width: 100%;
     margin: 3.75rem 0; // top&bottom: 60px/16; left&right: 0
-  }
 
-  &__date-updated {
-    font-family: Oxygen, sans-serif;
-    font-size: map.get($font-sizes, "xs");
-    text-align: center;
-    line-height: 1.75rem; // 28px/16
-    letter-spacing: 0.02em; // 2% in Figma
-  }
-
-  // these styles are NOT in the design, but are here to just fix up the
-  // visual experience for tablets
-  @media (min-width: $breakpoint-large-screen-860) {
-    &-top {
-      padding: 0 1.25rem 1.25rem 8.5625rem; // top&bottom: 0; right: 20px/16; left: 137px/16
-      display: flex;
-      flex-basis: 100%;
-      justify-content: space-between;
-      margin-top: 2rem;
-
-      &__text-column {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex-basis: 45%;
-        padding-right: 1.875rem; // 30px/16
-
-        h1 {
-          font-size: map.get($font-sizes, "md");
-          margin: 0;
-        }
-      }
-
-      &__top-image {
-        margin: 0;
-      }
-    }
-  }
-
-  // this is where the font styles in the designs are officially applied
-  @media (min-width: $breakpoint-top-section-scale-up) {
-    &-top {
-      h1 {
-        font-size: map.get($font-sizes, "xl");
-        margin: 0;
-        line-height: 4.1875rem; // 67px/16
-      }
-
-      p {
-        font-size: map.get($font-sizes, "sm");
-      }
+    @media (min-width: $breakpoint-large-screen-860) {
+      margin: 0;
     }
   }
 }

@@ -14,12 +14,27 @@ $breakpoint-usage-guidelines-display: 70rem;
     color: var(--font-color-dark);
   }
 
+  @media (min-width: $breakpoint-usage-guidelines-display) {
+    width: 100%;
+    max-width: 100rem;
+    display: flex;
+    flex-direction: row;
+
+    &__text {
+      max-width: 60ch;
+    }
+  }
+
   &__heading {
     position: relative;
     font-family: Viga, sans-serif;
     font-weight: 400;
     font-size: 1.5625rem;
     margin-top: 0;
+
+    @media (min-width: $breakpoint-usage-guidelines-display) {
+      font-size: map.get($font-sizes, "md");
+    }
   }
 
   &__image {
@@ -27,11 +42,22 @@ $breakpoint-usage-guidelines-display: 70rem;
     width: 80%;
     max-width: 30rem;
     margin: 0 auto -3rem;
+
+    @media (min-width: $breakpoint-usage-guidelines-display) {
+      position: relative;
+      width: 60%;
+      max-width: 35rem;
+      margin: -5rem auto;
+    }
   }
 
   p {
     line-height: 1.875rem;
     font-size: map.get($font-sizes, "xs");
+
+    @media (min-width: $breakpoint-usage-guidelines-display) {
+      font-size: map.get($font-sizes, "sm");
+    }
   }
 
   ul {
@@ -51,35 +77,6 @@ $breakpoint-usage-guidelines-display: 70rem;
       height: 1rem;
       left: -1.75rem;
       top: 0.5rem;
-    }
-  }
-}
-
-@media (min-width: $breakpoint-usage-guidelines-display) {
-  .cmp-usage-guidelines {
-    background-color: var(--accent-color-background);
-    width: 100%;
-    max-width: 100rem;
-    display: flex;
-    flex-direction: row;
-
-    p {
-      font-size: map.get($font-sizes, "sm");
-    }
-
-    &__heading {
-      font-size: map.get($font-sizes, "md");
-    }
-
-    &__text {
-      max-width: 60ch;
-    }
-
-    &__image {
-      position: relative;
-      width: 60%;
-      max-width: 35rem;
-      margin: -5rem auto;
     }
   }
 }

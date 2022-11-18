@@ -57,7 +57,6 @@ export default function Details({ details }) {
         <CodeBlock name="HTML" exportedCodeString={htmlCode} />
         <CodeBlock name="CSS" exportedCodeString={cssCode} />
         <CodeBlock name="JS" exportedCodeString={javascriptCode} />
-
       </div>
       <div className="details-page__banner">
         <div className="details-page__secondary details-page__secondary--usage-guidelines">

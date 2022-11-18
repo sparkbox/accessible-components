@@ -9,6 +9,11 @@
     @media (prefers-color-scheme: dark) {
       background-image: url("../../../public/images/background_image-light.svg");
     }
+
+    @media (min-width: $breakpoint-large-screen-860) {
+      padding: 5rem 8.5625rem;
+      gap: 1rem;
+    }
   }
 
   &__banner {
@@ -32,6 +37,11 @@
     padding: 3.75rem 1.25rem;
     max-width: 100rem; // 1600px;
     overflow: hidden;
+
+    @media (min-width: $breakpoint-scale-up) {
+      padding: 8.5625rem;
+      gap: 1rem;
+    }
   }
 
   &__secondary {
@@ -40,27 +50,15 @@
     margin: auto;
     padding: 3.75rem 1.25rem;
     max-width: 100rem;
-  }
 
-  @media (prefers-color-scheme: dark) {
-    &__secondary--usage-guidelines {
-      background-color: var(--accent-color-background);
-    }
-
-    &__secondary--related-components {
-      background-color: var(--background-color);
-    }
-  }
-
-  @media only screen and (min-width: $breakpoint-tablet) {
-    &__primary,
-    &__heading {
-      padding: 8.5625rem;
-      gap: 1rem;
-    }
-
-    &__secondary {
+    @media (min-width: $breakpoint-scale-up) {
       padding: 5.875rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      &--related-components {
+        background-color: var(--background-color);
+      }
     }
   }
 }

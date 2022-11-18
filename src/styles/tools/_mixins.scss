@@ -1,14 +1,12 @@
-$breakpoint-tablet: 820px;
-
 @mixin background-pattern() {
   background: url("../../../public/images/background_image.png");
   background-size: 100%;
 
-  @media screen and (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     background: url("../../../public/images/background_image_dark.svg");
   }
 
-  @media only screen and (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-scale-up) {
     background-size: 30%;
   }
 }

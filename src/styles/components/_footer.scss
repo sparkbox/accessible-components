@@ -38,10 +38,8 @@ $breakpoint-footer-margin: 25em;
     // this compensates for that
     &:first-child {
       margin-bottom: -1.875rem; // 30px/16
-    }
 
-    @media (min-width: $breakpoint-large-screen-860) {
-      &:first-child {
+      @media (min-width: $breakpoint-large-screen-860) {
         margin-bottom: -43px; // this is to compensate for the 17px line-height once at tablet size
       }
     }
@@ -81,17 +79,8 @@ $breakpoint-footer-margin: 25em;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    max-width: 325px;
+    max-width: 20.3125rem; // 325px/16
     position: relative;
-
-    // each social media icon is an SVG with className="icon"
-    .icon {
-      fill: currentcolor;
-      position: relative;
-      transition: all ease-in-out 150ms;
-      bottom: 0;
-      right: 0;
-    }
 
     @media (min-width: $breakpoint-footer-margin) {
       margin: auto;
@@ -100,41 +89,39 @@ $breakpoint-footer-margin: 25em;
     a {
       position: relative;
       outline: none;
-      border: 2px solid transparent;
 
-      svg {
+      // each social media icon is an SVG with className="icon"
+      .icon {
+        fill: currentcolor;
+        position: relative;
+        bottom: 0;
+        right: 0;
         transition: all ease-in-out 150ms;
         width: 2.5625rem; /* 41px/16px */
         height: auto;
       }
-    }
 
-    @media screen and (prefers-reduced-motion: reduce) {
-      a:hover .icon,
-      a:focus-within .icon {
-        fill: var(--accent-color-icons);
-      }
+      @media (prefers-reduced-motion: no-preference) {
+        &:hover .icon,
+        &:focus-within .icon {
+          bottom: 0.5rem; // 8px/16
+          fill: var(--accent-color-icons);
 
-      @media (prefers-color-scheme: dark) {
-        a:hover .icon,
-        a:focus-within .icon {
-          fill: var(--accent-color);
+          @media (prefers-color-scheme: dark) {
+            bottom: 0.5rem; // 8px/16
+            fill: var(--accent-color);
+          }
         }
       }
-    }
 
-    @media screen and (prefers-reduced-motion: no-preference) {
-      a:hover .icon,
-      a:focus-within .icon {
-        bottom: 0.5rem; // 8px/16
-        fill: var(--accent-color-icons);
-      }
+      @media (prefers-reduced-motion: reduce) {
+        &:hover .icon,
+        &:focus-within .icon {
+          fill: var(--accent-color-icons);
 
-      @media (prefers-color-scheme: dark) {
-        a:hover .icon,
-        a:focus-within .icon {
-          bottom: 0.5rem; // 8px/16
-          fill: var(--accent-color);
+          @media (prefers-color-scheme: dark) {
+            fill: var(--accent-color);
+          }
         }
       }
     }

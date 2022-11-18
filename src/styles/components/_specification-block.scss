@@ -5,14 +5,63 @@
   line-height: 1.5625rem;
   letter-spacing: 0.02rem;
 
+  @media (min-width: $breakpoint-grid-large-screen-1115) {
+    display: grid;
+    column-gap: 5rem; // 80px /16
+    row-gap: 2.5rem; // 40px
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "keyboard semantic"
+      "focus focus"
+      "aria aria"
+      "additional .";
+  }
+
   &__wrapper {
     display: block;
+
+    @media (min-width: $breakpoint-grid-large-screen-1115) {
+      margin: 0;
+
+      // focus expectations (1 column)
+      &:nth-child(1) {
+        grid-area: keyboard;
+      }
+
+      // semantic elements (1 column)
+      &:nth-child(2) {
+        grid-area: semantic;
+      }
+
+      // aria roles & attributes (full width)
+      &:nth-child(3) {
+        grid-area: aria;
+        max-width: 75ch;
+      }
+
+      // keyboard interactions (full-width)
+      &:nth-child(4) {
+        grid-area: focus;
+        max-width: 75ch;
+      }
+
+      // additional resources (1 column)
+      &:last-child {
+        li {
+          padding: 0.25rem 0; // top&bottom: 4px/16
+        }
+      }
+    }
   }
 
   &__heading {
     font-size: 1.5625rem;
     font-family: Viga, sans-serif;
     margin: 0;
+
+    @media (min-width: $breakpoint-grid-large-screen-1115) {
+      font-size: map.get($font-sizes, "md");
+    }
   }
 
   &__content {
@@ -26,6 +75,10 @@
 
   p {
     font-size: map.get($font-sizes, "xs");
+
+    @media (min-width: $breakpoint-grid-large-screen-1115) {
+      font-size: map.get($font-sizes, "sm");
+    }
   }
 
   li {
@@ -51,6 +104,17 @@
         background-size: contain;
       }
     }
+
+    @media (min-width: $breakpoint-grid-large-screen-1115) {
+      font-size: map.get($font-sizes, "sm");
+
+      &::before {
+        width: 0.8rem;
+        height: 1rem;
+        left: -1.5rem;
+        top: 0.4rem;
+      }
+    }
   }
 
   /* Adjacent sibling selector */
@@ -63,9 +127,14 @@
     font-family: Oxygen, sans-serif;
   }
 
+  // accordion subheaders (not on every detail page)
   h3 {
     font-size: map.get($font-sizes, "xs");
     font-weight: 700;
+
+    @media (min-width: $breakpoint-grid-large-screen-1115) {
+      font-size: map.get($font-sizes, "sm");
+    }
   }
 
   a {
@@ -73,102 +142,17 @@
     color: var(--foreground-color);
     transition: all ease-in-out 100ms;
     display: inline-block;
-  }
 
-  // hover/focus matched the footer text-links
-  @media (prefers-reduced-motion: no-preference) {
-    a:hover,
-    a:focus {
-      outline: 1px solid var(--foreground-color);
-      text-decoration: none;
-
-      @media (prefers-color-scheme: dark) {
-        outline: 1px solid var(--accent-color);
-      }
-    }
-  }
-
-  // matches the related components text-links
-  @media (prefers-reduced-motion: reduce) {
-    a {
-      transition: all ease-in-out 100ms;
-
+    // matches the related components text-links
+    @media (prefers-reduced-motion: no-preference) {
       &:hover,
       &:focus {
-        outline: 1px solid var(--accent-color);
+        outline: 1px solid var(--foreground-color);
         text-decoration: none;
-      }
-    }
-  }
 
-  @media (min-width: $breakpoint-grid-large-screen-1115) {
-    // grid of data fields & content (.cmp-specifications-block)
-    display: grid;
-    column-gap: 5rem; // 80px /16
-    row-gap: 2.5rem; // 40px
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "keyboard semantic"
-      "focus focus"
-      "aria aria"
-      "additional .";
-
-    p {
-      font-size: map.get($font-sizes, "sm");
-    }
-
-    li {
-      font-size: map.get($font-sizes, "sm");
-
-      &::before {
-        width: 0.8rem;
-        height: 1rem;
-        left: -1.5rem;
-        top: 0.4rem;
-      }
-    }
-
-    h3 {
-      font-size: map.get($font-sizes, "sm");
-    }
-
-    &__heading {
-      font-size: map.get($font-sizes, "md");
-    }
-
-    &__wrapper {
-      margin: 0;
-    }
-
-    // keyboard interactions (1 column)
-    &__wrapper:nth-child(1) {
-      // border: 1px solid red;
-      grid-area: keyboard;
-    }
-
-    // semantic elements (1 column)
-    &__wrapper:nth-child(2) {
-      // border: 1px solid blue;
-      grid-area: semantic;
-    }
-
-    // aria roles & attributes (full width)
-    &__wrapper:nth-child(3) {
-      // border: 1px solid black;
-      grid-area: aria;
-      max-width: 75ch;
-    }
-
-    // focus expectations (full-width)
-    &__wrapper:nth-child(4) {
-      // border: 1px solid green;
-      grid-area: focus;
-      max-width: 75ch;
-    }
-
-    &__wrapper:last-child {
-      li {
-        padding: 0.25rem 0; // top&bottom: 4px/16
+        @media (prefers-color-scheme: dark) {
+          outline: 1px solid var(--accent-color);
+        }
       }
     }
   }

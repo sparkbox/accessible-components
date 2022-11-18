@@ -9,11 +9,21 @@
     background-color: var(--background-color);
   }
 
+  @media (min-width: $breakpoint-large-screen-860) {
+    flex-direction: row;
+    gap: 15%;
+  }
+
   &__heading {
     position: relative;
     font-size: 25px;
     font-family: Viga, sans-serif;
     margin: 4rem 0;
+
+    @media (min-width: $breakpoint-large-screen-860) {
+      margin-top: 1rem;
+      max-width: 10rem;
+    }
 
     &::after {
       content: "";
@@ -30,10 +40,8 @@
       @media (prefers-color-scheme: dark) {
         filter: invert(1);
       }
-    }
 
-    @media (min-width: $breakpoint-scale-up) {
-      &::after {
+      @media (min-width: $breakpoint-scale-up) {
         right: 6rem;
         top: -3.25rem;
         width: 2.875rem; // 46px/16
@@ -49,6 +57,17 @@
     padding: 1rem 0;
     text-align: left;
     font-size: 18px;
+
+    @media (min-width: $breakpoint-large-screen-860) {
+      display: flex;
+      gap: 1rem 6rem;
+      flex-grow: 2;
+      font-size: map.get($font-sizes, "sm");
+      flex-flow: wrap column;
+      max-height: 10rem;
+      align-self: left;
+      text-align: left;
+    }
   }
 
   &__link {
@@ -64,35 +83,6 @@
       @media (prefers-color-scheme: dark) {
         outline: 1px solid var(--accent-color);
       }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      &:hover,
-      &:focus {
-        outline: 1px solid var(--foreground-color);
-        text-decoration: none;
-      }
-    }
-  }
-
-  @media (min-width: $breakpoint-large-screen-860) {
-    flex-direction: row;
-    gap: 15%;
-
-    &__heading {
-      margin-top: 1rem;
-      max-width: 10rem;
-    }
-
-    &__list {
-      display: flex;
-      gap: 1rem 6rem;
-      flex-grow: 2;
-      font-size: map.get($font-sizes, "sm");
-      flex-flow: wrap column;
-      max-height: 10rem;
-      align-self: left;
-      text-align: left;
     }
   }
 }
