@@ -10,7 +10,6 @@ export default function Definition({ children }) {
         </h2>
         <div className="cmp-definition__content">{children}</div>
       </div>
-      <div className="cmp-definition__bg-text" />
     </div>
   );
 }

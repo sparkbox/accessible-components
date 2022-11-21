@@ -5,13 +5,20 @@ $breakpoint-background-image-size: 75rem;
   line-height: 1.75rem;
   color: var(--foreground-color);
 
-  // the text column
-  &__text {
-    padding: 0;
-    max-width: 60ch;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(-50vw + 50%); // Forbidden Zastrow Knowledge
+    width: 100vw;
+    height: 100%;
+    background: url("../../../public/images/definition_text.svg");
+    background-repeat: repeat-x;
+    mask-image: linear-gradient(to right, transparent 70ch, hsl(100deg 100 100));
+    z-index: -1;
 
-    @media (min-width: $breakpoint-large-screen-860) {
-      padding: 8rem 0;
+    @media (prefers-color-scheme: dark) {
+      filter: invert(48%) sepia(65%) saturate(5548%) hue-rotate(302deg) brightness(102%) contrast(99%);
     }
   }
 
@@ -53,7 +60,12 @@ $breakpoint-background-image-size: 75rem;
     }
   }
 
-  // airtable paragraphs, not including the heading
+  &__text {
+    padding: 0;
+    max-width: 60ch;
+    z-index: $z2;
+  }
+
   &__content {
     font-size: map.get($font-sizes, "xs");
     letter-spacing: 0.02rem;
@@ -72,23 +84,18 @@ $breakpoint-background-image-size: 75rem;
       right: -10rem;
       width: 100%;
       min-height: 100%;
-      background:
-        linear-gradient(to right, var(--background-color) 50%, transparent),
-        url("../../../public/images/definition_text_light.svg");
       background-size: contain;
       background-position: right;
       background-repeat: no-repeat;
       margin: auto;
-      z-index: -1;
 
       @media (prefers-color-scheme: dark) {
         right: -7rem;
-        background: linear-gradient(to right, var(--background-color) 50%, transparent), url("../../../public/images/definition_text_dark.svg");
+        background: linear-gradient(to right, var(--background-color) 50%, transparent), url("../../../public/images/definition_text.svg");
         background-size: contain;
         background-position: right;
         background-repeat: no-repeat;
         margin: auto;
-        z-index: -1;
       }
     }
   }
