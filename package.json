@@ -21,7 +21,7 @@
     "airtable": "^0.11.5",
     "check-node-version": "^4.2.1",
     "isomorphic-dompurify": "^0.24.0",
-    "marked": "^4.2.2",
+    "marked": "^4.2.3",
     "next": "^13.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
