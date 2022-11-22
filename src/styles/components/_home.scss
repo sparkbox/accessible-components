@@ -37,7 +37,7 @@ $breakpoint-top-section-scale-up: 70rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      flex-basis: 45%;
+      flex-basis: 0 0 60%;
       padding-right: 1.875rem; // 30px/16
     }
 
@@ -63,6 +63,7 @@ $breakpoint-top-section-scale-up: 70rem;
       margin: 1.25rem 0 0; // top: 20px/16; bottom&left&right: 0
       line-height: 1.75rem; // 28px/16
       letter-spacing: 0.02em;
+      max-width: 70ch;
     }
   }
 
