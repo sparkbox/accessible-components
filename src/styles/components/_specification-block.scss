@@ -26,6 +26,67 @@
     }
   }
 
+  &__wrapper {
+    // checkmark doodle
+    &:nth-child(1) {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 14.5rem;
+        top: -0.5rem;
+        width: 4rem;
+        height: 2.5rem;
+        background-image: url("../../../public/images/doodles/doodle_checkmark.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+
+        @media (prefers-color-scheme: dark) {
+          filter: invert(1);
+        }
+      }
+    }
+
+    // underline doodle
+    &:nth-child(2) {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0.5rem;
+        top: 1.25rem;
+        width: 6rem;
+        height: 2.5rem;
+        background-image: url("../../../public/images/doodles/doodle_underline.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+
+        @media (prefers-color-scheme: dark) {
+          filter: invert(1);
+        }
+      }
+    }
+
+    @media (min-width: $breakpoint-grid-large-screen-1115) {
+      // doodles at larger screen sizes
+      &:nth-child(1) {
+        &::after {
+          left: 17.5rem;
+        }
+      }
+
+      &:nth-child(2) {
+        &::after {
+          width: 10rem;
+          left: -0.5rem;
+          top: 1rem;
+        }
+      }
+    }
+  }
+
   &__heading {
     font-size: 1.5625rem;
     font-family: Viga, sans-serif;
