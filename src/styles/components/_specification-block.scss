@@ -86,6 +86,7 @@
     font-weight: 400;
     font-size: map.get($font-sizes, "xs");
     letter-spacing: 175%;
+    margin-top: 1.5rem;
 
     &::before {
       content: "";
@@ -118,10 +119,6 @@
   }
 
   /* Adjacent sibling selector */
-  li + li {
-    margin-top: 1.5rem;
-  }
-
   code {
     color: var(--code-color);
     font-family: Oxygen, sans-serif;

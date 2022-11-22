@@ -98,5 +98,27 @@ $breakpoint-background-image-size: 75rem;
         margin: auto;
       }
     }
+
+    &__heading {
+      font-size: map.get($font-sizes, "md");
+
+      &::after {
+        content: "";
+        top: -2.5rem;
+        left: -2.2rem;
+        width: 15rem;
+        height: 6rem;
+        background-size: 100%;
+      }
+    }
+
+    &__content {
+      position: relative;
+      font-size: map.get($font-sizes, "sm");
+    }
+
+    &__text {
+      padding: 6rem 0;
+    }
   }
 }
