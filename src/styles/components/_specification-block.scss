@@ -1,55 +1,27 @@
 .cmp-specifications-block {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 3.75rem;
   line-height: 1.5625rem;
   letter-spacing: 0.02rem;
 
-  @media (min-width: $breakpoint-grid-large-screen-1115) {
-    display: grid;
-    column-gap: 5rem; // 80px /16
-    row-gap: 2.5rem; // 40px
+  @media (min-width: $breakpoint-specifications-grid-two-column) {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "keyboard semantic"
-      "focus focus"
-      "aria aria"
-      "additional .";
-  }
 
-  &__wrapper {
-    display: block;
+    @supports (grid-template-rows: masonry) {
+      grid-template-rows: masonry;
+    }
 
-    @media (min-width: $breakpoint-grid-large-screen-1115) {
-      margin: 0;
+    @supports not (grid-template-rows: masonry) {
+      &__wrapper {
+        --row-start: auto;
+        --number-of-rows: 1;
+        --column-start: auto;
+        --number-of-columns: 1;
 
-      // focus expectations (1 column)
-      &:nth-child(1) {
-        grid-area: keyboard;
-      }
-
-      // semantic elements (1 column)
-      &:nth-child(2) {
-        grid-area: semantic;
-      }
-
-      // aria roles & attributes (full width)
-      &:nth-child(3) {
-        grid-area: aria;
         max-width: 75ch;
-      }
-
-      // keyboard interactions (full-width)
-      &:nth-child(4) {
-        grid-area: focus;
-        max-width: 75ch;
-      }
-
-      // additional resources (1 column)
-      &:last-child {
-        li {
-          padding: 0.25rem 0; // top&bottom: 4px/16
-        }
+        grid-row: var(--row-start, 1) / span var(--number-of-rows, 1);
+        grid-column: var(--column-start, 1) / span var(--number-of-columns, 1);
       }
     }
   }

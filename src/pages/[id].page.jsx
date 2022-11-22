@@ -8,6 +8,7 @@ import DetailsBanner from '../components/DetailsBanner';
 import UsageGuidelines from '../components/UsageGuidelines';
 import RichText from '../components/RichText';
 import CodeBlock from '../components/CodeBlock';
+import masonryDetails from '../utils/masonryDetails';
 
 export default function Details({ details }) {
   const {
@@ -66,7 +67,20 @@ export default function Details({ details }) {
       <div className="details-page__primary">
         <div className="cmp-specifications-block">
           {specificationBlocks.map((block) => (
-            <SpecificationBlock key={block.id} heading={block.heading}>
+            <SpecificationBlock
+              key={block.id}
+              heading={block.heading}
+              rowStart={masonryDetails[slug][block.heading]?.rowStart ?? 'auto'}
+              numberOfRows={
+                masonryDetails[slug][block.heading]?.numberOfRows ?? 1
+              }
+              columnStart={
+                masonryDetails[slug][block.heading]?.columnStart ?? 'auto'
+              }
+              numberOfColumns={
+                masonryDetails[slug][block.heading]?.numberOfColumns ?? 1
+              }
+            >
               <RichText markdown={block.content} />
             </SpecificationBlock>
           ))}

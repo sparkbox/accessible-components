@@ -1,6 +1,21 @@
-export default function SpecificationBlock({ heading, children }) {
+export default function SpecificationBlock({
+  heading,
+  children,
+  rowStart,
+  numberOfRows,
+  columnStart,
+  numberOfColumns,
+}) {
   return (
-    <div className="cmp-specifications-block__wrapper">
+    <div
+      className="cmp-specifications-block__wrapper"
+      style={{
+        '--column-start': columnStart,
+        '--number-of-columns': numberOfColumns,
+        '--row-start': rowStart,
+        '--number-of-rows': numberOfRows,
+      }}
+    >
       <h2
         className="cmp-specifications-block__heading"
         data-testid="spec-block-heading"
