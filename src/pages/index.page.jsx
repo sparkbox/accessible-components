@@ -10,11 +10,15 @@ export default function Home() {
           <div className="home-top">
             <div className="home-top__text-column">
               <h1>Accessibility Cheatsheets for Components</h1>
-              <p className="home-top__top-description">
-                Intro copy goes here, such as: Build accessible components more
-                accurately and in less time with these easy-to-read cheatsheets
-                based on WCAG and ARIA best practices. Check back often as
-                we&#39;re adding new components frequently!
+              <p>
+                Building accessible components is hard: the requirements are
+                complicated, the specifications are dense, and good examples are
+                sparse.
+              </p>
+              <p>
+                These cheatsheets should make that a little bit easier—and
+                they&#39;re based on WCAG and ARIA best practices. Check back
+                often as we&#39;re adding new components frequently!
               </p>
             </div>
             <div>
