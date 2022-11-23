@@ -1,6 +1,6 @@
 const html = `
     <div class="tabs">
-      <nav role="tablist" aria-labelledby="tablist-1" class="manual">
+      <nav role="tablist" class="manual">
         <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1">Section 1</button>
         <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2" tabIndex="-1">Section 2</button>
         <button id="tab-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3" tabIndex="-1">Section 3</button>

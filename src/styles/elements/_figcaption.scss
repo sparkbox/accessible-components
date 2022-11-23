@@ -1,0 +1,9 @@
+figcaption {
+  font-size: 0.875rem; // 14px/16
+  line-height: 1; // 16px/16
+  color: var(--foreground-color);
+
+  @media (min-width: $breakpoint-scale-up) {
+    margin-bottom: -5rem;
+  }
+}

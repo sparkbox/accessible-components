@@ -1,0 +1,82 @@
+// the article container
+.sandpack {
+  header {
+    color: var(--foreground-color);
+
+    h2 {
+      position: relative;
+      font-size: 1.5625rem; // 25px/16
+      font-family: Viga, sans-serif;
+      line-height: 1.36; // 34px/25
+      margin-inline: auto;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 2rem;
+        height: 2.5rem;
+        background-image: url("/images/cmt_inventory_arrow.svg");
+        transform: translateX(0.5rem) rotate(-30deg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @media (prefers-color-scheme: dark) {
+          filter: invert(1);
+        }
+      }
+
+      @media (min-width: $breakpoint-increase-content-font-size) {
+        font-size: map.get($font-sizes, "md");
+        line-height: 1.5; // 40px/30
+
+        &::after {
+          width: 2.5rem;
+          height: 3rem;
+        }
+      }
+    }
+  }
+}
+
+// because we have no control over the auto-generated sandpack class names,
+// I turned off the kebab-case linting error for certain selectors
+
+// sandpack code editor
+.sp-code-editor {
+  transition: all 150ms ease-in-out;
+  border: 2px solid transparent;
+
+  &:focus-within {
+    border: 2px solid var(--accent-color);
+  }
+}
+
+/* stylelint-disable selector-class-pattern */
+// sandpack tabs/buttons regardless if selected or not: outline gets added on focus
+.sp-c-dRhJti[data-active="true"]:focus,
+.sp-c-dRhJti:focus:not(:disabled, [data-active="true"]) {
+  outline: 2px solid var(--accent-color);
+}
+/* stylelint-enable */
+
+// syntax tags (HTML element tags/CSS selectors)
+// syntax keywords (const, if, any units used in CSS, etc)
+// !important is used to override theme styles
+.sp-syntax-tag,
+.sp-syntax-keyword {
+  color: var(--accent-color-background) !important;
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--accent-color) !important;
+  }
+}
+
+// strings (HTML attributes, Javascript strings)
+span.sp-syntax-string {
+  color: var(--accent-color) !important;
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--accent-color-background) !important;
+  }
+}
