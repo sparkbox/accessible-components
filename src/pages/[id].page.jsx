@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { Sandpack } from '@codesandbox/sandpack-react';
+import { levelUp } from '@codesandbox/sandpack-themes';
 import Layout from '../components/Layout';
 import getComponentDetails from '../utils/airtable';
 import RelatedComponents from '../components/RelatedComponents';
@@ -7,7 +9,6 @@ import Definition from '../components/Definition';
 import DetailsBanner from '../components/DetailsBanner';
 import UsageGuidelines from '../components/UsageGuidelines';
 import RichText from '../components/RichText';
-import CodeBlock from '../components/CodeBlock';
 import masonryDetails from '../utils/masonryDetails';
 
 export default function Details({ details }) {
@@ -53,9 +54,32 @@ export default function Details({ details }) {
         <RichText markdown={definition} />
       </Definition>
       <div className="details-page__primary">
-        <CodeBlock name="HTML" exportedCodeString={htmlCode} />
-        <CodeBlock name="CSS" exportedCodeString={cssCode} />
-        <CodeBlock name="JS" exportedCodeString={javascriptCode} />
+        <article className="sandpack">
+          <header>
+            <h2>Code Example</h2>
+          </header>
+          <Sandpack
+            template="vanilla"
+            theme={levelUp}
+            files={{
+              '/index.html': {
+                code: htmlCode,
+                active: true,
+              },
+              'index.css': cssCode,
+              '/index.js': javascriptCode,
+              '/src/index.js': {
+                code: 'import "../index.css"; import "../index.js"',
+                hidden: true,
+              },
+            }}
+            options={{
+              showLineNumbers: true,
+              wrapContent: true,
+              editorHeight: 480,
+            }}
+          />
+        </article>
       </div>
       <div className="details-page__banner">
         <div className="details-page__secondary details-page__secondary--usage-guidelines">

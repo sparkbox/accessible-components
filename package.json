@@ -18,6 +18,8 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
+    "@codesandbox/sandpack-react": "^1.17.0",
+    "@codesandbox/sandpack-themes": "^1.17.0",
     "airtable": "^0.11.6",
     "check-node-version": "^4.2.1",
     "isomorphic-dompurify": "^0.24.0",
