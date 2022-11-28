@@ -52,9 +52,14 @@ export default function Details({ details }) {
         <RichText markdown={definition} />
       </Definition>
       <div className="details-page__primary">
-        <CodeBlock name="HTML" exportedCodeString={htmlCode} />
-        <CodeBlock name="CSS" exportedCodeString={cssCode} />
-        <CodeBlock name="JS" exportedCodeString={javascriptCode} />
+        <Definition>
+          <RichText markdown={definition} />
+        </Definition>
+        <div className="obj-code-block">
+          <CodeBlock name="HTML" exportedCodeString={htmlCode} />
+          <CodeBlock name="CSS" exportedCodeString={cssCode} />
+          <CodeBlock name="JS" exportedCodeString={javascriptCode} />
+        </div>
       </div>
       <div className="details-page__banner">
         <div className="details-page__secondary details-page__secondary--usage-guidelines">

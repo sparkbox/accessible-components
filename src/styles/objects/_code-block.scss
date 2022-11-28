@@ -1,0 +1,32 @@
+@media (min-width: 80rem) {
+  .obj-code-block {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    grid-template-areas:
+      "html css"
+      "js   js";
+
+    &__html {
+      display: flex;
+      align-items: stretch;
+      flex-direction: column;
+      grid-area: html;
+    }
+
+    &__css {
+      grid-area: css;
+      display: flex;
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    &__js {
+      grid-area: js;
+    }
+
+    &__child {
+      flex-grow: 2;
+    }
+  }
+}

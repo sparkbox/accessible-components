@@ -20,6 +20,7 @@
 /* LAYOUT/OBJECTS: objects, grids, flexbox etc */
 @import "./components/layout";
 @import "./components/component-grid";
+@import "./objects/code-block";
 
 /* COMPONENTS: most of the work goes here! BEM classes, headers/footers/carousels, etc */
 @import "./components/home";
