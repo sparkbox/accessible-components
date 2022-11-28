@@ -2,11 +2,17 @@ $breakpoint-top-section-margin: 70rem;
 $breakpoint-top-section-scale-up: 70rem;
 
 // listing/home page
-// everything below the SB logo & above the footer
+// everything below the homepage link & above the footer
 .home {
   @include background-pattern;
 
   width: 100%;
+
+  @media (min-width: $breakpoint-scale-up) {
+    // this adjusts the homepage to better match the interior page margins and
+    // puts the header link in a more consistent spot
+    margin-top: 5rem; // 80px/16;
+  }
 
   &-wrapper {
     background-color: var(--background-color);

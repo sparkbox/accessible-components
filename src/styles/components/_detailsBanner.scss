@@ -27,17 +27,39 @@
 
   &-image {
     box-sizing: border-box;
-    width: 100%;
-    background-color: var(--light-background-color);
+    background-color: var(--background-color);
     border: 2px solid var(--foreground-color);
-
-    @media (prefers-color-scheme: dark) {
-      border: 2px solid var(--background-color);
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 
     img {
-      width: 100%;
-      max-height: 45rem;
+      max-width: 100%;
+      min-width: 0;
+      height: auto;
+      max-height: 30rem; // 480px/16
+
+      @media (prefers-color-scheme: dark) {
+        filter: invert(1);
+      }
+    }
+
+    & img:nth-child(2),
+    & img:nth-child(3) {
+      display: none;
+
+      @media (min-width: $breakpoint-scale-up) {
+        display: block;
+      }
+    }
+  }
+
+  &__header {
+    padding: 0;
+    margin-left: -1.25rem;
+
+    @media (min-width: $breakpoint-scale-up) {
+      margin-left: -8.5625rem;
     }
   }
 }

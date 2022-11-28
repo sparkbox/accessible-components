@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Header from './Header';
 import Footer from './Footer';
 
 function formatTitle(title) {
@@ -19,7 +18,6 @@ export default function Layout({ children, pageTitle }) {
         <link rel="icon" href="/images/favicon.png" />
       </Head>
       <div className="page-container">
-        <Header />
         <main className="content">{children}</main>
         <Footer />
       </div>

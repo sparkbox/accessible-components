@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import Header from '../components/Header';
 import ComponentCard from '../components/ComponentCard';
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <Layout pageTitle="Home">
       <div className="home">
         <div className="home-wrapper">
+          <Header />
           <div className="home-top">
             <div className="home-top__text-column">
               <h1>Accessibility Cheatsheets for Components</h1>
