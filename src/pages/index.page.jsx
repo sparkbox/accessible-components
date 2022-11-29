@@ -70,10 +70,12 @@ export default function Home() {
               />
             </li>
             <li className="components-grid__item components-grid__item--max-scott">
-              <img
-                src="/images/max-grid.svg"
-                alt="Illustration of cute small white terrier dog with tongue out and head turned left looking like he is curious"
-              />
+              <div className="max-wrapper">
+                <img
+                  src="/images/max-grid.svg"
+                  alt="Illustration of cute small white terrier dog with tongue out and head turned left looking like he is curious"
+                />
+              </div>
             </li>
           </ul>
         </article>

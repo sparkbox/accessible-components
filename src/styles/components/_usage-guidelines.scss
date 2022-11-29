@@ -69,14 +69,14 @@ $breakpoint-usage-guidelines-display: 70rem;
 
     &::before {
       content: "";
-      background-image: url("../../../public/images/list_markers/emdash.png");
+      background-image: url("../../../public/images/list_markers/emdash.svg");
       background-repeat: no-repeat;
       background-size: 80%;
       position: absolute;
-      width: 2rem;
+      width: 1.25rem;
       height: 1rem;
       left: -1.75rem;
-      top: 0.5rem;
+      top: 0.8rem;
     }
   }
 }

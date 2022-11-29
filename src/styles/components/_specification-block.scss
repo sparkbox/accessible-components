@@ -116,6 +116,7 @@
 
   li {
     position: relative;
+    margin-top: 1.25rem;
     font-weight: 400;
     font-size: map.get($font-sizes, "xs");
     letter-spacing: 175%;
@@ -129,10 +130,10 @@
       width: 0.6rem;
       height: 1rem;
       left: -1.5rem;
-      top: 0.4rem;
+      top: 0.5rem;
 
       @media (prefers-color-scheme: dark) {
-        background-image: url("../../../public/images/pink-decorative-bullet.svg");
+        background-image: url("../../../public/images/list_markers/pink-decorative-bullet.svg");
         background-repeat: no-repeat;
         background-size: contain;
       }
@@ -148,11 +149,6 @@
         top: 0.4rem;
       }
     }
-  }
-
-  /* Adjacent sibling selector */
-  li + li {
-    margin-top: 1.5rem;
   }
 
   code {

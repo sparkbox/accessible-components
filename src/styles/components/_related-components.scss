@@ -31,13 +31,13 @@ $breakpoint-move-arrow-left: 38.125rem; // 610px/16
       content: "";
       background-image: url("../../../public/images/cmt_inventory_arrow.svg");
       position: absolute;
-      right: 65%;
-      top: -5.5rem;
+      left: 2rem;
+      top: -4.5rem;
       width: 3.75rem; // 60px/16
       height: 4.6875rem; // 75px/16
       background-repeat: no-repeat;
       background-position: center;
-      background-size: cover;
+      background-size: contain;
 
       @media (prefers-color-scheme: dark) {
         filter: invert(1);

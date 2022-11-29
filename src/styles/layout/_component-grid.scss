@@ -5,7 +5,6 @@ $breakpoint-accordion-medium-550: 34rem;
 .components-grid {
   padding: 1.25rem; // 20px/16
   max-width: 100rem; // 1600px/16
-  place-items: center;
 
   @media (min-width: $breakpoint-scale-up) {
     padding: 5rem 8.5625rem; // top&bottom: 80px/16; left&right: 137px/16
@@ -27,18 +26,14 @@ $breakpoint-accordion-medium-550: 34rem;
     &::after {
       @include doodle;
 
-      width: 50%;
-      height: 100%;
-      background-image: url("../../../public/images/doodles/doodle_line.png");
-      background-size: 80%;
-      rotate: -10deg;
-      top: 0.5rem;
-      right: -1rem;
+      width: 7rem;
+      height: 7rem;
+      background-image: url("../../../public/images/doodles/doodle_line.svg");
+      background-size: contain;
+      rotate: 30deg;
+      top: -1rem;
+      left: 50vw;
       background-position: 0;
-
-      @media only screen and (min-width: $breakpoint-accordion-medium-550) {
-        height: 5rem;
-      }
     }
 
     @media (min-width: $breakpoint-scale-up) {
@@ -53,10 +48,10 @@ $breakpoint-accordion-medium-550: 34rem;
   // grid list
   &__list {
     text-align: center;
+    gap: 1rem;
 
     @media (min-width: $breakpoint-scale-up) {
       display: grid;
-      gap: 1rem;
       list-style: none;
       grid-template-areas:
         "accordion dialog disclosure"
@@ -70,16 +65,12 @@ $breakpoint-accordion-medium-550: 34rem;
     display: flex;
     justify-content: center;
     width: 100%;
+    min-width: 7.5rem; // to keep 'skinny' items from shrinking too much
     margin-bottom: 1.25rem;
     background-color: var(--light-background-color);
     text-align: center;
     align-items: flex-start;
     color: var(--font-color-dark);
-
-    img {
-      object-position: bottom;
-      object-fit: scale-down;
-    }
 
     @media (min-width: $breakpoint-scale-up) {
       margin-bottom: 0;
@@ -87,8 +78,11 @@ $breakpoint-accordion-medium-550: 34rem;
 
     &--accordion {
       grid-area: accordion;
-      overflow: hidden;
+
+      // Accordion needs some special rules to match design.
+      // Used here instead of _component-card b/c of --accordion modifier
       position: relative;
+      overflow: hidden;
 
       @media (min-width: $breakpoint-scale-up) {
         overflow: visible;
@@ -96,13 +90,15 @@ $breakpoint-accordion-medium-550: 34rem;
 
       img {
         position: absolute;
-        top: -3.5rem;
-        object-position: top;
+        top: 0;
+        max-width: 25rem;
+        align-self: center;
+        height: auto !important; // override component-card height, which is more specific.
 
         @media (min-width: $breakpoint-scale-up) {
-          position: static;
-          top: 0;
-          object-position: inherit;
+          position: relative;
+          height: 70%;
+          overflow: auto;
         }
       }
     }
@@ -122,13 +118,16 @@ $breakpoint-accordion-medium-550: 34rem;
     &--max-scott {
       grid-area: max-scott;
       background-color: transparent;
-      max-width: 17.1875rem; // 275px/16
       height: auto;
       margin: auto;
+      margin-top: 2rem;
+      max-width: 80%;
+      min-width: 12.625rem;
 
       img {
-        object-position: inherit;
-        object-fit: inherit;
+        width: 80%; // 250px
+        max-width: 17.625rem; // 250px
+        height: 100%;
       }
     }
 
@@ -139,12 +138,12 @@ $breakpoint-accordion-medium-550: 34rem;
       &::before {
         @include doodle;
 
-        width: 35%;
-        height: 8%;
-        background-image: url("../../../public/images/doodles/doodle_line.png");
+        width: 30%;
+        height: 10%;
+        background-image: url("../../../public/images/doodles/doodle_line.svg");
         top: -5%;
-        right: 0;
-        rotate: -10deg;
+        right: -5%;
+        rotate: 30deg;
         background-size: contain;
         display: none;
 
@@ -161,15 +160,15 @@ $breakpoint-accordion-medium-550: 34rem;
       &::before {
         @include doodle;
 
-        width: 12%;
-        height: 12%;
-        background-image: url("../../../public/images/doodles/doodle_o.png");
-        bottom: 7%;
-        right: -6%;
+        width: 8%;
+        height: 3rem;
+        background-image: url("../../../public/images/doodles/doodle_o.svg");
+        bottom: 3%;
+        right: -3%;
         background-size: contain;
         display: none;
 
-        @media (min-width: $breakpoint-grid-large-screen-1115) {
+        @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
         }
       }
@@ -182,16 +181,16 @@ $breakpoint-accordion-medium-550: 34rem;
       &::before {
         @include doodle;
 
-        width: 20%;
-        height: 20%;
-        background-image: url("../../../public/images/doodles/doodle_diamond.png");
+        width: 15%;
+        height: 5rem;
+        background-image: url("../../../public/images/doodles/doodle_diamond.svg");
         background-size: contain;
         rotate: 15deg;
         top: -6%;
-        right: -10%;
+        right: -6%;
         display: none;
 
-        @media (min-width: $breakpoint-grid-large-screen-1115) {
+        @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
         }
       }
@@ -204,15 +203,15 @@ $breakpoint-accordion-medium-550: 34rem;
       &::before {
         @include doodle;
 
-        width: 12%;
-        height: 12%;
-        background-image: url("../../../public/images/doodles/doodle_x.png");
+        width: 10%;
+        height: 10%;
+        background-image: url("../../../public/images/doodles/doodle_x.svg");
         background-size: contain;
-        top: -5%;
-        left: -2%;
+        top: -3%;
+        left: -1%;
         display: none;
 
-        @media (min-width: $breakpoint-grid-large-screen-1115) {
+        @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
         }
       }
@@ -225,15 +224,15 @@ $breakpoint-accordion-medium-550: 34rem;
       &::before {
         @include doodle;
 
-        width: 30%;
-        height: 30%;
-        background-image: url("../../../public/images/doodles/doodle_arrow.png");
+        width: 20%;
+        height: 20%;
+        background-image: url("../../../public/images/doodles/doodle_arrow.svg");
         background-size: contain;
         bottom: -15%;
         left: -5%;
         display: none;
 
-        @media (min-width: $breakpoint-grid-large-screen-1115) {
+        @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
         }
       }
@@ -244,40 +243,32 @@ $breakpoint-accordion-medium-550: 34rem;
       position: relative;
 
       &::before {
-        @include doodle;
-
-        width: 20%;
-        height: 20%;
-        min-width: 3rem;
-        min-height: 3rem;
-        background-image: url("../../../public/images/doodles/doodle_diamond.png");
-        background-size: contain;
-        display: inline-block;
-        top: 0%;
-        left: 0.25rem;
-
-        @media (min-width: $breakpoint-accordion-small-475) {
-          width: 25%;
-          height: 25%;
-          left: -15%;
-        }
+        background-image: none;
       }
 
-      &::after {
-        @include doodle;
+      .max-wrapper {
+        &::before {
+          @include doodle;
 
-        width: 40%;
-        height: 25%;
-        background-image: url("../../../public/images/doodles/doodle_line.png");
-        rotate: -30deg;
-        bottom: -8%;
-        right: -3%;
-        background-size: contain;
-        background-position: 0;
+          width: 20%;
+          height: 20%;
+          transform: translateX(-2rem) translateY(0.25rem) rotate(-20deg);
+          background-image: url("../../../public/images/doodles/doodle_diamond.svg");
+          background-size: contain;
+          display: inline-block;
+        }
 
-        @media (min-width: $breakpoint-accordion-small-475) {
-          width: 60%;
-          right: -30%;
+        &::after {
+          @include doodle;
+
+          width: 40%;
+          height: 25%;
+          background-image: url("../../../public/images/doodles/doodle_line.svg");
+          rotate: 20deg;
+          bottom: -18%;
+          right: -10%;
+          background-size: contain;
+          background-position: 0;
         }
       }
     }

@@ -16,11 +16,11 @@ $breakpoint-increase-padding: $breakpoint-scale-up;
     &::after {
       content: "";
       background-image: url("../../../public/images/cmt_inventory_arrow.svg");
-      transform: translateX(0.5rem) rotate(-30deg);
+      transform: translateX(1rem) translateY(0.25rem) rotate(-30deg);
       position: absolute;
-      top: -0.5rem;
-      width: 2rem;
-      height: 2.5rem;
+      top: 0;
+      width: 2rem; // 32px
+      height: 2.5rem; // 40px
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -35,8 +35,8 @@ $breakpoint-increase-padding: $breakpoint-scale-up;
       line-height: 2.5rem; // 40px/16
 
       &::after {
-        width: 2.5rem;
-        height: 3rem;
+        width: 2.2rem;
+        height: 2.9rem;
       }
     }
   }

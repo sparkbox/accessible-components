@@ -13,10 +13,12 @@
     transition: all 150ms ease-in-out;
     border: 2px solid var(--foreground-color);
 
-    img {
+    &__image {
+      box-sizing: border-box;
       transition: all 150ms ease-in-out;
       width: 100%;
-      height: auto;
+      height: 70%;
+      padding: min(15%, 2rem);
       margin: auto;
     }
 
@@ -54,18 +56,18 @@
         font-size: map.get($font-sizes, "sm"); // 20px/16
       }
 
-      &::after {
-        content: url("../../../public/images/list_markers/teal-decorative-bullet.svg");
-        position: relative;
-        top: 0;
-        left: 1rem; // 16px/16
-      }
-
       &::before {
         content: url("../../../public/images/list_markers/teal-decorative-bullet.svg");
         position: relative;
-        top: 0;
+        top: -0.1rem;
         left: -1rem; // 16px/16
+      }
+
+      &::after {
+        content: url("../../../public/images/list_markers/teal-decorative-bullet.svg");
+        position: relative;
+        top: -0.1rem;
+        left: 1rem; // 16px/16
       }
     }
   }

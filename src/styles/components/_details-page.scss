@@ -8,7 +8,7 @@
     padding: 0 1.25rem;
 
     @media (prefers-color-scheme: dark) {
-      background-image: url("../../../public/images/background_image-light.svg");
+      background-image: url("../../../public/images/background_image_dark.svg");
     }
 
     @media (min-width: $breakpoint-scale-up) {

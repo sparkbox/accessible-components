@@ -1,5 +1,5 @@
 @mixin background-pattern() {
-  background: url("../../../public/images/background_image.png");
+  background: url("../../../public/images/background_image_light.svg");
   background-size: 100%;
 
   @media (prefers-color-scheme: dark) {
@@ -15,5 +15,6 @@
   content: "";
   position: absolute;
   background-repeat: no-repeat;
+  pointer-events: none;
   z-index: 2;
 }

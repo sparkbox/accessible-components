@@ -61,12 +61,12 @@ $breakpoint-background-image-size: 75rem;
     &::after {
       content: "";
       position: absolute;
-      top: -1.8rem;
-      left: -1.8rem;
-      width: 15rem;
-      height: 6rem;
-      background-image: url("../../../public/images/shapes/circle.svg");
-      background-size: 80%;
+      top: -1.5rem;
+      left: -1rem;
+      width: 10rem;
+      height: 5rem;
+      background-image: url("../../../public/images/doodles/doodle_circle.svg");
+      background-size: contain;
       background-repeat: no-repeat;
 
       @media (prefers-color-scheme: dark) {
@@ -78,9 +78,8 @@ $breakpoint-background-image-size: 75rem;
       font-size: map.get($font-sizes, "md");
 
       &::after {
-        top: -2.5rem;
-        left: -2.2rem;
-        background-size: 100%;
+        top: -2rem;
+        width: 12rem;
       }
     }
   }
