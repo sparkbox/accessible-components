@@ -20,8 +20,6 @@
         --number-of-columns: 1;
 
         max-width: 75ch;
-        grid-row: var(--row-start, 1) / span var(--number-of-rows, 1);
-        grid-column: var(--column-start, 1) / span var(--number-of-columns, 1);
       }
     }
   }

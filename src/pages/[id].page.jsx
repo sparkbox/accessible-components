@@ -8,7 +8,7 @@ import DetailsBanner from '../components/DetailsBanner';
 import UsageGuidelines from '../components/UsageGuidelines';
 import RichText from '../components/RichText';
 import CodeBlock from '../components/CodeBlock';
-import masonryDetails from '../utils/masonryDetails';
+import { masonryDetails } from '../utils/masonryDetails';
 
 export default function Details({ details }) {
   const {
@@ -70,7 +70,10 @@ export default function Details({ details }) {
             <SpecificationBlock
               key={block.id}
               heading={block.heading}
-              rowStart={masonryDetails[slug][block.heading]?.rowStart ?? 'auto'}
+              rowStart={
+                masonryDetails[slug][block.heading]?.rowStart(block.content)
+                ?? 'auto'
+              }
               numberOfRows={
                 masonryDetails[slug][block.heading]?.numberOfRows ?? 1
               }
