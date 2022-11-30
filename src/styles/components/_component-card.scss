@@ -1,7 +1,3 @@
-$breakpoint-illustration-small: 30rem;
-$breakpoint-illustration-medium: 43rem;
-$breakpoint-illustration-large: $breakpoint-large-screen-860;
-
 .component-link {
   display: block;
   outline: none;
@@ -26,15 +22,6 @@ $breakpoint-illustration-large: $breakpoint-large-screen-860;
 
     @media (prefers-color-scheme: dark) {
       border: 2px solid var(--background-color);
-    }
-
-    // the following breakpoints are where certain illustrations try to break out of their containers
-    @media (min-width: $breakpoint-illustration-small) {
-      height: 30rem; // 480px/16px
-    }
-
-    @media (min-width: $breakpoint-illustration-medium) {
-      height: 40rem; // 640px/16px
     }
 
     @media (min-width: $breakpoint-scale-up) {

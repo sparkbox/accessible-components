@@ -18,8 +18,8 @@
 @import "./elements/kbd";
 
 /* LAYOUT/OBJECTS: objects, grids, flexbox etc */
-@import "./components/layout";
-@import "./components/component-grid";
+@import "./layout/layout";
+@import "./layout/component-grid";
 
 /* COMPONENTS: most of the work goes here! BEM classes, headers/footers/carousels, etc */
 @import "./components/home";

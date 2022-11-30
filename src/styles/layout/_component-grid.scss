@@ -1,14 +1,5 @@
-$breakpoint-accordion-small-355: 22rem;
-$breakpoint-accordion-small-390: 24rem;
-$breakpoint-accordion-small-420: 26rem;
-$breakpoint-accordion-small-460: 29rem;
 $breakpoint-accordion-small-475: 30rem;
 $breakpoint-accordion-medium-550: 34rem;
-$breakpoint-accordion-medium-580: 36rem;
-$breakpoint-accordion-medium-620: 39rem;
-$breakpoint-accordion-medium-665: 42rem;
-$breakpoint-accordion-medium-690: 43rem;
-$breakpoint-accordion-large-755: 47rem;
 
 // grid section
 .components-grid {
@@ -85,6 +76,11 @@ $breakpoint-accordion-large-755: 47rem;
     align-items: flex-start;
     color: var(--font-color-dark);
 
+    img {
+      object-position: bottom;
+      object-fit: scale-down;
+    }
+
     @media (min-width: $breakpoint-scale-up) {
       margin-bottom: 0;
     }
@@ -92,64 +88,21 @@ $breakpoint-accordion-large-755: 47rem;
     &--accordion {
       grid-area: accordion;
       overflow: hidden;
+      position: relative;
 
       @media (min-width: $breakpoint-scale-up) {
-        position: static;
         overflow: visible;
       }
 
       img {
         position: absolute;
-        bottom: -6rem;
-
-        // the following breakpoints are where the accordion illustration starts breaking out of the container
-        @media (min-width: $breakpoint-accordion-small-355) {
-          bottom: -9rem;
-        }
-
-        @media (min-width: $breakpoint-accordion-small-390) {
-          bottom: -12rem;
-        }
-
-        @media (min-width: $breakpoint-accordion-small-420) {
-          bottom: -15rem;
-        }
-
-        @media (min-width: $breakpoint-accordion-small-460) {
-          bottom: -18rem;
-        }
-
-        @media (min-width: $breakpoint-accordion-small-475) {
-          bottom: -15rem;
-        }
-
-        @media (min-width: $breakpoint-accordion-medium-550) {
-          bottom: -18rem;
-        }
-
-        @media (min-width: $breakpoint-accordion-medium-580) {
-          bottom: -21rem;
-        }
-
-        @media only screen and (min-width: $breakpoint-accordion-medium-620) {
-          bottom: -25rem;
-        }
-
-        @media only screen and (min-width: $breakpoint-accordion-medium-665) {
-          bottom: -28rem;
-        }
-
-        @media only screen and (min-width: $breakpoint-accordion-medium-690) {
-          bottom: -23rem;
-        }
-
-        @media (min-width: $breakpoint-accordion-large-755) {
-          bottom: -28rem;
-        }
+        top: -3.5rem;
+        object-position: top;
 
         @media (min-width: $breakpoint-scale-up) {
           position: static;
-          bottom: 0;
+          top: 0;
+          object-position: inherit;
         }
       }
     }
@@ -172,6 +125,11 @@ $breakpoint-accordion-large-755: 47rem;
       max-width: 17.1875rem; // 275px/16
       height: auto;
       margin: auto;
+
+      img {
+        object-position: inherit;
+        object-fit: inherit;
+      }
     }
 
     /* Add a squiggly line to every 5th list item, starting with the first */
