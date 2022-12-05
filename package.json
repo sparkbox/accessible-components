@@ -18,7 +18,7 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
-    "airtable": "^0.11.5",
+    "airtable": "^0.11.6",
     "check-node-version": "^4.2.1",
     "isomorphic-dompurify": "^0.24.0",
     "marked": "^4.2.3",
