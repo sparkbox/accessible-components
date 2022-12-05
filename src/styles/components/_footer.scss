@@ -19,13 +19,13 @@ $breakpoint-footer-margin: 25em;
     padding: 3.75rem 0; /* top&bottom: 60px/16; left&right: 0 */
     font-size: map.get($font-sizes, "sm");
     margin: auto;
-    line-height: 1.5rem; /* 24px/16 */
+    line-height: map.get($line-heights, "md"); /* 22px/20 */
     transition: 500ms color;
     letter-spacing: 0.02em; // 2% in Figma
 
     @media (min-width: $breakpoint-large-screen-860) {
-      line-height: 1.0625rem; /* 17px/16 */
       font-size: map.get($font-sizes, "sm");
+      line-height: map.get($line-heights, "sm"); // 20px/20
     }
   }
 

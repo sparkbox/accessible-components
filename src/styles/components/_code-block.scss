@@ -9,7 +9,7 @@ $breakpoint-increase-padding: $breakpoint-scale-up;
   &__heading {
     font-size: map.get($font-sizes, "mobile-heading");
     font-family: Viga, sans-serif;
-    line-height: 2.125rem; // 34px/16
+    line-height: map.get($line-heights, "lg"); // approx. 34px/24
     margin-inline: auto;
     position: relative;
 
@@ -32,7 +32,7 @@ $breakpoint-increase-padding: $breakpoint-scale-up;
 
     @media (min-width: $breakpoint-increase-content-font-size) {
       font-size: map.get($font-sizes, "md");
-      line-height: 2.5rem; // 40px/16
+      line-height: map.get($line-heights, "lg"); // approx. 45px/32
 
       &::after {
         width: 2.2rem;
@@ -43,10 +43,9 @@ $breakpoint-increase-padding: $breakpoint-scale-up;
 
   &__content {
     padding: 1.875rem 1.25rem; // top&bottom: 30px/16; left&right: 20px/16
-    // background-color: map.get($colors, "white");
     color: var(--foreground-color);
-    line-height: 1.75rem; // 28px/16
     font-size: map.get($font-sizes, "xs");
+    line-height: map.get($line-heights, "lg"); // approx. 22px/16
     font-family: Oxygen, sans-serif;
     letter-spacing: 0.02em; // 2% in Figma
     margin-top: 1rem;
@@ -73,12 +72,13 @@ $breakpoint-increase-padding: $breakpoint-scale-up;
   code {
     margin: 0;
     font-size: map.get($font-sizes, "xs");
-    line-height: 1.75rem; // 28px/16
+    line-height: map.get($line-heights, "xl"); // approx. 28px/16
     letter-spacing: 0.02em; // 2% in Figma
     font-family: Oxygen, sans-serif;
 
     @media (min-width: $breakpoint-increase-codeblock-font) {
       font-size: map.get($font-sizes, "sm");
+      line-height: map.get($line-heights, "lg"); // approx. 28px/20
     }
   }
 }

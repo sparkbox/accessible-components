@@ -30,6 +30,7 @@ $breakpoint-usage-guidelines-display: 70rem;
     font-family: Viga, sans-serif;
     font-weight: 400;
     font-size: map.get($font-sizes, "mobile-heading");
+    line-height: map.get($line-heights, "lg"); // approx. 34px/24
     margin-top: 0;
 
     @media (min-width: $breakpoint-usage-guidelines-display) {
@@ -52,11 +53,12 @@ $breakpoint-usage-guidelines-display: 70rem;
   }
 
   p {
-    line-height: 1.875rem;
     font-size: map.get($font-sizes, "xs");
+    line-height: map.get($line-heights, "xl"); // 28px/16
 
     @media (min-width: $breakpoint-usage-guidelines-display) {
       font-size: map.get($font-sizes, "sm");
+      line-height: map.get($line-heights, "lg"); // 28px/20
     }
   }
 
@@ -67,7 +69,7 @@ $breakpoint-usage-guidelines-display: 70rem;
   li {
     position: relative;
     font-size: map.get($font-sizes, "xs");
-    line-height: 1.75; // 28px/16
+    line-height: map.get($line-heights, "xl"); // approx. 28px/16
 
     &::before {
       content: "";
@@ -83,7 +85,7 @@ $breakpoint-usage-guidelines-display: 70rem;
 
     @media (min-width: $breakpoint-usage-guidelines-display) {
       font-size: map.get($font-sizes, "sm");
-      line-height: 1.5; // 30px/20
+      line-height: map.get($line-heights, "lg"); // approx. 28px/20
     }
   }
 }

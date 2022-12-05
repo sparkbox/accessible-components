@@ -1,7 +1,6 @@
 $breakpoint-background-image-size: 75rem;
 
 .cmp-definition {
-  line-height: 1.75rem;
   color: var(--foreground-color);
   width: 100%;
   position: relative;
@@ -36,6 +35,7 @@ $breakpoint-background-image-size: 75rem;
   // the entire text column
   &__content {
     font-size: map.get($font-sizes, "xs");
+    line-height: map.get($line-heights, "xl"); // approx. 28px/16
     letter-spacing: 0.02rem;
     max-width: 100rem;
 
@@ -46,6 +46,7 @@ $breakpoint-background-image-size: 75rem;
     @media (min-width: $breakpoint-scale-up) {
       position: relative;
       font-size: map.get($font-sizes, "sm");
+      line-height: map.get($line-heights, "lg"); // approx. 28px/20
       padding: 2.5rem 8.5625rem;
     }
   }
@@ -55,6 +56,7 @@ $breakpoint-background-image-size: 75rem;
     font-family: Viga, sans-serif;
     font-weight: 400;
     font-size: map.get($font-sizes, "mobile-heading");
+    line-height: map.get($line-heights, "lg"); // approx. 34px/24
     margin: 0;
 
     /* Circle around "definition" */

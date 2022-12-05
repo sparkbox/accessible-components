@@ -89,6 +89,7 @@
 
   &__heading {
     font-size: map.get($font-sizes, "mobile-heading");
+    line-height: map.get($line-heights, "lg"); // approx. 34px/24
     font-family: Viga, sans-serif;
     margin: 0;
 
@@ -97,17 +98,13 @@
     }
   }
 
-  &__content {
-    font-size: map.get($font-sizes, "sm");
-  }
-
   ul {
-    line-height: 1.5625rem;
     margin-left: 2rem;
   }
 
   p {
     font-size: map.get($font-sizes, "xs");
+    line-height: map.get($line-heights, "lg"); // approx. 22px/16
 
     @media (min-width: $breakpoint-grid-large-screen-1115) {
       font-size: map.get($font-sizes, "sm");
@@ -119,6 +116,7 @@
     margin-top: 1.25rem;
     font-weight: 400;
     font-size: map.get($font-sizes, "xs");
+    line-height: map.get($line-heights, "lg"); // approx. 22px/16
     letter-spacing: 175%;
 
     &::before {
@@ -159,6 +157,7 @@
   // accordion subheaders (not on every detail page)
   h3 {
     font-size: map.get($font-sizes, "xs");
+    line-height: map.get($line-heights, "lg"); // approx. 22px/16
     font-weight: 700;
 
     @media (min-width: $breakpoint-grid-large-screen-1115) {

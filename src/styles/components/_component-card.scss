@@ -39,12 +39,15 @@
       font-weight: 700;
       z-index: 1;
       font-size: map.get($font-sizes, "sm");
-      line-height: 4.6667rem; // 75px
+      line-height: map.get($line-heights, "lg"); // 28px/20
       letter-spacing: 0.02em;
+      height: 5.5rem; // 88px/16
       background-color: var(--light-background-color);
       position: relative;
       text-align: center;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-top: 0.25rem solid var(--foreground-color);
 
       @media (prefers-color-scheme: dark) {

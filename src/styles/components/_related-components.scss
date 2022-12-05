@@ -19,12 +19,14 @@ $breakpoint-move-arrow-left: 38.125rem; // 610px/16
   &__heading {
     position: relative;
     font-size: map.get($font-sizes, "mobile-heading");
+    line-height: map.get($line-heights, "lg"); // approx. 34px/24
     font-family: Viga, sans-serif;
     margin: 4rem 0;
 
     @media (min-width: $breakpoint-large-screen-860) {
       margin-top: 1rem;
       max-width: 10rem;
+      font-size: map.get($font-sizes, "md");
     }
 
     &::after {
@@ -62,15 +64,16 @@ $breakpoint-move-arrow-left: 38.125rem; // 610px/16
     padding: 1rem 0;
     text-align: left;
     font-size: map.get($font-sizes, "sm");
+    line-height: map.get($line-heights, "lg"); // 28px/20
 
-    @media (min-width: $breakpoint-large-screen-860) {
+    @media (min-width: $breakpoint-scale-up) {
       display: flex;
       gap: 1rem 6rem;
       flex-grow: 2;
       font-size: map.get($font-sizes, "sm");
-      flex-flow: wrap column;
+      flex-flow: wrap row;
+      align-items: flex-start;
       max-height: 10rem;
-      align-self: left;
       text-align: left;
     }
   }
