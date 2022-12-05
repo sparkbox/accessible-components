@@ -18,7 +18,7 @@ $breakpoint-move-arrow-left: 38.125rem; // 610px/16
 
   &__heading {
     position: relative;
-    font-size: 25px;
+    font-size: map.get($font-sizes, "mobile-heading");
     font-family: Viga, sans-serif;
     margin: 4rem 0;
 
@@ -61,7 +61,7 @@ $breakpoint-move-arrow-left: 38.125rem; // 610px/16
     gap: 4.6875rem;
     padding: 1rem 0;
     text-align: left;
-    font-size: 18px;
+    font-size: map.get($font-sizes, "sm");
 
     @media (min-width: $breakpoint-large-screen-860) {
       display: flex;

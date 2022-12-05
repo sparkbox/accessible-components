@@ -54,7 +54,7 @@ $breakpoint-background-image-size: 75rem;
     position: relative;
     font-family: Viga, sans-serif;
     font-weight: 400;
-    font-size: 1.5625rem;
+    font-size: map.get($font-sizes, "mobile-heading");
     margin: 0;
 
     /* Circle around "definition" */

@@ -18,7 +18,7 @@ $breakpoint-accordion-medium-550: 34rem;
   &__heading {
     position: relative;
     font-family: Viga, sans-serif;
-    font-size: 1.5625rem; // 25px/16
+    font-size: map.get($font-sizes, "mobile-heading");
     margin-bottom: 3.125rem; // 50px/16
     font-weight: 400;
     line-height: 2.125rem; // 34px/16

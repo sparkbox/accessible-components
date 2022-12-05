@@ -38,7 +38,7 @@
       font-family: Oxygen, sans-serif;
       font-weight: 700;
       z-index: 1;
-      font-size: 1.125rem; // 18px/16
+      font-size: map.get($font-sizes, "sm");
       line-height: 4.6667rem; // 75px
       letter-spacing: 0.02em;
       background-color: var(--light-background-color);
@@ -53,7 +53,7 @@
       }
 
       @media (min-width: $breakpoint-scale-up) {
-        font-size: map.get($font-sizes, "sm"); // 20px/16
+        font-size: map.get($font-sizes, "sm");
       }
 
       &::before {

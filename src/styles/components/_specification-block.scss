@@ -88,7 +88,7 @@
   }
 
   &__heading {
-    font-size: 1.5625rem;
+    font-size: map.get($font-sizes, "mobile-heading");
     font-family: Viga, sans-serif;
     margin: 0;
 
@@ -98,7 +98,7 @@
   }
 
   &__content {
-    font-size: map.get($font-sizes, "sm"); // 1.25rem, 20px/16
+    font-size: map.get($font-sizes, "sm");
   }
 
   ul {

@@ -47,9 +47,9 @@ $breakpoint-top-section-scale-up: 70rem;
       }
 
       h1 {
-        font-size: 1.5625rem; // 25px/16
+        font-size: map.get($font-sizes, "mobile-heading");
         font-weight: 400;
-        line-height: 1.36; // 34px/25
+        line-height: 1.21; // 34px/28
 
         @media (min-width: $breakpoint-scale-up) {
           font-size: map.get($font-sizes, "md");
@@ -59,7 +59,7 @@ $breakpoint-top-section-scale-up: 70rem;
         @media (min-width: $breakpoint-grid-large-screen-1115) {
           font-size: map.get($font-sizes, "xl");
           margin: 0;
-          line-height: 1.4; // 70px/50
+          line-height: 1.34; // 70px/52
         }
       }
 

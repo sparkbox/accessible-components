@@ -29,7 +29,7 @@ $breakpoint-usage-guidelines-display: 70rem;
     position: relative;
     font-family: Viga, sans-serif;
     font-weight: 400;
-    font-size: 1.5625rem;
+    font-size: map.get($font-sizes, "mobile-heading");
     margin-top: 0;
 
     @media (min-width: $breakpoint-usage-guidelines-display) {
@@ -66,6 +66,8 @@ $breakpoint-usage-guidelines-display: 70rem;
 
   li {
     position: relative;
+    font-size: map.get($font-sizes, "xs");
+    line-height: 1.75; // 28px/16
 
     &::before {
       content: "";
@@ -77,6 +79,11 @@ $breakpoint-usage-guidelines-display: 70rem;
       height: 1rem;
       left: -1.75rem;
       top: 0.8rem;
+    }
+
+    @media (min-width: $breakpoint-usage-guidelines-display) {
+      font-size: map.get($font-sizes, "sm");
+      line-height: 1.5; // 30px/20
     }
   }
 }

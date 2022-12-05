@@ -1,5 +1,5 @@
 .details-banner {
-  line-height: 2.125rem; // 28px
+  line-height: 2.125rem;
   letter-spacing: 0.02em; // 2% in Figma
   max-width: 82.875rem; // compensates for 8.5625rem padding on left/right
 
@@ -9,7 +9,7 @@
 
   @media (min-width: $breakpoint-scale-up) {
     font-size: map.get($font-sizes, "xl");
-    line-height: 1.4; // 70px/16 (get the line-height number from the target-line-height/font-size; 70 / 50)
+    line-height: 1.34; // 70px/52 (get the line-height number from the target-line-height/font-size)
   }
 
   h1 {
@@ -17,11 +17,11 @@
     line-height: 2.125rem; // 34px/16
     letter-spacing: 0;
     font-family: Viga, sans-serif;
-    font-size: 1.5625rem; // 25px/16
+    font-size: map.get($font-sizes, "mobile-heading");
 
     @media (min-width: $breakpoint-scale-up) {
       font-size: map.get($font-sizes, "xl");
-      line-height: 1.4; // 70px/16
+      line-height: 1.34; // 70px/52
     }
   }
 
