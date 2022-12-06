@@ -12,6 +12,7 @@
     cursor: pointer;
     transition: all 150ms ease-in-out;
     border: 2px solid var(--foreground-color);
+    background-color: var(--background-color);
 
     &__image {
       box-sizing: border-box;
@@ -20,10 +21,10 @@
       height: 70%;
       padding: min(15%, 2rem);
       margin: auto;
-    }
 
-    @media (prefers-color-scheme: dark) {
-      border: 2px solid var(--background-color);
+      @media (prefers-color-scheme: dark) {
+        filter: invert(1);
+      }
     }
 
     @media (min-width: $breakpoint-scale-up) {
@@ -42,18 +43,14 @@
       line-height: map.get($line-heights, "lg"); // 28px/20
       letter-spacing: 0.02em;
       height: 5.5rem; // 88px/16
-      background-color: var(--light-background-color);
+      background-color: var(--background-color);
       position: relative;
       text-align: center;
       display: flex;
       align-items: center;
       justify-content: center;
       border-top: 0.25rem solid var(--foreground-color);
-
-      @media (prefers-color-scheme: dark) {
-        border-top: 0.25rem solid var(--background-color);
-        background-color: var(--foreground-color);
-      }
+      color: var(--foreground-color);
 
       @media (min-width: $breakpoint-scale-up) {
         font-size: map.get($font-sizes, "sm");
@@ -64,6 +61,10 @@
         position: relative;
         top: -0.1rem;
         left: -1rem; // 16px/16
+
+        @media (prefers-color-scheme: dark) {
+          content: url("../../../public/images/list_markers/pink-decorative-bullet.svg");
+        }
       }
 
       &::after {
@@ -71,6 +72,10 @@
         position: relative;
         top: -0.1rem;
         left: 1rem; // 16px/16
+
+        @media (prefers-color-scheme: dark) {
+          content: url("../../../public/images/list_markers/pink-decorative-bullet.svg");
+        }
       }
     }
   }
@@ -87,9 +92,5 @@
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;
     transform: rotate(2deg);
-
-    @media screen and (prefers-color-scheme: dark) {
-      background-color: var(--foreground-color);
-    }
   }
 }

@@ -34,6 +34,10 @@ $breakpoint-accordion-medium-550: 34rem;
       top: -1rem;
       left: 50vw;
       background-position: 0;
+
+      @media (prefers-color-scheme: dark) {
+        background-image: url("../../../public/images/doodles/pink_doodle_line.svg");
+      }
     }
 
     @media (min-width: $breakpoint-scale-up) {
@@ -147,6 +151,10 @@ $breakpoint-accordion-medium-550: 34rem;
         background-size: contain;
         display: none;
 
+        @media (prefers-color-scheme: dark) {
+          background-image: url("../../../public/images/doodles/pink_doodle_line.svg");
+        }
+
         @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
         }
@@ -167,6 +175,10 @@ $breakpoint-accordion-medium-550: 34rem;
         right: -3%;
         background-size: contain;
         display: none;
+
+        @media (prefers-color-scheme: dark) {
+          background-image: url("../../../public/images/doodles/pink_doodle_o.svg");
+        }
 
         @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
@@ -190,6 +202,10 @@ $breakpoint-accordion-medium-550: 34rem;
         right: -6%;
         display: none;
 
+        @media (prefers-color-scheme: dark) {
+          background-image: url("../../../public/images/doodles/pink_doodle_diamond.svg");
+        }
+
         @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
         }
@@ -211,6 +227,10 @@ $breakpoint-accordion-medium-550: 34rem;
         left: -1%;
         display: none;
 
+        @media (prefers-color-scheme: dark) {
+          background-image: url("../../../public/images/doodles/pink_doodle_x.svg");
+        }
+
         @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
         }
@@ -231,6 +251,10 @@ $breakpoint-accordion-medium-550: 34rem;
         bottom: -15%;
         left: -5%;
         display: none;
+
+        @media (prefers-color-scheme: dark) {
+          background-image: url("../../../public/images/doodles/pink_doodle_arrow.svg");
+        }
 
         @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
@@ -256,6 +280,10 @@ $breakpoint-accordion-medium-550: 34rem;
           background-image: url("../../../public/images/doodles/doodle_diamond.svg");
           background-size: contain;
           display: inline-block;
+
+          @media (prefers-color-scheme: dark) {
+            background-image: url("../../../public/images/doodles/pink_doodle_diamond.svg");
+          }
         }
 
         &::after {
@@ -269,6 +297,10 @@ $breakpoint-accordion-medium-550: 34rem;
           right: -10%;
           background-size: contain;
           background-position: 0;
+
+          @media (prefers-color-scheme: dark) {
+            background-image: url("../../../public/images/doodles/pink_doodle_line.svg");
+          }
         }
       }
     }
