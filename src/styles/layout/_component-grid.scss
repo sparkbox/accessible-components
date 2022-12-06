@@ -183,12 +183,14 @@ $breakpoint-accordion-medium-550: 34rem;
 
         width: 15%;
         height: 5rem;
-        background-image: url("../../../public/images/doodles/doodle_diamond.svg");
-        background-size: contain;
         rotate: 15deg;
-        top: -6%;
-        right: -6%;
+        top: -20%;
+        right: -4%;
         display: none;
+        content: "";
+        mask: url("../../../public/images/doodles/doodle_diamond.svg") no-repeat;
+        background-color: var(--accent-color);
+        mask-size: contain;
 
         @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
