@@ -1,6 +1,0 @@
-{
-  "defaults": {
-    "runners": ["axe", "htmlcs"],
-    "hideElements": "li"
-  }
-}
