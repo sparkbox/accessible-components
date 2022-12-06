@@ -1,7 +1,7 @@
 .cmp-specifications-block {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3.75rem;
+  gap: 4rem;
   line-height: 1.5625rem;
   letter-spacing: 0.02rem;
 
@@ -20,8 +20,8 @@
         --number-of-columns: 1;
 
         max-width: 75ch;
-        grid-row: var(--row-start, 1) / span var(--number-of-rows, 1);
-        grid-column: var(--column-start, 1) / span var(--number-of-columns, 1);
+        grid-row: var(--row-start, auto) / span var(--number-of-rows, 1);
+        grid-column: var(--column-start, auto) / span var(--number-of-columns, 1);
       }
     }
   }

@@ -8,41 +8,46 @@ const masonryDetails = {
       rowStart: 1,
       numberOfRows: 1,
     },
-    'Aria Attributes': {
-      rowStart: 'auto',
-      numberOfRows: 1,
+    'ARIA Roles and Attributes': {
+      rowStart: 2,
+      numberOfRows: 3,
+      columnStart: 1,
     },
     'Keyboard Interactions': {
       rowStart: 2,
-      numberOfRows: 1,
+      numberOfRows: 2,
+      columnStart: 2,
     },
     'Additional Resources': {
-      rowStart: 2,
-      numberOfRows: 1,
+      rowStart: 4,
+      numberOfRows: 3,
     },
   },
   dialog: {
-    'Keyboard Interactions': {
+    'Focus Expectations': {
       rowStart: 1,
       numberOfRows: 2,
-    },
-    'Focus Expectations': {
-      rowStart: 3,
-      numberOfRows: 1,
-      columnStart: 2,
+      columnStart: 1,
     },
     'Semantic Elements': {
       rowStart: 1,
       numberOfRows: 1,
+      columnStart: 2,
     },
-    'Aria Attributes': {
+    'ARIA Roles and Attributes': {
       rowStart: 3,
-      numberOfRows: 1,
+      numberOfRows: 4,
       columnStart: 1,
     },
-    'Additional Resources': {
+    'Keyboard Interactions': {
       rowStart: 2,
+      numberOfRows: 3,
+      columnStart: 2,
+    },
+    'Additional Resources': {
+      rowStart: 4,
       numberOfRows: 1,
+      columnStart: 2,
     },
   },
   disclosure: {
@@ -54,19 +59,19 @@ const masonryDetails = {
       rowStart: 1,
       numberOfRows: 1,
     },
-    'Aria Attributes': {
-      rowStart: 3,
-      numberOfRows: 1,
-      columnStart: 1,
+    'ARIA Roles and Attributes': {
+      rowStart: 2,
+      numberOfRows: 3,
     },
     'Keyboard Interactions': {
       rowStart: 2,
-      numberOfColumns: 2,
+      numberOfRows: 1,
+      columnStart: 2,
     },
+
     'Additional Resources': {
       rowStart: 3,
       numberOfRows: 1,
-      columnStart: 1,
     },
   },
   tabs: {
@@ -75,21 +80,22 @@ const masonryDetails = {
       numberOfRows: 1,
     },
     'Semantic Elements': {
-      rowStart: 2,
-      numberOfRows: 1,
+      rowStart: 1,
+      numberOfRows: 2,
       columnStart: 2,
     },
-    'Aria Attributes': {
+    'ARIA Roles and Attributes': {
       rowStart: 2,
-      numberOfRows: 1,
+      numberOfRows: 3,
+      columnStart: 1,
     },
     'Keyboard Interactions': {
       rowStart: 3,
-      numberOfRows: 1,
+      numberOfRows: 3,
+      columnStart: 2,
     },
     'Additional Resources': {
-      rowStart: 1,
-      numberOfRows: 1,
+      rowStart: 5,
     },
   },
 };
