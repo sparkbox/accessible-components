@@ -61,6 +61,10 @@
         position: relative;
         top: -0.1rem;
         left: -1rem; // 16px/16
+
+        @media (prefers-color-scheme: dark) {
+          content: url("../../../public/images/list_markers/pink-decorative-bullet.svg");
+        }
       }
 
       &::after {
@@ -68,6 +72,10 @@
         position: relative;
         top: -0.1rem;
         left: 1rem; // 16px/16
+
+        @media (prefers-color-scheme: dark) {
+          content: url("../../../public/images/list_markers/pink-decorative-bullet.svg");
+        }
       }
     }
   }
