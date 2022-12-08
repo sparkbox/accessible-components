@@ -45,28 +45,32 @@ export default function Home() {
               <ComponentCard
                 name="Accordion"
                 slug="/accordion"
-                image="/images/components/accordion.svg"
+                imageOpen="/images/components/accordion_open.svg"
+                imageClosed="/images/components/accordion_closed.svg"
               />
             </li>
             <li className="components-grid__item components-grid__item--dialog">
               <ComponentCard
                 name="Dialog"
                 slug="/dialog"
-                image="/images/components/dialog.svg"
+                imageOpen="/images/components/dialog_open.svg"
+                imageClosed="/images/components/dialog_closed.svg"
               />
             </li>
             <li className="components-grid__item components-grid__item--disclosure">
               <ComponentCard
                 name="Disclosure"
                 slug="/disclosure"
-                image="/images/components/disclosure.svg"
+                imageOpen="/images/components/disclosure_open.svg"
+                imageClosed="/images/components/disclosure_closed.svg"
               />
             </li>
             <li className="components-grid__item components-grid__item--tabs">
               <ComponentCard
                 name="Tabs"
                 slug="/tabs"
-                image="/images/components/tabs.svg"
+                imageOpen="/images/components/tabs_open.svg"
+                imageClosed="/images/components/tabs_closed.svg"
               />
             </li>
             <li className="components-grid__item components-grid__item--max-scott">

@@ -1,11 +1,18 @@
 import Link from 'next/link';
 
-export default function ComponentCard({ name, slug, image }) {
+export default function ComponentCard({
+  name, slug, imageOpen, imageClosed,
+}) {
   return (
     <Link href={slug} className="component-link">
       <div className="component-card">
         <span className="component-card__header">{name}</span>
-        <img src={image} alt="" className="component-card__image" />
+        <img src={imageOpen} alt="" className="component-card__image-open" />
+        <img
+          src={imageClosed}
+          alt=""
+          className="component-card__image-closed"
+        />
       </div>
     </Link>
   );
