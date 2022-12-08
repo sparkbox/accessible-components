@@ -15,60 +15,50 @@ $breakpoint-footer-margin: 25em;
     text-align: center;
     padding: 1.5rem 0; /* top&bottom: 60px/16px; left&right: 0 */
     font-size: map.get($font-sizes, "xs");
-    transition: 500ms color;
     letter-spacing: 0.02em; // 2% in Figma
-
-    @media (min-width: $breakpoint-large-screen-860) {
-      line-height: map.get($line-heights, "sm"); // 20px/20
-    }
+    color: var(--foreground-color);
   }
 
   // Flex items of content wrapper
   &__item {
-    color: var(--foreground-color);
     width: 100%;
 
-    // the first line of the footer has a smaller margin-bottom than the rest of the footer items.
-    // this compensates for that.
+    // first line of text needs extra space below it.
     &:first-child {
-      margin-bottom: -1.25rem; // 30px/16
-
-      @media (min-width: $breakpoint-scale-up) {
-        margin-bottom: -1.5rem; // this is to compensate for the 17px line-height once at tablet size
-      }
-    }
-  }
-
-  // text-links
-  &__item > a {
-    text-decoration: underline;
-    color: var(--font-color);
-    background: linear-gradient(to left, transparent 50%, var(--accent-color) 50%);
-    background-size: 201% 100%;
-    background-position: right bottom;
-    transition: ease-in-out all 250ms;
-    outline: none;
-
-    @media (prefers-reduced-motion: no-preference) {
-      &:hover,
-      &:focus-within {
-        color: var(--font-color-dark);
-        background-position: left bottom;
-      }
+      margin-bottom: -1.5rem; // 30px/16
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      &:hover,
-      &:focus-within {
-        color: var(--font-color-dark);
-        background-color: var(--accent-color);
+    // Underline links and give them animations
+    &--text a {
+      text-decoration: underline;
+      color: var(--font-color);
+      background: linear-gradient(to left, transparent 50%, var(--accent-color) 50%);
+      background-size: 201% 100%;
+      background-position: right bottom;
+      transition: ease-in-out all 250ms;
+      outline: none;
+
+      @media (prefers-reduced-motion: no-preference) {
+        &:hover,
+        &:focus-within {
+          color: var(--font-color-dark);
+          background-position: left bottom;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        &:hover,
+        &:focus-within {
+          color: var(--font-color-dark);
+          background-color: var(--accent-color);
+        }
       }
     }
   }
 
   // Container for social media icons
-  &__links {
-    margin: 0 1rem; // top&bottom: 0; left&right: 16px
+  &__icon-container {
+    margin: auto; // top&bottom: 0; left&right: 16px
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -76,16 +66,11 @@ $breakpoint-footer-margin: 25em;
     max-width: 16rem; // 325px/16
     position: relative;
 
-    @media (min-width: $breakpoint-footer-margin) {
-      margin: auto;
-    }
-
     a {
       position: relative;
-      outline: none;
       padding-right: 0.2rem;
 
-      // each social media icon is an SVG with className="icon"
+      // classname on the <svg> tags
       .icon {
         fill: currentcolor;
         position: relative;

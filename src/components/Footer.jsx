@@ -10,18 +10,18 @@ export default function Footer() {
   return (
     <footer className="default-footer" data-testid="footer">
       <div className="default-footer__content">
-        <div className="default-footer__item">
+        <div className="default-footer__item default-footer__item--text">
           {'This site was proudly built by '}
           <a href="https://sparkbox.com">Sparkbox</a>
           {' apprentices.'}
         </div>
-        <div className="default-footer__item">
+        <div className="default-footer__item default-footer__item--text">
           <a href="https://apprentices.sparkbox.com/">
             Learn more about Sparkbox&#39;s apprenticeship programs.
           </a>
         </div>
         <div className="default-footer__item">
-          <div className="default-footer__links">
+          <div className="default-footer__icon-container">
             <a
               href="https://twitter.com/hearsparkbox"
               aria-label="Twitter link"
@@ -48,7 +48,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="default-footer__item">
+        <div className="default-footer__item default-footer__item--text">
           {`©${currentYear} Sparkbox. All rights reserved. `}
           <a href="https://sparkbox.com/privacypolicy">Privacy Policy</a>
           {' and '}
