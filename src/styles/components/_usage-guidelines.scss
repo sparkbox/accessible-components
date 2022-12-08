@@ -6,7 +6,6 @@ $breakpoint-usage-guidelines-display: 70rem;
   margin: auto;
   letter-spacing: 0.02rem;
   background-color: var(--accent-color);
-  padding-left: 1.25rem;
   color: var(--font-color-dark);
 
   @media (prefers-color-scheme: dark) {
@@ -17,6 +16,7 @@ $breakpoint-usage-guidelines-display: 70rem;
   @media (min-width: $breakpoint-usage-guidelines-display) {
     width: 100%;
     max-width: 100rem;
+    padding-left: 1.25rem;
     display: flex;
     flex-direction: row;
 
@@ -52,7 +52,7 @@ $breakpoint-usage-guidelines-display: 70rem;
     }
   }
 
-  p {
+  &__content {
     font-size: map.get($font-sizes, "xs");
     line-height: map.get($line-heights, "xl"); // 28px/16
 
@@ -60,32 +60,42 @@ $breakpoint-usage-guidelines-display: 70rem;
       font-size: map.get($font-sizes, "sm");
       line-height: map.get($line-heights, "lg"); // 28px/20
     }
-  }
 
-  ul {
-    margin-left: 1.5rem;
-  }
+    // needs more specific styles to override user agent stylesheet
+    h3 {
+      font-size: map.get($font-sizes, "xs");
 
-  li {
-    position: relative;
-    font-size: map.get($font-sizes, "xs");
-    line-height: map.get($line-heights, "xl"); // approx. 28px/16
-
-    &::before {
-      content: "";
-      background-image: url("../../../public/images/list_markers/emdash.svg");
-      background-repeat: no-repeat;
-      background-size: 80%;
-      position: absolute;
-      width: 1.25rem;
-      height: 1rem;
-      left: -1.75rem;
-      top: 0.8rem;
+      @media (min-width: $breakpoint-usage-guidelines-display) {
+        font-size: map.get($font-sizes, "sm");
+      }
     }
 
-    @media (min-width: $breakpoint-usage-guidelines-display) {
-      font-size: map.get($font-sizes, "sm");
-      line-height: map.get($line-heights, "lg"); // approx. 28px/20
+    ul {
+      list-style-type: none;
+
+      li {
+        position: relative;
+        margin: 1rem 0 1rem 1.9rem;
+        font-size: map.get($font-sizes, "xs");
+        line-height: map.get($line-heights, "xl"); // approx. 28px/16
+
+        @media (min-width: $breakpoint-usage-guidelines-display) {
+          font-size: map.get($font-sizes, "sm");
+          line-height: map.get($line-heights, "lg"); // approx. 28px/20
+        }
+
+        &::before {
+          content: "";
+          background-image: url("../../../public/images/list_markers/emdash.svg");
+          background-repeat: no-repeat;
+          background-size: 80%;
+          position: absolute;
+          width: 1.25rem;
+          height: 1rem;
+          left: -1.75rem;
+          top: 0.4rem;
+        }
+      }
     }
   }
 }

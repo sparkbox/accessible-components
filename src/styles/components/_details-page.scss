@@ -32,16 +32,17 @@
   &__primary {
     display: flex;
     flex-direction: column;
-    gap: 3.75rem;
     width: 100%;
     margin: auto;
     padding: 3.75rem 1.25rem;
     max-width: 100rem; // 1600px;
-    overflow: hidden;
 
     @media (min-width: $breakpoint-scale-up) {
       padding: 8.5625rem;
-      gap: 1rem;
+    }
+
+    &--sandpack {
+      padding-top: 0;
     }
   }
 

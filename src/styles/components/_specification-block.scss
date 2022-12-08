@@ -34,9 +34,9 @@
       &::after {
         content: "";
         position: absolute;
-        left: 14.5rem;
-        top: -0.5rem;
-        width: 4rem;
+        top: 0;
+        left: 15rem;
+        width: 3.5rem;
         height: 2.5rem;
         background-image: url("../../../public/images/doodles/doodle_checkmark.svg");
         background-size: 100%;
@@ -56,7 +56,7 @@
         content: "";
         position: absolute;
         left: 0.5rem;
-        top: 1.25rem;
+        top: 1.5rem;
         width: 6rem;
         height: 2.5rem;
         background-image: url("../../../public/images/doodles/doodle_underline.svg");
@@ -73,7 +73,10 @@
       // doodles at larger screen sizes
       &:nth-child(1) {
         &::after {
-          left: 17.5rem;
+          top: 0;
+          left: 19.5rem;
+          width: 4.5rem;
+          height: 3rem;
         }
       }
 
@@ -81,7 +84,7 @@
         &::after {
           width: 10rem;
           left: -0.5rem;
-          top: 1rem;
+          top: 1.75rem;
         }
       }
     }
@@ -98,53 +101,49 @@
     }
   }
 
-  ul {
-    margin-left: 2rem;
-  }
-
-  p {
+  &__content {
     font-size: map.get($font-sizes, "xs");
     line-height: map.get($line-heights, "lg"); // approx. 22px/16
 
     @media (min-width: $breakpoint-grid-large-screen-1115) {
       font-size: map.get($font-sizes, "sm");
     }
-  }
 
-  li {
-    position: relative;
-    margin-top: 1.25rem;
-    font-weight: 400;
-    font-size: map.get($font-sizes, "xs");
-    line-height: map.get($line-heights, "lg"); // approx. 22px/16
-    letter-spacing: 175%;
+    ul {
+      list-style-type: none;
 
-    &::before {
-      content: "";
-      background-image: url("../../../public/images/list_markers/teal-decorative-bullet.svg");
-      background-repeat: no-repeat;
-      background-size: contain;
-      position: absolute;
-      width: 0.6rem;
-      height: 1rem;
-      left: -1.5rem;
-      top: 0.5rem;
+      li {
+        position: relative;
+        margin: 1rem 0 1rem 1.9rem;
+        font-size: map.get($font-sizes, "xs");
+        line-height: map.get($line-heights, "xl"); // approx. 28px/16
 
-      @media (prefers-color-scheme: dark) {
-        background-image: url("../../../public/images/list_markers/pink-decorative-bullet.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-      }
-    }
+        &::before {
+          content: "";
+          background-image: url("../../../public/images/list_markers/teal-decorative-bullet.svg");
+          background-repeat: no-repeat;
+          background-size: 80%;
+          position: absolute;
+          width: 0.8rem;
+          height: 0.8rem;
+          left: -1.75rem;
+          top: 0.55rem;
+        }
 
-    @media (min-width: $breakpoint-grid-large-screen-1115) {
-      font-size: map.get($font-sizes, "sm");
+        @media (min-width: $breakpoint-scale-up) {
+          font-size: map.get($font-sizes, "sm");
+          line-height: map.get($line-heights, "lg"); // approx. 28px/20
 
-      &::before {
-        width: 0.8rem;
-        height: 1rem;
-        left: -1.5rem;
-        top: 0.4rem;
+          &::before {
+            top: 0.6rem;
+          }
+        }
+
+        @media (prefers-color-scheme: dark) {
+          &::before {
+            background-image: url("../../../public/images/list_markers/pink-decorative-bullet.svg");
+          }
+        }
       }
     }
   }

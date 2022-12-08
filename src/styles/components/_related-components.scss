@@ -1,5 +1,3 @@
-$breakpoint-move-arrow-left: 38.125rem; // 610px/16
-
 .rel-component {
   background-color: var(--accent-color);
   color: var(--font-color-highlight);
@@ -34,9 +32,9 @@ $breakpoint-move-arrow-left: 38.125rem; // 610px/16
       background-image: url("../../../public/images/cmt_inventory_arrow.svg");
       position: absolute;
       left: 2rem;
-      top: -4.5rem;
-      width: 3.75rem; // 60px/16
-      height: 4.6875rem; // 75px/16
+      top: -5rem;
+      width: 3.5rem; // 56px/16
+      height: 4.2rem; // 67px/16
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -45,14 +43,10 @@ $breakpoint-move-arrow-left: 38.125rem; // 610px/16
         filter: invert(1);
       }
 
-      @media (min-width: $breakpoint-move-arrow-left) {
-        right: 85%;
-        width: 2.875rem; // 46px/16
-        height: 3.5625rem; // 57px/16
-      }
-
       @media (min-width: $breakpoint-large-screen-860) {
-        right: 50%;
+        width: 2.8rem; // 45px/16
+        height: 3.4rem; // 54px/16
+        top: -3.5rem;
       }
     }
   }

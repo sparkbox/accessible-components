@@ -65,7 +65,7 @@ export default function Details({ details }) {
         <RichText markdown={definition} />
       </Definition>
       {canRenderSandpack ? (
-        <div className="details-page__primary">
+        <div className="details-page__primary details-page__primary--sandpack">
           <article className="sandpack">
             <header>
               <h2>Code Example</h2>
