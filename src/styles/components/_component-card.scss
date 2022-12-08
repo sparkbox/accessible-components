@@ -75,8 +75,21 @@
     }
   }
 
+  &:focus {
+    @media screen and (prefers-color-scheme: dark) {
+      background-color: var(--background-color);
+    }
+  }
+
   &:focus .component-card {
-    outline: none;
-    border: 2px solid var(--accent-color);
+    position: relative;
+    z-index: 1;
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    transform: rotate(2deg);
+
+    @media screen and (prefers-color-scheme: dark) {
+      background-color: var(--foreground-color);
+    }
   }
 }
