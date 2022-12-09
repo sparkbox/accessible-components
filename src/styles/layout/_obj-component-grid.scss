@@ -16,33 +16,29 @@ $breakpoint-accordion-medium-550: 34rem;
 
   // grid heading
   &__heading {
-    position: relative;
     font-family: Viga, sans-serif;
     font-size: map.get($font-sizes, "mobile-heading");
     margin-bottom: 3.125rem; // 50px/16
     font-weight: 400;
     line-height: 2.125rem; // 34px/16
-
-    &::after {
-      @include doodle;
-
-      width: 7rem;
-      height: 7rem;
-      rotate: 30deg;
-      top: -1rem;
-      left: 50vw;
-
-      // mask: url("../../../public/images/doodles/doodle_line.svg") no-repeat;
-      // background-color: var(--accent-color);
-      // mask-size: contain;
-    }
+    position: relative;
 
     @media (min-width: $breakpoint-scale-up) {
       font-size: map.get($font-sizes, "lg");
+    }
+  }
 
-      &::after {
-        display: none;
-      }
+  .doodle-line-pseudo-heading {
+    border: 1px solid white;
+    width: 7rem;
+    height: 7rem;
+    rotate: 20deg;
+    position: absolute;
+    top: -1.25rem;
+    left: 7rem;
+
+    @media (min-width: $breakpoint-scale-up) {
+      left: 15rem;
     }
   }
 
@@ -135,73 +131,60 @@ $breakpoint-accordion-medium-550: 34rem;
     /* Add a squiggly line to every 5th list item, starting with the first */
     &:nth-child(5n-4) {
       position: relative;
+    }
 
-      &::before {
-        @include doodle;
+    .doodle-line-pseudo-max {
+      border: 1px solid blue;
+      width: 30%;
+      height: 10%;
+      top: 2rem;
+      right: -5rem;
+      rotate: 20deg;
+      display: inline-block;
 
-        width: 30%;
-        height: 10%;
-
-        // background-image: url("../../../public/images/doodles/doodle_line.svg");
-        top: -5%;
-        right: -5%;
-        rotate: 30deg;
-        display: none;
-
-        // mask: url("../../../public/images/doodles/doodle_line.svg") no-repeat;
-        // background-color: var(--accent-color);
-        // mask-size: contain;
-
-        @media (min-width: $breakpoint-scale-up) {
-          display: inline-block;
-        }
+      @media (min-width: $breakpoint-scale-up) {
+        top: -5rem;
+        right: -10rem;
       }
     }
 
     /* Add a circle to every 5th list item, starting with second */
     &:nth-child(5n-3) {
       position: relative;
+      background-color: transparent;
+    }
 
-      &::before {
-        @include doodle;
+    .doodle-o-pseudo {
+      display: none;
 
-        width: 8%;
-        height: 3rem;
-        bottom: 3%;
-        right: -3%;
-        display: none;
-
-        // mask: url("../../../public/images/doodles/doodle_o.svg") no-repeat;
-        // background-color: var(--accent-color);
-        // mask-size: contain;
-
-        @media (min-width: $breakpoint-scale-up) {
-          display: inline-block;
-        }
+      @media (min-width: $breakpoint-scale-up) {
+        position: relative;
+        left: -9rem;
+        min-height: 2rem;
+        display: inline;
+        width: 100%;
+        bottom: -10rem;
+        z-index: 2;
       }
     }
 
     /* Add a diamond to every 5th list item, starting with third */
     &:nth-child(5n-2) {
       position: relative;
+      background-color: transparent;
+    }
 
-      &::before {
-        @include doodle;
+    .doodle-diamond-pseudo-grid {
+      display: none;
 
-        width: 15%;
+      @media (min-width: $breakpoint-scale-up) {
+        position: relative;
+        min-width: 2rem;
         height: 5rem;
-        rotate: 15deg;
-        top: -20%;
-        right: -4%;
-        display: none;
-
-        // mask: url("../../../public/images/doodles/doodle_diamond.svg") no-repeat;
-        // background-color: var(--accent-color);
-        // mask-size: contain;
-
-        @media (min-width: $breakpoint-scale-up) {
-          display: inline-block;
-        }
+        rotate: 25deg;
+        top: -5rem;
+        right: 1rem;
+        display: inline-block;
       }
     }
 
@@ -297,5 +280,5 @@ $breakpoint-accordion-medium-550: 34rem;
 
 .doodle {
   border: 1px solid red;
-  fill: var(--accent-color);
+  color: var(--accent-color);
 }
