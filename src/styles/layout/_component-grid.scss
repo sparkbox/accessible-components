@@ -31,9 +31,10 @@ $breakpoint-accordion-medium-550: 34rem;
       rotate: 30deg;
       top: -1rem;
       left: 50vw;
-      mask: url("../../../public/images/doodles/doodle_line.svg") no-repeat;
-      background-color: var(--accent-color);
-      mask-size: contain;
+
+      // mask: url("../../../public/images/doodles/doodle_line.svg") no-repeat;
+      // background-color: var(--accent-color);
+      // mask-size: contain;
     }
 
     @media (min-width: $breakpoint-scale-up) {
@@ -146,9 +147,10 @@ $breakpoint-accordion-medium-550: 34rem;
         right: -5%;
         rotate: 30deg;
         display: none;
-        mask: url("../../../public/images/doodles/doodle_line.svg") no-repeat;
-        background-color: var(--accent-color);
-        mask-size: contain;
+
+        // mask: url("../../../public/images/doodles/doodle_line.svg") no-repeat;
+        // background-color: var(--accent-color);
+        // mask-size: contain;
 
         @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
@@ -168,9 +170,10 @@ $breakpoint-accordion-medium-550: 34rem;
         bottom: 3%;
         right: -3%;
         display: none;
-        mask: url("../../../public/images/doodles/doodle_o.svg") no-repeat;
-        background-color: var(--accent-color);
-        mask-size: contain;
+
+        // mask: url("../../../public/images/doodles/doodle_o.svg") no-repeat;
+        // background-color: var(--accent-color);
+        // mask-size: contain;
 
         @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
@@ -191,9 +194,10 @@ $breakpoint-accordion-medium-550: 34rem;
         top: -20%;
         right: -4%;
         display: none;
-        mask: url("../../../public/images/doodles/doodle_diamond.svg") no-repeat;
-        background-color: var(--accent-color);
-        mask-size: contain;
+
+        // mask: url("../../../public/images/doodles/doodle_diamond.svg") no-repeat;
+        // background-color: var(--accent-color);
+        // mask-size: contain;
 
         @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
@@ -213,9 +217,10 @@ $breakpoint-accordion-medium-550: 34rem;
         top: -3%;
         left: -1%;
         display: none;
-        mask: url("../../../public/images/doodles/doodle_x.svg") no-repeat;
-        background-color: var(--accent-color);
-        mask-size: contain;
+
+        // mask: url("../../../public/images/doodles/doodle_x.svg") no-repeat;
+        // background-color: var(--accent-color);
+        // mask-size: contain;
 
         @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
@@ -234,10 +239,11 @@ $breakpoint-accordion-medium-550: 34rem;
         height: 20%;
         bottom: -15%;
         left: -5%;
-        mask: url("../../../public/images/doodles/doodle_arrow.svg") no-repeat;
-        background-color: var(--accent-color);
-        mask-size: contain;
         display: none;
+
+        // mask: url("../../../public/images/doodles/doodle_arrow.svg") no-repeat;
+        // background-color: var(--accent-color);
+        // mask-size: contain;
 
         @media (min-width: $breakpoint-scale-up) {
           display: inline-block;
@@ -261,9 +267,10 @@ $breakpoint-accordion-medium-550: 34rem;
           height: 20%;
           transform: translateX(-2rem) translateY(0.25rem) rotate(-20deg);
           display: inline-block;
-          mask: url("../../../public/images/doodles/doodle_diamond.svg") no-repeat;
-          background-color: var(--accent-color);
-          mask-size: contain;
+
+          // mask: url("../../../public/images/doodles/doodle_diamond.svg") no-repeat;
+          // background-color: var(--accent-color);
+          // mask-size: contain;
         }
 
         &::after {
@@ -274,11 +281,21 @@ $breakpoint-accordion-medium-550: 34rem;
           rotate: 20deg;
           bottom: -18%;
           right: -10%;
-          mask: url("../../../public/images/doodles/doodle_line.svg") no-repeat;
-          background-color: var(--accent-color);
-          mask-size: contain;
+
+          // mask: url("../../../public/images/doodles/doodle_line.svg") no-repeat;
+          // background-color: var(--accent-color);
+          // mask-size: contain;
         }
       }
     }
   }
+}
+
+.svg-partials {
+  display: none;
+}
+
+.doodle {
+  border: 1px solid red;
+  fill: var(--accent-color);
 }
