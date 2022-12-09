@@ -53,7 +53,7 @@ if (openDialogButton) {
   });
   
   dialog.addEventListener("keydown", (e) => {
-    if(e.key !== 'Tab' || e.keyCode !== 9) return;
+    if(e.key !== "Tab" || e.keyCode !== 9) return;
     
     const focusableElements = dialog.querySelectorAll("button", "a");
     const firstFocusableElement = focusableElements[0];

@@ -1,5 +1,4 @@
-const css = `
-/* Styles for panel visibility */
+const css = `/* Styles for panel visibility */
 .collapsed ~ .tab-panel {
   display: none;
 }
@@ -43,7 +42,6 @@ h3 {
   margin: 0.3rem;
 }
 /* end of optional styles */
-
 `;
 
 export default css;

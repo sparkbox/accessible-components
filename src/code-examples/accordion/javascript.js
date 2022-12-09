@@ -1,5 +1,4 @@
-const javascript = `
-// Return NodeList of all buttons in the Accordion
+const javascript = `// Return NodeList of all buttons in the Accordion
 const getAccordionButtons = () => {
   const accordion = document.querySelector(".accordion");
   return accordion.querySelectorAll("button");

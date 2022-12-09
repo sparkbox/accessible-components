@@ -1,8 +1,8 @@
 const html = `<button type="button" class="js-open-modal" aria-expanded="true" aria-controls="dialog-content">Open a Dialog</button>
 
-<div id="dialog-content" class="dialog" aria-hidden="false" role="dialog" aria-labelledBy="h2" aria-modal="true">
+<div id="dialog-content" class="dialog" role="dialog" aria-labelledby="dialog-heading" aria-modal="true">
   <button type="button" class="js-close-modal" aria-label="close the dialog" id="close-dialog">x</button>
-  <h2>You made it to the Dialog window!</h2>
+  <h2 id="dialog-heading">You made it to the Dialog window!</h2>
   <p>
     Cupcake ipsum dolor sit amet. Icing cookie marzipan muffin marshmallow. Cotton candy cupcake lollipop gummies bear claw soufflé tootsie roll. Liquorice gummies pie cupcake bonbon danish icing. Biscuit cake pie sweet roll cheesecake biscuit apple pie jujubes. Fruitcake bear claw dragée fruitcake ice cream soufflé. Icing bear claw apple pie bonbon muffin chupa chups pudding marzipan. Sugar plum bear claw chocolate tootsie roll lemon drops icing. Brownie marzipan powder shortbread danish. Cake apple pie pastry biscuit cake halvah marzipan gingerbread carrot cake.
   </p>
@@ -12,7 +12,7 @@ const html = `<button type="button" class="js-open-modal" aria-expanded="true" a
   <p>
     Bear claw sugar plum topping dessert ice cream gummi bears. Sweet roll apple pie pastry cookie croissant tootsie roll caramels cookie. Icing cheesecake chocolate cake tart chocolate gingerbread. Gummi bears ice cream apple pie cookie candy carrot cake fruitcake gummi bears marshmallow. Cotton candy pudding bonbon muffin jelly. Marshmallow chocolate cake cupcake muffin shortbread chocolate cake.
   </p>
-  <a href="#">Another element to demonstrate trapped focus :)</a>
+  <a href="#">Another element to demonstrate trapped focus 😃</a>
   <button type="button" class="js-cancel-modal">Close/Cancel</button>
 </div>`;
 
