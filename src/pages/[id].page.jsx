@@ -29,20 +29,31 @@ export default function Details({ details }) {
   const [htmlCode, setHtmlCode] = useState('');
   const [cssCode, setCssCode] = useState('');
   const [javascriptCode, setJavascriptCode] = useState('');
+  const [canRenderSandpack, setCanRenderSandpack] = useState(false);
 
   // dynamic imports need to be asynchronous
   useEffect(() => {
-    const updateCodeBlocks = async () => {
-      const html = await import(`../code-examples/${slug}/html.js`);
-      setHtmlCode(html.default);
+    const updateSandpackExamples = async () => {
+      try {
+        const html = await import(`../code-examples/${slug}/html.js`);
+        setHtmlCode(html.default);
 
-      const css = await import(`../code-examples/${slug}/css.js`);
-      setCssCode(css.default);
+        const css = await import(`../code-examples/${slug}/css.js`);
+        setCssCode(css.default);
 
-      const javascript = await import(`../code-examples/${slug}/javascript.js`);
-      setJavascriptCode(javascript.default);
+        const javascript = await import(
+          `../code-examples/${slug}/javascript.js`
+        );
+        setJavascriptCode(javascript.default);
+        setCanRenderSandpack(true);
+      } catch (e) {
+        // we want a console.log when there might not be any code
+        // examples, so I disabled this lint rule
+        // eslint-disable-next-line no-console
+        console.log(`We couldn't find code examples for ${slug}.`);
+      }
     };
-    updateCodeBlocks();
+    updateSandpackExamples();
   });
 
   return (
@@ -53,54 +64,56 @@ export default function Details({ details }) {
       <Definition>
         <RichText markdown={definition} />
       </Definition>
-      <div className="details-page__primary">
-        <article className="sandpack">
-          <header>
-            <h2>Code Example</h2>
-          </header>
-          <figure>
-            <Sandpack
-              template="vanilla"
-              theme={levelUp}
-              files={{
-                '/index.html': {
-                  code: htmlCode,
-                  active: true,
-                },
-                'index.css': cssCode,
-                '/index.js': javascriptCode,
-                '/src/index.js': {
-                  code: 'import "../index.css"; import "../index.js"',
-                  hidden: true,
-                },
-              }}
-              options={{
-                showLineNumbers: true,
-                wrapContent: true,
-                editorHeight: 480,
-              }}
-            />
-          </figure>
-          <figcaption>
-            Once focused on the code editor:
-            <p>
-              Press
-              {' '}
-              <kbd>Enter</kbd>
-              {' '}
-              to enter the code editor and change the
-              code.
-            </p>
-            <p>
-              Press
-              {' '}
-              <kbd>Escape</kbd>
-              {' '}
-              to leave the code editor.
-            </p>
-          </figcaption>
-        </article>
-      </div>
+      {canRenderSandpack ? (
+        <div className="details-page__primary">
+          <article className="sandpack">
+            <header>
+              <h2>Code Example</h2>
+            </header>
+            <figure>
+              <Sandpack
+                template="vanilla"
+                theme={levelUp}
+                files={{
+                  '/index.html': {
+                    code: htmlCode,
+                    active: true,
+                  },
+                  'index.css': cssCode,
+                  '/index.js': javascriptCode,
+                  '/src/index.js': {
+                    code: 'import "../index.css"; import "../index.js"',
+                    hidden: true,
+                  },
+                }}
+                options={{
+                  showLineNumbers: true,
+                  wrapContent: true,
+                  editorHeight: 480,
+                }}
+              />
+            </figure>
+            <figcaption>
+              Once focused on the code editor:
+              <p>
+                Press
+                {' '}
+                <kbd>Enter</kbd>
+                {' '}
+                to enter the code editor and change the
+                code.
+              </p>
+              <p>
+                Press
+                {' '}
+                <kbd>Escape</kbd>
+                {' '}
+                to leave the code editor.
+              </p>
+            </figcaption>
+          </article>
+        </div>
+      ) : null}
       <div className="details-page__banner">
         <div className="details-page__secondary details-page__secondary--usage-guidelines">
           <UsageGuidelines>

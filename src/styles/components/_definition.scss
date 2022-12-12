@@ -4,10 +4,9 @@ $breakpoint-background-image-size: 75rem;
   color: var(--foreground-color);
   width: 100%;
   position: relative;
-  margin: 2.5rem 0 0; // top: 40px; left&right: 0; bottom: 0;
+  margin: 2.5rem 0; // top/bottom: 40px; left&right: 0;
 
   @media (min-width: $breakpoint-scale-up) {
-    margin-bottom: -8.5625rem; // compensates for code example padding
     background-image: url("../../../public/images/definition_text_light.svg");
     background-size: contain;
     background-position: center right -3rem;
