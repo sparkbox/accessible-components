@@ -151,7 +151,8 @@
 
   code {
     color: var(--code-color);
-    font-family: Oxygen, sans-serif;
+    padding: 0 4px;
+    border-radius: 0.5rem;
   }
 
   // accordion subheaders (not on every detail page)
