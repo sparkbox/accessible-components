@@ -1,0 +1,83 @@
+.error-page {
+  @media (min-width: $breakpoint-scale-up) {
+    padding-bottom: 5rem; // this should mirror the header padding
+  }
+
+  &__header {
+    padding: 0;
+
+    @media (min-width: $breakpoint-scale-up) {
+      padding-top: 5rem;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  &__content {
+    padding: 0 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 100rem;
+
+    @media (min-width: $breakpoint-scale-up) {
+      padding: 1.25rem 1.25rem 1.25rem 8.5625rem; // top: 20px/16; right: 20px/16; bottom: 20px/16; left: 137px/16
+    }
+
+    @media (min-width: 100rem) {
+      margin: auto;
+    }
+  }
+
+  &__heading {
+    color: var(--foreground-color);
+    font-size: map.get($font-sizes, "mobile-heading");
+    line-height: map.get($line-heights, "lg");
+    letter-spacing: 0.02em;
+    margin: 0;
+
+    @media (min-width: $breakpoint-scale-up) {
+      font-size: map.get($font-sizes, "xl");
+    }
+  }
+
+  &__message {
+    margin: 0;
+    color: var(--foreground-color);
+    font-size: map.get($font-sizes, "xs");
+    line-height: map.get($line-heights, "md");
+    letter-spacing: 0.02em;
+
+    @media (min-width: $breakpoint-scale-up) {
+      font-size: map.get($font-sizes, "sm");
+    }
+  }
+
+  &__image {
+    margin-top: 2rem;
+    padding: 1.25rem;
+    align-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url("../../../public/images/background_image.png");
+    background-color: var(--background-color);
+    background-size: cover;
+    background-position: center;
+
+    @media (prefers-color-scheme: dark) {
+      background-image: url("../../../public/images/background_image_dark.svg");
+    }
+
+    @media (min-width: $breakpoint-scale-up) {
+      background-size: 50%;
+    }
+
+    img {
+      max-width: 50%;
+    }
+  }
+}

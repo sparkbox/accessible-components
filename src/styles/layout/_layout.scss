@@ -1,4 +1,11 @@
 .page-container {
   position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  // this continues to push the footer all the way to the bottom
+  .content {
+    flex: 1;
+  }
 }
