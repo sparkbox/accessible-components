@@ -49,7 +49,6 @@ $breakpoint-top-section-scale-up: 70rem;
       h1 {
         font-size: map.get($font-sizes, "mobile-heading");
         font-weight: 400;
-        line-height: map.get($line-heights, "lg"); // approx. 34px/24
 
         @media (min-width: $breakpoint-scale-up) {
           font-size: map.get($font-sizes, "md");

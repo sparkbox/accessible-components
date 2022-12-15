@@ -56,7 +56,19 @@ $breakpoint-accordion-medium-550: 34rem;
 
     @media (min-width: $breakpoint-scale-up) {
       display: grid;
-      list-style: none;
+      grid-template-rows: repeat(4, minmax(0, 0.8fr));
+      grid-template-areas:
+        "accordion dialog"
+        "accordion disclosure"
+        " tabs tabs"
+        "max-scott max-scott";
+    }
+
+    @media (min-width: $breakpoint-grid-large-screen-1115) {
+      grid-template-columns: unset;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: unset;
+      grid-template-rows: repeat(3, minmax(0, 0.8fr));
       grid-template-areas:
         "accordion dialog disclosure"
         "accordion tabs tabs"

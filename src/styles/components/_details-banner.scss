@@ -7,7 +7,6 @@
 
   h1 {
     margin: 1.875rem 0; // top&bottom: 30px/16; left&right: 0
-    line-height: map.get($line-heights, "lg"); // approx. 34px/24
     letter-spacing: 0;
     font-family: Viga, sans-serif;
     font-size: map.get($font-sizes, "mobile-heading");

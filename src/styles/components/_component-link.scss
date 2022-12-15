@@ -5,11 +5,18 @@
   height: 100%;
   background-color: var(--background-color);
 
-  &:focus .component-card {
+  // tabbed focus has rotation
+  &:focus-visible .component-card {
     position: relative;
     z-index: 1;
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;
     transform: rotate(2deg);
+  }
+
+  // click focus has no rotation
+  &:focus:not(:focus-visible) .component-card {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
   }
 }

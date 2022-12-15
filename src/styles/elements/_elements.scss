@@ -30,4 +30,5 @@ a {
 h1 {
   font-size: map.get($font-sizes, "xl");
   font-family: Viga, sans-serif;
+  line-height: calc(1em + 0.5rem);
 }
