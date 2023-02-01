@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import ComponentCard from '../components/ComponentCard';
+import { getHomePageInfo } from '../utils/airtable';
 
 export default function Home() {
   return (
@@ -86,4 +87,20 @@ export default function Home() {
       </div>
     </Layout>
   );
+}
+
+// pre-render this page on each request using data in props.
+export async function getStaticProps() {
+  try {
+    // run the airtable function to get the data and save to the details variable.
+    const details = await getHomePageInfo();
+    // pass that details variable and its data into props to use elsewhere
+    return {
+      props: {
+        details,
+      },
+    };
+  } catch {
+    return { notFound: true };
+  }
 }

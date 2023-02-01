@@ -43,3 +43,20 @@ export default function getComponentDetails(componentName) {
       );
   });
 }
+
+// this function should return title and image data for all components
+export async function getHomePageInfo() {
+  // connect to our table 'Components
+  const records = await base('Components').select().firstPage();
+  const homePageInfo = records.map((record) => {
+    if (!record.fields['Default Image']) {
+      // Add coming soon image
+    }
+    return {
+      name: record.fields['Component Name'],
+      defaultImage: record.fields['Default Image'],
+      hoverImage: record.fields['Hover Image'],
+    };
+  });
+  return homePageInfo;
+}
