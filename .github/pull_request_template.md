@@ -6,7 +6,7 @@
 
 Designs: [Designs](DESIGN_URL)
 
-See Story: [FSA22V2-ISSUE](https://sparkbox.atlassian.net/browse/FSA22V2-ISSUE)
+See Story: [Jira card](https://sparkbox.atlassian.net/browse/AC-CARD_NUMBER)
 
 ### Validation:
 
