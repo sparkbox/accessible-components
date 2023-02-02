@@ -52,11 +52,20 @@ export async function getHomePageInfo() {
     if (!record.fields['Default Image']) {
       // Add coming soon image
     }
-    return {
+    const obj = {};
+    obj[record.fields['Component Name']] = {
       name: record.fields['Component Name'],
-      defaultImage: record.fields['Default Image'],
-      hoverImage: record.fields['Hover Image'],
+      defaultImage: record.fields['Default Image'][0].url,
+      hoverImage: record.fields['Hover Image'][0].url,
     };
+    return obj;
   });
-  return homePageInfo;
+
+  const homePageObject = {};
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < homePageInfo.length; i++) {
+    Object.assign(homePageObject, homePageInfo[i]);
+  }
+
+  return homePageObject;
 }

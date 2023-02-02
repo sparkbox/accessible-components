@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import ComponentCard from '../components/ComponentCard';
 import { getHomePageInfo } from '../utils/airtable';
 
-export default function Home() {
+export default function Home({ details }) {
   return (
     <Layout pageTitle="Home">
       <div className="home">
@@ -46,32 +46,32 @@ export default function Home() {
               <ComponentCard
                 name="Accordion"
                 slug="/accordion"
-                imageOpen="/images/components/accordion_open.svg"
-                imageClosed="/images/components/accordion_closed.svg"
+                imageOpen={details.Accordion.defaultImage}
+                imageClosed={details.Accordion.hoverImage}
               />
             </li>
             <li className="components-grid__item components-grid__item--dialog">
               <ComponentCard
                 name="Dialog"
                 slug="/dialog"
-                imageOpen="/images/components/dialog_open.svg"
-                imageClosed="/images/components/dialog_closed.svg"
+                imageOpen={details['Dialog (Modal)'].defaultImage}
+                imageClosed={details['Dialog (Modal)'].hoverImage}
               />
             </li>
             <li className="components-grid__item components-grid__item--disclosure">
               <ComponentCard
                 name="Disclosure"
                 slug="/disclosure"
-                imageOpen="/images/components/disclosure_open.svg"
-                imageClosed="/images/components/disclosure_closed.svg"
+                imageOpen={details['Disclosure (Show/Hide)'].defaultImage}
+                imageClosed={details['Disclosure (Show/Hide)'].hoverImage}
               />
             </li>
             <li className="components-grid__item components-grid__item--tabs">
               <ComponentCard
                 name="Tabs"
                 slug="/tabs"
-                imageOpen="/images/components/tabs_open.svg"
-                imageClosed="/images/components/tabs_closed.svg"
+                imageOpen={details.Tabs.defaultImage}
+                imageClosed={details.Tabs.hoverImage}
               />
             </li>
             <li className="components-grid__item components-grid__item--max-scott">
@@ -94,6 +94,7 @@ export async function getStaticProps() {
   try {
     // run the airtable function to get the data and save to the details variable.
     const details = await getHomePageInfo();
+
     // pass that details variable and its data into props to use elsewhere
     return {
       props: {
