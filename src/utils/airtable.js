@@ -47,25 +47,17 @@ export default function getComponentDetails(componentName) {
 // this function should return title and image data for all components
 export async function getHomePageInfo() {
   // connect to our table 'Components
-  const records = await base('Components').select().firstPage();
+  const records = await base('Components')
+    .select({
+      sort: [{ field: 'Component Name', direction: 'asc' }],
+    })
+    .all();
   const homePageInfo = records.map((record) => {
     if (!record.fields['Default Image']) {
       // Add coming soon image
     }
-    const obj = {};
-    obj[record.fields['Component Name']] = {
-      name: record.fields['Component Name'],
-      defaultImage: record.fields['Default Image'][0].url,
-      hoverImage: record.fields['Hover Image'][0].url,
-    };
-    return obj;
+    return record.fields;
   });
 
-  const homePageObject = {};
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < homePageInfo.length; i++) {
-    Object.assign(homePageObject, homePageInfo[i]);
-  }
-
-  return homePageObject;
+  return homePageInfo;
 }

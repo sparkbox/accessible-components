@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import ComponentCard from '../components/ComponentCard';
 import { getHomePageInfo } from '../utils/airtable';
+import GridItem from '../components/GridItem';
 
 export default function Home({ details }) {
   return (
@@ -42,38 +43,22 @@ export default function Home({ details }) {
         <article className="components-grid">
           <h2 className="components-grid__heading">Components</h2>
           <ul className="components-grid__list">
-            <li className="components-grid__item components-grid__item--accordion">
-              <ComponentCard
-                name="Accordion"
-                slug="/accordion"
-                imageOpen={details.Accordion.defaultImage}
-                imageClosed={details.Accordion.hoverImage}
-              />
-            </li>
-            <li className="components-grid__item components-grid__item--dialog">
-              <ComponentCard
-                name="Dialog"
-                slug="/dialog"
-                imageOpen={details['Dialog (Modal)'].defaultImage}
-                imageClosed={details['Dialog (Modal)'].hoverImage}
-              />
-            </li>
-            <li className="components-grid__item components-grid__item--disclosure">
-              <ComponentCard
-                name="Disclosure"
-                slug="/disclosure"
-                imageOpen={details['Disclosure (Show/Hide)'].defaultImage}
-                imageClosed={details['Disclosure (Show/Hide)'].hoverImage}
-              />
-            </li>
-            <li className="components-grid__item components-grid__item--tabs">
-              <ComponentCard
-                name="Tabs"
-                slug="/tabs"
-                imageOpen={details.Tabs.defaultImage}
-                imageClosed={details.Tabs.hoverImage}
-              />
-            </li>
+            {details.map((item) => (
+              <GridItem
+                key={item['Component Name']}
+                rowStart={item['Row Start']}
+                rowSpan={item['Row Span']}
+                columnStart={item['Column Start']}
+                columnSpan={item['Column Span']}
+              >
+                <ComponentCard
+                  name={item['Component Name']}
+                  slug={`/${item.Slug}`}
+                  imageOpen={item['Default Image'][0].url}
+                  imageClosed={item['Hover Image'][0].url}
+                />
+              </GridItem>
+            ))}
             <li className="components-grid__item components-grid__item--max-scott">
               <div className="max-wrapper">
                 <img
