@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import ComponentCard from '../components/ComponentCard';
-import { getHomePageInfo } from '../utils/airtable';
+import { getHomePageInfo, fields } from '../utils/airtable';
 import GridItem from '../components/GridItem';
 
 export default function Home({ details }) {
@@ -45,17 +45,17 @@ export default function Home({ details }) {
           <ul className="components-grid__list">
             {details.map((item) => (
               <GridItem
-                key={item['Component Name']}
-                rowStart={item['Row Start']}
-                rowSpan={item['Row Span']}
-                columnStart={item['Column Start']}
-                columnSpan={item['Column Span']}
+                key={item[fields.COMPONENT_NAME]}
+                rowStart={item[fields.ROW_START]}
+                rowSpan={item[fields.ROW_SPAN]}
+                columnStart={item[fields.COLUMN_START]}
+                columnSpan={item[fields.COLUMN_SPAN]}
               >
                 <ComponentCard
                   name={item['Component Name']}
                   slug={`/${item.Slug}`}
-                  imageOpen={item['Default Image'][0].url}
-                  imageClosed={item['Hover Image'][0].url}
+                  imageOpen={item[fields.DEFAULT_IMAGE][0].url}
+                  imageClosed={item[fields.HOVER_IMAGE][0].url}
                 />
               </GridItem>
             ))}

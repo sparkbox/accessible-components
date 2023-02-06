@@ -60,9 +60,7 @@ $breakpoint-accordion-medium-550: 34rem;
     }
 
     @media (min-width: $breakpoint-grid-large-screen-1115) {
-      grid-template-columns: unset;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: unset;
       grid-template-rows: repeat(3, minmax(0, 0.8fr));
     }
   }

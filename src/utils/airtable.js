@@ -15,6 +15,27 @@ Airtable.configure({
 // Initialize a base
 const base = Airtable.base(process.env.AIRTABLE_BASE_ID);
 
+export const fields = {
+  COMPONENT_NAME: 'Component Name',
+  SLUG: 'Slug',
+  DEFINITION: 'Definition',
+  KEYBOARD_INTERACTIONS: 'Keyboard Interactions',
+  SEMANTIC_ELEMENTS: 'Semantic Elements',
+  ARIA_ROLES: 'ARIA Roles and Attributes',
+  FOCUS_EXPECTATIONS: 'Focus Expectaions',
+  USAGE_GUIDELINES: 'Usage Guidelines',
+  ADDITIONAL_RESOURCES: 'Additional Resources',
+  RELATED_COMPONENTS: 'Related Components',
+  RELATED_COMPONENTS_NAME: 'Component Name (from Related Components)',
+  RELATED_COMPONENTS_SLUG: 'Slug (from Related Components)',
+  DEFAULT_IMAGE: 'Default Image',
+  HOVER_IMAGE: 'Hover Image',
+  ROW_START: 'Row Start',
+  ROW_SPAN: 'Row Span',
+  COLUMN_START: 'Column Start',
+  COLUMN_SPAN: 'Column Span',
+};
+
 // this function should return all data for the component we are querying
 // (name, code sample, usage guidelines, role, etc.)
 export default function getComponentDetails(componentName) {
