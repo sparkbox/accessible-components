@@ -6,6 +6,11 @@ const css = `.is-hidden {
 /* = EXTRA STYLES = */
 /* ================ */
 
+[role="tablist"] {
+  padding: 0.35rem 0;
+
+}
+
 [role="tab"] {
   border: none;
   padding: 0.35rem;
@@ -15,6 +20,7 @@ const css = `.is-hidden {
   transition: all ease-in-out 100ms;
   border: 2px solid white;
   border-bottom: none;
+  text-decoration: none;
 }
 
 [role="tab"]:focus,

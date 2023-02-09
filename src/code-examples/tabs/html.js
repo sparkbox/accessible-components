@@ -1,8 +1,8 @@
 const html = `<div class="tabs">
-  <nav role="tablist" aria-labelledby="tablist-1" class="manual">
-    <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1">Section 1</button>
-    <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2" tabindex="-1">Section 2</button>
-    <button id="tab-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3" tabindex="-1">Section 3</button>
+  <nav role="tablist" class="manual">
+    <a id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1" href="#tabpanel-1">Section 1</a>
+    <a id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2" tabindex="-1" href="#tabpanel-2">Section 2</a>
+    <a id="tab-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3" tabindex="-1" href="#tabpanel-3">Section 3</a>
   </nav>
 
   <section id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
