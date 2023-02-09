@@ -54,8 +54,8 @@ export default function Home({ details }) {
                 <ComponentCard
                   name={item['Component Name']}
                   slug={`/${item.Slug}`}
-                  imageOpen={`/images/components/${item.Slug}_open.svg`}
-                  imageClosed={`/images/components/${item.Slug}_closed.svg`}
+                  defaultImage={`/images/components/${item.Slug}_open.svg`}
+                  hoverImage={`/images/components/${item.Slug}_closed.svg`}
                 />
               </GridItem>
             ))}
