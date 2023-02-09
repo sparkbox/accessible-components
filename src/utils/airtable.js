@@ -12,9 +12,6 @@ Airtable.configure({
   apiKey: process.env.AIRTABLE_API_KEY,
 });
 
-// Initialize a base
-const base = Airtable.base(process.env.AIRTABLE_BASE_ID);
-
 export const fields = {
   COMPONENT_NAME: 'Component Name',
   SLUG: 'Slug',
@@ -38,7 +35,10 @@ export const fields = {
 
 // this function should return all data for the component we are querying
 // (name, code sample, usage guidelines, role, etc.)
-export default function getComponentDetails(componentName) {
+export function getComponentDetails(componentName) {
+  // Initialize a base
+  const base = Airtable.base(process.env.AIRTABLE_BASE_ID);
+
   return new Promise((resolve, reject) => {
     // connect to our table 'Components
     base('Components')
@@ -67,6 +67,9 @@ export default function getComponentDetails(componentName) {
 
 // this function should return title and image data for all components
 export async function getHomePageInfo() {
+  // Initialize a base
+  const base = Airtable.base(process.env.AIRTABLE_BASE_ID);
+
   // connect to our table 'Components
   const records = await base('Components')
     .select({
