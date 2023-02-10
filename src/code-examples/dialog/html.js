@@ -1,4 +1,4 @@
-const html = `<button type="button" class="js-open-modal" aria-expanded="true" aria-controls="dialog-content">Open a Dialog</button>
+const html = `<button type="button" class="js-open-modal" aria-controls="dialog-content">Open a Dialog</button>
 
 <div id="dialog-content" class="dialog" role="dialog" aria-labelledby="dialog-heading" aria-modal="true">
   <button type="button" class="js-close-modal" aria-label="close the dialog" id="close-dialog">x</button>
