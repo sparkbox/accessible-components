@@ -66,7 +66,7 @@ export function getComponentDetails(componentName) {
 }
 
 // this function should return title and image data for all components
-export async function getHomePageInfo() {
+export async function getAllComponents() {
   // Initialize a base
   const base = Airtable.base(process.env.AIRTABLE_BASE_ID);
 
@@ -76,12 +76,20 @@ export async function getHomePageInfo() {
       sort: [{ field: 'Component Name', direction: 'asc' }],
     })
     .all();
-  const homePageInfo = records.map((record) => {
-    if (!record.fields['Default Image']) {
-      // Add coming soon image
-    }
-    return record.fields;
-  });
+  const homePageInfo = records
+    .filter((record) => {
+      if (process.env.NODE_ENV === 'development') {
+        return true;
+      }
+
+      return record.fields.Published;
+    })
+    .map((record) => {
+      if (!record.fields['Default Image']) {
+        // Add coming soon image
+      }
+      return record.fields;
+    });
 
   return homePageInfo;
 }

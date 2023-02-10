@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import ComponentCard from '../components/ComponentCard';
-import { getHomePageInfo, fields } from '../utils/airtable';
+import { getAllComponents, fields } from '../utils/airtable';
 import GridItem from '../components/GridItem';
 
 export default function Home({ details }) {
@@ -78,7 +78,7 @@ export default function Home({ details }) {
 export async function getStaticProps() {
   try {
     // run the airtable function to get the data and save to the details variable.
-    const details = await getHomePageInfo();
+    const details = await getAllComponents();
 
     // pass that details variable and its data into props to use elsewhere
     return {
