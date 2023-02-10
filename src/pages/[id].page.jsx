@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Sandpack } from '@codesandbox/sandpack-react';
 import { levelUp } from '@codesandbox/sandpack-themes';
 import Layout from '../components/Layout';
-import getComponentDetails from '../utils/airtable';
+import { getComponentDetails } from '../utils/airtable';
 import RelatedComponents from '../components/RelatedComponents';
 import SpecificationBlock from '../components/SpecificationBlock';
 import Definition from '../components/Definition';
