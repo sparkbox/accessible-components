@@ -13,7 +13,7 @@ const html = `<button type="button" class="js-open-modal" aria-controls="dialog-
     Bear claw sugar plum topping dessert ice cream gummi bears. Sweet roll apple pie pastry cookie croissant tootsie roll caramels cookie. Icing cheesecake chocolate cake tart chocolate gingerbread. Gummi bears ice cream apple pie cookie candy carrot cake fruitcake gummi bears marshmallow. Cotton candy pudding bonbon muffin jelly. Marshmallow chocolate cake cupcake muffin shortbread chocolate cake.
   </p>
   <a href="#">Another element to demonstrate trapped focus 😃</a>
-  <button type="button" class="js-cancel-modal">Close/Cancel</button>
+  <button type="button" class="js-close-modal">Close/Cancel</button>
 </div>`;
 
 export default html;

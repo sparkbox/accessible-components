@@ -1,10 +1,9 @@
 const javascript = `const openDialogButton = document.querySelector(".js-open-modal");
-const closeDialogButton = document.querySelector(".js-close-modal");
+const closeDialogButtons = document.querySelectorAll(".js-close-modal");
 
 if (openDialogButton) {
   const dialogId = openDialogButton.getAttribute("aria-controls");
   const dialog = document.getElementById(dialogId);
-  const cancelDialogButton = document.querySelector(".js-cancel-modal");
   // These attributes were hard-coded in the HTML to ensure the dialog would be visible to users who do not have JavaScript enabled. We can reset them now because if the script has gotten to this point, JS has been enabled.
   openDialogButton.setAttribute("aria-expanded", "false");
   dialog.setAttribute("aria-hidden", "true");
@@ -20,7 +19,6 @@ if (openDialogButton) {
   const closeDialog = () => {
     dialog.setAttribute("aria-hidden", "true");
     openDialogButton.setAttribute("aria-expanded", "false");
-    closeDialogButton.setAttribute("aria-expanded", "false");
     openDialogButton.focus();
     openDialogButton.style.pointerEvents = "auto";
   }
@@ -28,13 +26,11 @@ if (openDialogButton) {
   openDialogButton.addEventListener("click", () => {
     openDialog();
   });
-  
-  closeDialogButton.addEventListener("click", () => {
-    closeDialog();
-  });
-  
-  cancelDialogButton.addEventListener("click", () => {
-    closeDialog();
+
+  closeDialogButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      closeDialog();
+    });
   });
   
   document.addEventListener("keydown", (e) => {
