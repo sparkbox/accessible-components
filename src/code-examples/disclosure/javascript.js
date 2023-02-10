@@ -1,8 +1,8 @@
-const javascript = `document.addEventListener("click", (event) => {
-  if (event.target.matches("[data-disclosure]")) {
+const javascript = `const button = document.querySelector("#disclosure-button");
+button.addEventListener("click", (event) => {
     //aria-controls attribute is used to select desired element to show/hide
     let disclosureTarget = document.querySelector(
-      "#" + event.target.getAttribute("aria-controls")
+      "#" + button.getAttribute("aria-controls")
     );
 
     // If no matching element is found, return.
@@ -15,7 +15,6 @@ const javascript = `document.addEventListener("click", (event) => {
     event.target.setAttribute("aria-expanded", !isExpanded);
     //Toggles element to show or hide (text).
     disclosureTarget.toggleAttribute("hidden", isExpanded);
-  }
 });
 `;
 
