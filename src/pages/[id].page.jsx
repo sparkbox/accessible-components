@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Sandpack } from '@codesandbox/sandpack-react';
 import { levelUp } from '@codesandbox/sandpack-themes';
 import Layout from '../components/Layout';
-import { getComponentDetails } from '../utils/airtable';
+import { getAllComponents, getComponentDetails } from '../utils/airtable';
 import RelatedComponents from '../components/RelatedComponents';
 import SpecificationBlock from '../components/SpecificationBlock';
 import Definition from '../components/Definition';
@@ -167,22 +167,15 @@ const getRelatedComponents = (details) => {
 };
 
 export async function getStaticPaths() {
+  const components = await getAllComponents();
+
   return {
-    paths: [
-      {
-        params: { id: 'accordion' },
+    paths: components.map((component) => ({
+      params: {
+        id: component.Slug,
       },
-      {
-        params: { id: 'dialog' },
-      },
-      {
-        params: { id: 'disclosure' },
-      },
-      {
-        params: { id: 'tabs' },
-      },
-    ],
-    fallback: 'blocking', // indicates the type of fallback
+    })),
+    fallback: false,
   };
 }
 
