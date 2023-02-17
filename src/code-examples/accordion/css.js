@@ -1,9 +1,9 @@
 const css = `/* Styles for panel visibility */
-.collapsed ~ .tab-panel {
+.collapsed ~ .accordion-panel {
   display: none;
 }
 
-.tab-panel {
+.accordion-panel {
   display: block;
 }
 
@@ -30,7 +30,7 @@ h3 {
   margin: auto;
 }
 
-.accordion-section button {
+.accordion button {
   width: 100%;
   display: flex;
   margin: none;
@@ -38,7 +38,7 @@ h3 {
   justify-content: space-between;
 }
 
-.accordion-section .tab-panel {
+.accordion .accordion-panel {
   margin: 0.3rem;
 }
 /* end of optional styles */
