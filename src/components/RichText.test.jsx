@@ -22,7 +22,8 @@ it('Creates <li> elements given markdown with nested bullet points', () => {
 
 it('Generates <a> tags from markdown with [foo](bar) link syntax', () => {
   const linkMd = '[Link to google](https://www.google.com)';
-  const expectedHtml = '<p><a href="https://www.google.com">Link to google</a></p>';
+  const expectedHtml =
+    '<p><a href="https://www.google.com">Link to google</a></p>';
   render(<RichText markdown={linkMd} />);
   const linkOutput = screen.queryByTestId('richtext').innerHTML;
   expect(linkOutput).toMatch(expectedHtml);
@@ -30,7 +31,8 @@ it('Generates <a> tags from markdown with [foo](bar) link syntax', () => {
 
 it('Generates <code> tags from markdown with text in `backticks` and creates necessary HTML entities', () => {
   const codeMd = 'Use the component `<Test/>` around tests!';
-  const expectedHtml = '<p>Use the component <code>&lt;Test/&gt;</code> around tests!</p>';
+  const expectedHtml =
+    '<p>Use the component <code>&lt;Test/&gt;</code> around tests!</p>';
   render(<RichText markdown={codeMd} />);
   const codeTagOutput = screen.queryByTestId('richtext').innerHTML;
   expect(codeTagOutput).toMatch(expectedHtml);
@@ -38,7 +40,8 @@ it('Generates <code> tags from markdown with text in `backticks` and creates nec
 
 it('Replaces double brackets from markdown with <kbd> HTML elements', () => {
   const bracketMd = '[[Enter]] or [[Space]]: some test code';
-  const expectedHtml = '<p><kbd>Enter</kbd> or <kbd>Space</kbd>: some test code</p>';
+  const expectedHtml =
+    '<p><kbd>Enter</kbd> or <kbd>Space</kbd>: some test code</p>';
   render(<RichText markdown={bracketMd} />);
   const newKbdElements = screen.queryByTestId('richtext').innerHTML;
   expect(newKbdElements).toMatch(expectedHtml);
@@ -47,7 +50,8 @@ it('Replaces double brackets from markdown with <kbd> HTML elements', () => {
 /* Sanitation */
 // This can be adjusted if we decide we need stricter sanitation.
 it('Removes dangerous <html>, <body>, and <head> tags from strings, leaving their contents', () => {
-  const htmlMd = "Shouldn't <body>have</body> <head>any</head> breaking <html>tags</html> in the output.";
+  const htmlMd =
+    "Shouldn't <body>have</body> <head>any</head> breaking <html>tags</html> in the output.";
   const expectedHtml = "<p>Shouldn't have any breaking tags in the output.</p>";
   render(<RichText markdown={htmlMd} />);
   const nestedOutput = screen.queryByTestId('richtext').innerHTML;

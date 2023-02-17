@@ -96,19 +96,11 @@ export default function Details({ details }) {
             <figcaption>
               Once focused on the code editor:
               <p>
-                Press
-                {' '}
-                <kbd>Enter</kbd>
-                {' '}
-                to enter the code editor and change the
+                Press <kbd>Enter</kbd> to enter the code editor and change the
                 code.
               </p>
               <p>
-                Press
-                {' '}
-                <kbd>Escape</kbd>
-                {' '}
-                to leave the code editor.
+                Press <kbd>Escape</kbd> to leave the code editor.
               </p>
             </figcaption>
           </article>
