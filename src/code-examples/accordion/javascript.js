@@ -7,7 +7,7 @@ const getAccordionButtons = () => {
 // Return NodeList of all collapsable h3 tags in the Accordion
 const getAccordionHeaders = () => {
   const accordion = document.querySelector(".accordion");
-  return accordion.querySelectorAll("h3"); // specific enough?
+  return accordion.querySelectorAll(".accordion-header");
 }
 
 // Set accordion's aria-expanded attributes & classes to collapsed values
