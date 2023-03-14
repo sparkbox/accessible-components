@@ -79,10 +79,10 @@ export default function Details({ details }) {
                     code: htmlCode,
                     active: true,
                   },
-                  'index.css': cssCode,
-                  '/index.js': javascriptCode,
-                  '/src/index.js': {
-                    code: 'import "../index.css"; import "../index.js"',
+                  [`/${slug}.css`]: cssCode,
+                  [`/${slug}.js`]: javascriptCode,
+                  '/index.js': {
+                    code: `import "./${slug}.css"; import "./${slug}.js";`,
                     hidden: true,
                   },
                 }}
@@ -90,6 +90,7 @@ export default function Details({ details }) {
                   showLineNumbers: true,
                   wrapContent: true,
                   editorHeight: 480,
+                  recompileMode: 'immediate',
                 }}
               />
             </figure>
