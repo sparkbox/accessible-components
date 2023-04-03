@@ -1,7 +1,4 @@
-const css = `.is-hidden {
-  display: none;
-}
-
+const css = `
 /*  These styles are optional  */
 button {
   margin-bottom: 1em;

@@ -1,5 +1,5 @@
 const javascript = `const disclosure = document.querySelector('#disclosure-text');
-disclosure.classList.toggle("is-hidden");
+disclosure.toggleAttribute('hidden');
 const button = document.querySelector("#disclosure-button");
 button.addEventListener("click", (event) => {
     //aria-controls attribute is used to select desired element to show/hide
@@ -16,7 +16,7 @@ button.addEventListener("click", (event) => {
     //Toggles target button element.
     event.target.setAttribute("aria-expanded", !isExpanded);
     //Toggles element to show or hide (text).
-    disclosureTarget.classList.toggle("is-hidden");
+    disclosureTarget.toggleAttribute('hidden');
 });
 `;
 
