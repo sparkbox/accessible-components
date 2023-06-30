@@ -6,6 +6,9 @@ import DOMPurify from 'isomorphic-dompurify';
 export default function RichText({ markdown }) {
   const htmlFromMd = marked.parse(markdown.replace(/\\/g, ''), {
     breaks: true,
+    mangle: false,
+    headerIds: false,
+    headerPrefix: false,
   });
   const withKbdElements = htmlFromMd.replace(/\[\[(.+?)\]\]/g, '<kbd>$1</kbd>');
 
