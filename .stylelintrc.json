@@ -1,6 +1,7 @@
 {
   "extends": ["stylelint-config-standard", "stylelint-config-standard-scss"],
   "rules": {
-    "media-feature-range-notation": null
+    "media-feature-range-notation": null,
+    "media-query-no-invalid": null
   }
 }
