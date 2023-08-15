@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import findMatchingRecord from './findMatchingRecord';
 
 const fakeAirtableData = [
