@@ -1,12 +1,25 @@
-# Basic dependabot.yml file with
-# minimum configuration for npm
-
 version: 2
 updates:
-  # Enable version updates for npm
   - package-ecosystem: 'npm'
-    # Look for `package.json` and `lock` files in the `root` directory
     directory: '/'
-    # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: 'weekly'
+    groups:
+      dev-dependencies:
+        dependency-type: 'development'
+        update-types:
+          - 'minor'
+          - 'patch'
+      major-dev-dependencies:
+        dependency-type: 'development'
+        update-types:
+          - 'major'
+      production-dependencies:
+        dependency-type: 'production'
+        update-types:
+          - 'minor'
+          - 'patch'
+      major-production-dependencies:
+        dependency-type: 'production'
+        update-types:
+          - 'major'
