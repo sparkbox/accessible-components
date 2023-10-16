@@ -33,7 +33,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.0.0",
     "axe-core": "^4.7.2",
     "check-node-version": "^4.2.1",
