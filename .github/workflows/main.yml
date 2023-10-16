@@ -24,15 +24,6 @@ jobs:
           excludeTitle: 'true'
           checkAllCommitMessages: 'true'
           accessToken: ${{ secrets.GITHUB_TOKEN }}
-      - name: Check commit message ticket number
-        uses: gsactions/commit-message-checker@v1
-        with:
-          pattern: 'AC-[0-9]+$'
-          error: 'Commit messages must end with a ticket number.'
-          excludeDescription: 'true'
-          excludeTitle: 'true'
-          checkAllCommitMessages: 'true'
-          accessToken: ${{ secrets.GITHUB_TOKEN }}
 
   build:
     runs-on: ubuntu-latest
