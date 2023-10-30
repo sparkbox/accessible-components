@@ -55,6 +55,6 @@
     "stylelint-config-standard-scss": "^11.0.0"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   }
 }
