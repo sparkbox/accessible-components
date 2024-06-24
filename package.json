@@ -19,16 +19,16 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
-    "@codesandbox/sandpack-react": "^2.13.10",
+    "@codesandbox/sandpack-react": "^2.14.4",
     "@codesandbox/sandpack-themes": "^2.0.21",
     "airtable": "^0.12.2",
     "check-node-version": "^4.2.1",
-    "cypress": "^13.8.1",
+    "cypress": "^13.12.0",
     "cypress-axe": "^1.5.0",
     "cypress-each": "^1.14.0",
-    "isomorphic-dompurify": "^2.9.0",
+    "isomorphic-dompurify": "^2.12.0",
     "marked": "^12.0.2",
-    "next": "^14.2.3",
+    "next": "^14.2.4",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
